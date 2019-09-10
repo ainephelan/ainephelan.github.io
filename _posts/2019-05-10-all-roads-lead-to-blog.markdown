@@ -25,19 +25,5 @@ But, how do you break into a new field? How do you share the work you’ve done,
 
 Blog it is then.
 
-
-function initializeViz() {
-  // JS object that points at empty div in the html
-  var placeholderDiv = document.getElementById("tableauViz");
-  // URL of the viz to be embedded
-  var url = "http://public.tableau.com/views/WorldIndicators/GDPpercapita";
-  // An object that contains options specifying how to embed the viz
-  var options = {
-    width: '600px',
-    height: '600px',
-    hideTabs: true,
-    hideToolbar: true,
-  };
-  viz = new tableau.Viz(placeholderDiv, url, options);
-}
+<script src="http://public.tableau.com/views/WorldIndicators/GDPpercapita"></script>
 
