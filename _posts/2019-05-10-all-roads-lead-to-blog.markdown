@@ -26,15 +26,18 @@ But, how do you break into a new field? How do you share the work you’ve done,
 Blog it is then.
 
 
-<iframe src='https://public.tableau.com/views/Salesvs_TargetbyDepartment/Dashboard1?:embed=y&:display_count=yes&:origin=viz_share_link' width='800' height='600'></iframe>
+function initializeViz() {
+  // JS object that points at empty div in the html
+  var placeholderDiv = document.getElementById("tableauViz");
+  // URL of the viz to be embedded
+  var url = "http://public.tableau.com/views/WorldIndicators/GDPpercapita";
+  // An object that contains options specifying how to embed the viz
+  var options = {
+    width: '600px',
+    height: '600px',
+    hideTabs: true,
+    hideToolbar: true,
+  };
+  viz = new tableau.Viz(placeholderDiv, url, options);
+}
 
-
-<script type='text/javascript' src='http://mysite.myserver.com/javascripts/api/viz_v1.js'></script>
-  <div class='tableauPlaceholder' style='width: 800px; height: 600px;' >
-  <object class='tableauViz' width='800' height='600' style='display:none;'>
-  <param name='host_url' value='http://mysite.myserver.com' />
-  <param name='site_root' value='' />
-  <param name='name' value='ProfitAnalysis/Sales_Dashboard' />		
-  <param name='tabs' value='yes' />
-  <param name='toolbar' value='yes' />
-  <param name='filter' value=':original_view=yes' /></object></div>
