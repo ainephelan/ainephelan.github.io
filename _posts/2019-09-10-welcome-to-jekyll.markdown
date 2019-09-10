@@ -28,3 +28,4 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
 
+![alt text](https://public.tableau.com/views/Salesvs_TargetbyDepartment/Dashboard1?:retry=yes&:embed=y&:display_count=yes&:origin=viz_share_link)
