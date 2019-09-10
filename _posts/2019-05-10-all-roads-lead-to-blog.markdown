@@ -26,5 +26,5 @@ But, how do you break into a new field? How do you share the work you’ve done,
 Blog it is then.
 
 
-<iframe src=”https://public.tableau.com/views/Salesvs_TargetbyDepartment/Dashboard1?:embed=y&:display_count=yes&:origin=viz_share_link” width=”800″ height=”600″></iframe>
+<iframe src="https://public.tableau.com/views/Salesvs_TargetbyDepartment/Dashboard1?:embed=y&:display_count=yes&:origin=viz_share_link" width="800" height="600"></iframe>
 
