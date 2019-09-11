@@ -25,5 +25,4 @@ But, how do you break into a new field? How do you share the work you’ve done,
 
 Blog it is then.
 
-<script src="http://public.tableau.com/views/WorldIndicators/GDPpercapita"></script>
-
+<center><iframe src="https://public.tableau.com/views/ATaleof50Cities/ATaleof50Cities?:embed=y&:display_count=yes&:toolbar=no" width="1004" height="1269" frameborder="0"></iframe></center>
