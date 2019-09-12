@@ -2,6 +2,9 @@
 
 ![](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/getoffphone2.png) 
 
+![gender_stem]({{ site.baseurl }}/images/gender_stem_degrees.png)
+
+
 Daily Screen            |  Weekly Screen
 :-------------------------:|:-------------------------:
 ![](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/screentime1.jpg)  |  ![](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/screentime2.PNG)
