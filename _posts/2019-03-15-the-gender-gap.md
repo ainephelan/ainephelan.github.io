@@ -5,10 +5,14 @@ date:   2017-03-15 20:40:42 +1000
 categories: jekyll update
 ---
 
+![train](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/People_Train.jpg)
+
 ## Visualising the Gender Gap in College Majors  
 Today we're going to look at creating visualisations which communicate the historical narrative of the gender gap in different fields of study in the US.
 
-We'll use the already cleaned data set described below, and we're going to take the opportunity to practice some techniques to eliminate [chartjunk](https://en.wikipedia.org/wiki/Chartjunk) and maximise the [data-ink ratio](https://infovis-wiki.net/wiki/Data-Ink_Ratio).  All the better to see you with my dear!
+We'll use the already cleaned data set described below, and we're going to take the opportunity to practice some techniques to eliminate [chartjunk](https://en.wikipedia.org/wiki/Chartjunk) and maximise the [data-ink ratio](https://infovis-wiki.net/wiki/Data-Ink_Ratio).  
+
+All the better to see you with my dear!
 
 
 ### Context
@@ -31,6 +35,81 @@ It is not large and we can easily display it in its entirety.
 import pandas as pd
 
 women_degrees = pd.read_csv('percent-bachelors-degrees-women-usa.csv')
-women_degrees
+women_degrees.head()
 ```
 
+{% highlight ruby %}
+import pandas as pd
+
+women_degrees = pd.read_csv('percent-bachelors-degrees-women-usa.csv')
+women_degrees.head()
+{% endhighlight %}
+
+
+The data has been cleaned already. We do a quick check to confirm the data is complete and in a usable format.
+
+There are no missing values, and our percentages are all of data type `float`, which is perfect for our use.
+
+## The Gender Gap in STEM
+
+Let's first take a look at the historical narrative of the gender gap in STEM fields (Science, Technology, Engineering and Maths).
+
+As our data set deals with percentages of women who completed Bachelor degrees each field, we can easily impute the corresponding data for men by subtracting our known percentage values from 100.
+
+We will display our comparison of degrees awarded in each field by gender for our 6 STEM subjects in one figure.
+
+We will use our ink judiciously: 
+- using a colour palette suitable for colourblind readers
+- removing plot spines
+- removing plot tick parameters
+- doing away with labels and legends
+- using annotations, sparingly
+
+```
+# Import
+%matplotlib inline
+import matplotlib.pyplot as plt
+
+# Set our RBG colour palette
+cb_dark_blue = (0/255,107/255,164/255)
+cb_orange = (255/255, 128/255, 14/255)
+
+# List our STEM fields
+stem_cats = ['Engineering', 'Computer Science', 'Psychology', 'Biology', 'Physical Sciences', 'Math and Statistics']
+
+# Initialise our figure
+fig = plt.figure(figsize=(18, 3))
+fig.suptitle('The Gender Gap in STEM College Majors in the US', y=1.1, fontsize='16', fontweight='bold')
+
+# Iterate over our STEM cats, plotting our subplots
+for sp in range(0,6):
+    ax = fig.add_subplot(1,6,sp+1)
+    ax.plot(women_degrees['Year'], women_degrees[stem_cats[sp]], c=cb_dark_blue, label='Women', linewidth=3)
+    
+    # Plot percentages for men
+    ax.plot(women_degrees['Year'], 100-women_degrees[stem_cats[sp]], c=cb_orange, label='Men', linewidth=3)
+    
+    # Set axis limits and title
+    ax.set_xlim(1968, 2011)
+    ax.set_ylim(0,100)
+    ax.set_title(stem_cats[sp])
+
+    # Remove spines
+    for key, value in ax.spines.items():
+        value.set_visible(False)
+    
+    # Remove tick params
+    ax.tick_params(bottom=False, top=False, left=False, right=False)
+    
+    # Annotate
+    if sp == 0:
+        ax.text(2005, 87, 'Men')
+        ax.text(2002, 8, 'Women')
+    elif sp == 5:
+        ax.text(2005, 62, 'Men')
+        ax.text(2001, 35, 'Women')
+
+# Export our figure
+plt.savefig('gender_stem_degrees.png')        
+plt.show()
+```
