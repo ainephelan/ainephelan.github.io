@@ -3,7 +3,6 @@ layout: post
 title:  "Mind the Gap!"
 date:   2019-03-15 20:40:42 +1000
 categories: jekyll update
-description: Visualising the gender gap in US college majors
 ---
 
 ![train](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/People_Train.jpg)
@@ -32,15 +31,6 @@ Let's load our data and do some initial exploration of our data set.
 
 It is not large and we can easily display it in its entirety.
 
-{% highlight ruby %}
-import pandas as pd
-
-women_degrees = pd.read_csv('percent-bachelors-degrees-women-usa.csv')
-women_degrees.head()
-{% endhighlight %}
-
-
-
 {% highlight python %}
 import pandas as pd
 
@@ -48,6 +38,9 @@ women_degrees = pd.read_csv('percent-bachelors-degrees-women-usa.csv')
 women_degrees.head()
 {% endhighlight %}
 
+![gender_head]({{ site.baseurl }}/images/gender_head.png)
+
+![gender_head](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/gender_head.png)
 
 The data has been cleaned already. We do a quick check to confirm the data is complete and in a usable format.
 
