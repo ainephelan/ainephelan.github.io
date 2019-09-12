@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Mind the Gap!"
-date:   2017-03-15 20:40:42 +1000
+date:   2019-03-15 20:40:42 +1000
 categories: jekyll update
 ---
 
@@ -38,7 +38,7 @@ women_degrees = pd.read_csv('percent-bachelors-degrees-women-usa.csv')
 women_degrees.head()
 ```
 
-{% highlight ruby %}
+{% highlight python %}
 import pandas as pd
 
 women_degrees = pd.read_csv('percent-bachelors-degrees-women-usa.csv')
