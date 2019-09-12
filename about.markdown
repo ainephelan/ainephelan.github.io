@@ -4,9 +4,9 @@ title: About
 permalink: /about/
 ---
 
-Hello! I'm Áine. I do data science. I'm working mostly in Python and SQL. I enjoy learning and the more I learn, the more I build, the more I enjoy building.
+Hello! I'm Áine. I do data science. I'm working mostly in Python and SQL. I enjoy learning and the more I learn, the more I build. The more I build, the more I enjoy building.
 
-What I like about data is how it touches *everything*; it is applicable in every field. Instead of a profession narrowing your horizons to some few, discrete, specific areas, data opens the world right up to you. 
+What I like about data is that it touches *everything*; it is applicable in every field. Instead of a job narrowing your horizons to some few, discrete, specific areas, data opens the world right up to you, serves it up on a platter. 
 
 Also I just really dig the analysis of it all. When you get your Keyser Söze moments, when the puzzle pieces all slot into place, I mean, is there anything more satisfying?
 
