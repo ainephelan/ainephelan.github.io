@@ -42,7 +42,7 @@ theme: minima
 plugins:
   - jekyll-feed
 
-show_excerpts: # true # set to false to remove excerpts on the homepage
+# show_excerpts: true # set to false to remove excerpts on the homepage
 
 # Exclude from processing.
 # The following items will not be processed, by default.
