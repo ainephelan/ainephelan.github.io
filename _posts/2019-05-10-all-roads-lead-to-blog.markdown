@@ -26,3 +26,8 @@ But, how do you break into a new field? How do you share the work you’ve done,
 Blog it is then.
 
 <center><iframe src="https://public.tableau.com/views/ATaleof50Cities/ATaleof50Cities?:embed=y&:display_count=yes&:toolbar=no" width="1004" height="1269" frameborder="0"></iframe></center>
+
+
+<center><iframe src="https://public.tableau.com/views/Salesvs_TargetbyDepartment/Dashboard1?:embed=y&:display_count=yes&:origin=viz_share_link" width="1004" height="1269" frameborder="0"></iframe></center>
+
+
