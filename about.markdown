@@ -4,11 +4,7 @@ title: About
 permalink: /about/
 ---
 
-![journal](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/journal.png)
-
-![herro](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/aine_profile_pic.jpg)
-
-<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/aine_profile_pic.jpg" alt="drawing" width="300px"/>
+<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/aine_profile_pic.jpg" alt="hello" width="300px"/>
 
 Hello! I'm Áine. I do data science. I'm working mostly in Python and SQL, and really enjoy learning and building.  
 
