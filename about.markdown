@@ -3,11 +3,14 @@ layout: page
 title: About
 permalink: /about/
 ---
-![Hi](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/aine_profile_pic.jpeg)
+
+![Áine_Phelan](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/aine_profile_pic.jpeg)
 
 Hello! I'm Áine. I do data science. I'm working mostly in Python and SQL, and really enjoy learning and building.  
 
-What I like about data is how it is everywhere and touches everything; it's applicable in every field there is! And working with it has made me *so* interested in the world around me.  
+What I like about data is how it is everywhere and touches everything; it's applicable in every field there is! And working with it has made me *so* interested in the world around me. 
+
+Also, when you get your Keyser Söze moment, when all the puzzle pieces slot into place, I mean, is there anything more satisfying?
 
 Other things I care about: gender disparity, mental health and waste.  
 
