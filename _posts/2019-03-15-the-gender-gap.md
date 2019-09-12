@@ -20,11 +20,11 @@ The [National Center for Education Statistics](https://nces.ed.gov/programs/dige
 
 [Randal Olson](http://www.randalolson.com/2014/06/14/percentage-of-bachelors-degrees-conferred-to-women-by-major-1970-2012/), a data scientist from the University of Pennsylvania, has cleaned the data set for years 1970 to 2012 and made it available on his personal website. 
 
-Gender parity is a topic close to my own heart, and at least here in Australia, it appears we still have [a long way to go](https://blog.csiro.au/where-are-all-the-women-in-stem/) in [bridging the gap](https://www.sbs.com.au/news/women-leave-stem-over-pay-gap-study-finds).
+Gender parity is a topic close to my own heart, and at least here in Australia, it appears we still have a [long way to go](https://blog.csiro.au/where-are-all-the-women-in-stem/) in [bridging the gap](https://www.sbs.com.au/news/women-leave-stem-over-pay-gap-study-finds).
 
-News articles aside, let's use Randal's [cleaned data](http://www.randalolson.com/wp-content/uploads/percent-bachelors-degrees-women-usa.csv) to see some historical differences between the genders regarding their chosen fields of study in the US.
+Right, let's use Randal's [cleaned data](http://www.randalolson.com/wp-content/uploads/percent-bachelors-degrees-women-usa.csv) to see some historical differences between the genders regarding their chosen fields of study in the US.
 
-Note, due to the nature of the historical data available to us, for the purposes of this analysis we will be treating gender as a binary construct only.
+Note, for the purposes of this analysis we will be treating gender as a binary construct only.
 
 ## Load the Data
 Let's load our data and do some initial exploration of our data set.
