@@ -31,12 +31,14 @@ Let's load our data and do some initial exploration of our data set.
 
 It is not large and we can easily display it in its entirety.
 
-```
+{% highlight ruby %}
 import pandas as pd
 
 women_degrees = pd.read_csv('percent-bachelors-degrees-women-usa.csv')
 women_degrees.head()
-```
+{% endhighlight %}
+
+
 
 {% highlight python %}
 import pandas as pd
@@ -65,7 +67,7 @@ We will use our ink judiciously:
 - doing away with labels and legends
 - using annotations, sparingly
 
-```
+{% highlight ruby %}
 # Import
 %matplotlib inline
 import matplotlib.pyplot as plt
@@ -112,4 +114,5 @@ for sp in range(0,6):
 # Export our figure
 plt.savefig('gender_stem_degrees.png')        
 plt.show()
-```
+{% endhighlight %}
+
