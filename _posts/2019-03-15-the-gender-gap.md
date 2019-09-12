@@ -38,13 +38,15 @@ women_degrees = pd.read_csv('percent-bachelors-degrees-women-usa.csv')
 women_degrees.head()
 {% endhighlight %}
 
-![gender_head]({{ site.baseurl }}/images/gender_head.png)
-
 ![gender_head](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/gender_head.png)
 
 The data has been cleaned already. We do a quick check to confirm the data is complete and in a usable format.
 
 There are no missing values, and our percentages are all of data type `float`, which is perfect for our use.
+
+![gender_datatype](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/gender_datatype.png)
+
+
 
 ## The Gender Gap in STEM
 
