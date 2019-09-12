@@ -8,9 +8,6 @@ So, why a blog? I wouldn’t have thought it of me either, but frankly, the univ
 
 ![photos](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/journal.png)
 
-![herro](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/aine_profile_pic.jpg)
-
-
 ### Journaling
 A friend bought me a goal-tracking journal. I started using it (a year later, but moving on) and… I liked it. I found it valuable; small moments of structured reflection and planning in the morning and at night, the flow of my own thoughts, bookending my day.
 
