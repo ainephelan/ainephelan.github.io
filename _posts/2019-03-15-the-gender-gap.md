@@ -68,7 +68,7 @@ We will use our ink judiciously:
 - doing away with labels and legends
 - using annotations, sparingly
 
-{% highlight ruby %}
+{% highlight python %}
 # Import
 %matplotlib inline
 import matplotlib.pyplot as plt
@@ -116,4 +116,6 @@ for sp in range(0,6):
 plt.savefig('gender_stem_degrees.png')        
 plt.show()
 {% endhighlight %}
+
+![gender_stem]({{ site.baseurl }}/images/gender_stem_degrees.png)
 
