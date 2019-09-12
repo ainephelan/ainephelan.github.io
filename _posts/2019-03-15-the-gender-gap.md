@@ -3,6 +3,7 @@ layout: post
 title:  "Mind the Gap!"
 date:   2019-03-15 20:40:42 +1000
 categories: jekyll update
+description: Visualising the gender gap in US college majors
 ---
 
 ![train](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/People_Train.jpg)
