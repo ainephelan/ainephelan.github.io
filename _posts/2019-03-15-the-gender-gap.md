@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Mind the Gap!"
+title:  "Mind the Gap"
 date:   2019-03-15 20:40:42 +1000
 categories: jekyll update
 ---
