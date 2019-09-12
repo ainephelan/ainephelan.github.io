@@ -44,7 +44,7 @@ The data has been cleaned already. We do a quick check to confirm the data is co
 
 There are no missing values, and our percentages are all of data type `float`, which is perfect for our use.
 
-<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/gender_datatype.png" alt="drawing" width="300px"/>
+<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/gender_datatype.png" alt="drawing" width="400px"/>
 
 
 ## The Gender Gap in STEM
