@@ -4,8 +4,6 @@ title: About
 permalink: /about/
 ---
 
-<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/aine_profile_pic.jpg" alt="hello" width="300px"/>
-
 Hello! I'm Áine. I do data science. I'm working mostly in Python and SQL, and really enjoy learning and building.  
 
 What I like about data is how it is everywhere and touches everything; it's applicable in every field there is! Working with it has made me *so* interested in the world around me. 
