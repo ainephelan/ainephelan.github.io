@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-![Hi](aine_profile_pic.jpeg)
+![Hi](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/aine_profile_pic.jpeg)
 
 Hello! I'm Áine. I do data science. I'm working mostly in Python and SQL, and really enjoy learning and building.  
 
