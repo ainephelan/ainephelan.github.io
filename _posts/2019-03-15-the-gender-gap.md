@@ -48,8 +48,9 @@ women_degrees
 ```
 
 
-
+```
 ![gender_head](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/gender_head.png)
+```
 
 The data has been cleaned already. I do a quick check to confirm the data is complete and in a usable format.
 
