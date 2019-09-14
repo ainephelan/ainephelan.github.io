@@ -38,15 +38,14 @@ women_degrees = pd.read_csv('percent-bachelors-degrees-women-usa.csv')
 women_degrees.head()
 {% endhighlight %}
 
-{% highlight python %}
+```
 Order	PID	MS SubClass	MS Zoning	Lot Frontage	Lot Area	Street	Alley	Lot Shape	Land Contour	...	Pool Area	Pool QC	Fence	Misc Feature	Misc Val	Mo Sold	Yr Sold	Sale Type	Sale Condition	SalePrice	
 0	1	526301100	20	RL	141	31770	Pave	NaN	IR1	Lvl	...	0	NaN	NaN	NaN	0	5	2010	WD	Normal	215000
 1	2	526350040	20	RH	80	11622	Pave	NaN	Reg	Lvl	...	0	NaN	MnPrv	NaN	0	6	2010	WD	Normal	105000
 2	3	526351010	20	RL	81	14267	Pave	NaN	IR1	Lvl	...	0	NaN	NaN	Gar2	12500	6	2010	WD	Normal	172000
 3	4	526353030	20	RL	93	11160	Pave	NaN	Reg	Lvl	...	0	NaN	NaN	NaN	0	4	2010	WD	Normal	244000
 4	5	527105010	60	RL	74	13830	Pave	NaN	IR1	Lvl	...	0	NaN	MnPrv	NaN	0	3	2010	WD	Normal	189900
-
-{% endhighlight %}
+```
 
 
 
