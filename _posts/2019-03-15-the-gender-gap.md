@@ -39,11 +39,12 @@ women_degrees
 {% endhighlight %}
 
 ```
-	Year	Agriculture	Architecture	Art and Performance	Biology	Business	Communications and Journalism	Computer Science	Education	Engineering	English	Foreign Languages	Health Professions	Math and Statistics	Physical Sciences	Psychology	Public Administration	Social Sciences and History
-0	1970	4.229798	11.921005	59.7	29.088363	9.064439	35.3	13.6	74.535328	0.8	65.570923	73.8	77.1	38	13.8	44.4	68.4	36.8
-1	1971	5.452797	12.003106	59.9	29.394403	9.503187	35.5	13.6	74.149204	1	64.556485	73.9	75.5	39	14.9	46.2	65.5	36.2
-2	1972	7.42071	13.214594	60.4	29.810221	10.558962	36.6	14.9	73.55452	1.2	63.664263	74.6	76.9	40.2	14.8	47.6	62.6	36.1
-3	1973	9.653602	14.791613	60.2	31.147915	12.804602	38.4	16.4	73.501814	1.6	62.941502	74.9	77.4	40.9	16.5	50.4	64.3	36.4
+	Order	PID	MS SubClass	MS Zoning	Lot Frontage	Lot Area	Street	Alley	Lot Shape	Land Contour	...	Pool Area	Pool QC	Fence	Misc Feature	Misc Val	Mo Sold	Yr Sold	Sale Type	Sale Condition	SalePrice
+0	1	526301100	20	RL	141.0	31770	Pave	NaN	IR1	Lvl	...	0	NaN	NaN	NaN	0	5	2010	WD	Normal	215000
+1	2	526350040	20	RH	80.0	11622	Pave	NaN	Reg	Lvl	...	0	NaN	MnPrv	NaN	0	6	2010	WD	Normal	105000
+2	3	526351010	20	RL	81.0	14267	Pave	NaN	IR1	Lvl	...	0	NaN	NaN	Gar2	12500	6	2010	WD	Normal	172000
+3	4	526353030	20	RL	93.0	11160	Pave	NaN	Reg	Lvl	...	0	NaN	NaN	NaN	0	4	2010	WD	Normal	244000
+4	5	527105010	60	RL	74.0	13830	Pave	NaN	IR1	Lvl	...	0	NaN	MnPrv	NaN	0	3	2010	WD	Normal	189900
 ```
 
 
