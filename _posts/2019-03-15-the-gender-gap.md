@@ -84,13 +84,10 @@ women_degrees
 |   2010 |      48.73    |        42.0667 |                  61.3 |   59.0103 |   48.758   |                            62.5 |               17.6 |     79.6186 |          17.2 |   67.9281 |                69   |                 85   |                  43.1 |                40.2 |         77   |                    81.7 |                          49.3 |
 |   2011 |      50.0372  |        42.7734 |                  61.2 |   58.7424 |   48.1804  |                            62.2 |               18.2 |     79.4328 |          17.5 |   68.4267 |                69.5 |                 84.8 |                  43.1 |                40.1 |         76.7 |                    81.9 |                          49.2 |
 
-![gender_head](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/gender_head.png)
 
 The data has been cleaned already. I do a quick check to confirm the data is complete and in a usable format.
 
 There are no missing values, and the percentages are all of data type `float`, which is perfect for my purposes.
-
-<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/gender_datatype.png" alt="drawing" width="400px"/>
 
 ```
 <class 'pandas.core.frame.DataFrame'>
