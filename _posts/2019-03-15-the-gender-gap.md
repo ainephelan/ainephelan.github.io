@@ -20,7 +20,7 @@ The [National Center for Education Statistics](https://nces.ed.gov/programs/dige
 
 [Randal Olson](http://www.randalolson.com/2014/06/14/percentage-of-bachelors-degrees-conferred-to-women-by-major-1970-2012/), a data scientist from the University of Pennsylvania, has cleaned the data set for years 1970 to 2012 and made it available on his personal website. 
 
-Gender parity is a topic close to my own heart, and we still have a long way to go in even [understanding and agreeing that it exists](https://www.smartcompany.com.au/business-advice/politics/frydenberg-pay-gap-closed/), let alone bridging it.
+Gender parity is a topic close to my own heart, and we still have a long way to go in understanding it or in some instances even [agreeing that it exists](https://www.smartcompany.com.au/business-advice/politics/frydenberg-pay-gap-closed/), let alone bridging it.
 
 Right, let's use Randal's [cleaned data](http://www.randalolson.com/wp-content/uploads/percent-bachelors-degrees-women-usa.csv) to see some historical differences between the genders regarding their chosen fields of study in the US.
 
@@ -330,7 +330,7 @@ plt.show()
 
 In this project I created visualisations to communicate the historical narrative of the gender gap in different fields of study.
 
-I also practiced some techniques to remove chartjunk and maximise the data-ink ratio, with the aim of having these visuals work effectively as standalone artefacts.
+I also practiced some techniques to remove chartjunk and maximise the data-ink ratio, with the aim of having these visuals work effectively as standalone artifacts.
 
 It's quite interesting to see how the gaps have trended over time in different fields, and in my opinion, even more so to notice my responses to the results, which raise all sorts of interesting questions about my own conditioning and biases.
 
