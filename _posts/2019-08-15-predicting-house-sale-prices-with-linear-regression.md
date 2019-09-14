@@ -69,11 +69,12 @@ data.plot.scatter('SalePrice', 'Gr Liv Area')
 plt.savefig('ames_outliers.png')
 plt.show()
 
-print(data[data['Gr Liv Area'] > 4000])
+print('Before:', data[data['Gr Liv Area'] > 4000].shape)
 
 data.drop(data[data['Gr Liv Area'] > 4000].index, inplace=True)
 
-print(data[data['Gr Liv Area'] > 4000])
+# Check
+print('After:', data[data['Gr Liv Area'] > 4000].shape)
 {% endhighlight %}
 
 ![ames_outliers]({{ site.baseurl }}/images/ames_outliers.png)
