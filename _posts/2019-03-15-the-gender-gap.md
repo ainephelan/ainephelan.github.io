@@ -8,9 +8,9 @@ categories: jekyll update
 ![train](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/People_Train.jpg)
 
 ## Visualising the Gender Gap in College Majors  
-Today we're going to look at creating visualisations which communicate the historical narrative of the gender gap in different fields of study in the US.
+Today I'm going to look at creating visualisations which communicate the historical narrative of the gender gap in different fields of study in the US.
 
-We'll use the already cleaned data set described below, and we're going to take the opportunity to practice some techniques to eliminate [chartjunk](https://en.wikipedia.org/wiki/Chartjunk) and maximise the [data-ink ratio](https://infovis-wiki.net/wiki/Data-Ink_Ratio).  
+I'll use the already cleaned data set described below, and I'm going to take the opportunity to practice some techniques to eliminate [chartjunk](https://en.wikipedia.org/wiki/Chartjunk) and maximise the [data-ink ratio](https://infovis-wiki.net/wiki/Data-Ink_Ratio).  I want these visuals to be communicative and complete, not requiring any ancillary data to be understood.
 
 All the better to see you with my dear!
 
@@ -24,12 +24,12 @@ Gender parity is a topic close to my own heart, and at least here in Australia, 
 
 Right, let's use Randal's [cleaned data](http://www.randalolson.com/wp-content/uploads/percent-bachelors-degrees-women-usa.csv) to see some historical differences between the genders regarding their chosen fields of study in the US.
 
-Note, for the purposes of this analysis we will be treating gender as a binary construct only.
+For the purposes of this analysis I'll be treating gender as a binary construct only.
 
 ## Load the Data
-Let's load our data and do some initial exploration of our data set.
+Let's load our data and do some initial exploration of the data set.
 
-It is not large and we can easily display it in its entirety.
+It is not large and I can easily display it in its entirety.
 
 {% highlight python %}
 import pandas as pd
@@ -40,9 +40,9 @@ women_degrees.head()
 
 ![gender_head](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/gender_head.png)
 
-The data has been cleaned already. We do a quick check to confirm the data is complete and in a usable format.
+The data has been cleaned already. I do a quick check to confirm the data is complete and in a usable format.
 
-There are no missing values, and our percentages are all of data type `float`, which is perfect for our use.
+There are no missing values, and the percentages are all of data type `float`, which is perfect for my purposes.
 
 <img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/gender_datatype.png" alt="drawing" width="400px"/>
 
@@ -51,11 +51,11 @@ There are no missing values, and our percentages are all of data type `float`, w
 
 Let's first take a look at the historical narrative of the gender gap in STEM fields (Science, Technology, Engineering and Maths).
 
-As our data set deals with percentages of women who completed Bachelor degrees each field, we can easily impute the corresponding data for men by subtracting our known percentage values from 100.
+As the data set deals with percentages of women who completed Bachelor degrees each field, I can easily impute the corresponding data for men by subtracting the known percentage values from 100.
 
-We will display our comparison of degrees awarded in each field by gender for our 6 STEM subjects in one figure.
+I will display the comparison of degrees awarded in each field by gender for the 6 STEM subjects in one figure.
 
-We will use our ink judiciously: 
+I aim to use my ink judiciously: 
 - using a colour palette suitable for colourblind readers
 - removing plot spines
 - removing plot tick parameters
@@ -74,11 +74,11 @@ cb_orange = (255/255, 128/255, 14/255)
 # List our STEM fields
 stem_cats = ['Engineering', 'Computer Science', 'Psychology', 'Biology', 'Physical Sciences', 'Math and Statistics']
 
-# Initialise our figure
+# Initialise the figure
 fig = plt.figure(figsize=(18, 3))
 fig.suptitle('The Gender Gap in STEM College Majors in the US', y=1.1, fontsize='16', fontweight='bold')
 
-# Iterate over our STEM cats, plotting our subplots
+# Iterate over our STEM categories, plotting the subplots
 for sp in range(0,6):
     ax = fig.add_subplot(1,6,sp+1)
     ax.plot(women_degrees['Year'], women_degrees[stem_cats[sp]], c=cb_dark_blue, label='Women', linewidth=3)
@@ -106,7 +106,7 @@ for sp in range(0,6):
         ax.text(2005, 62, 'Men')
         ax.text(2001, 35, 'Women')
 
-# Export our figure
+# Export the figure
 plt.savefig('gender_stem_degrees.png')        
 plt.show()
 {% endhighlight %}
@@ -127,11 +127,11 @@ It would be an interesting project to investigate further the cultural shifts an
 
 Let's now do the same for all fields of education in our data set. 
 
-We want to visualise how fields in STEM compare to fields in the Liberal Arts (e.g. languages, communications, social sciences, arts) and other fields.
+I want to visualise how fields in STEM compare to fields in the Liberal Arts (e.g. languages, communications, social sciences, arts) and other fields.
 
-To this end, this time we will group our degree fields into the three categories just mentioned (STEM, Liberal Arts, other), and display them column by column.
+To this end, this time I will group our degree fields into the three categories just mentioned (STEM, Liberal Arts, other), and display them column by column.
 
-We will again do this in one figure, with a subplot for each individual field.
+I will again do this in one figure, with a subplot for each individual field.
 
 {% highlight python %}
 %matplotlib inline
@@ -146,12 +146,12 @@ stem_cats = ['Psychology', 'Biology', 'Math and Statistics', 'Physical Sciences'
 lib_arts_cats = ['Foreign Languages', 'English', 'Communications and Journalism', 'Art and Performance', 'Social Sciences and History']
 other_cats = ['Health Professions', 'Public Administration', 'Education', 'Agriculture','Business', 'Architecture']
 
-# Create our figure
+# Create figure
 fig = plt.figure(figsize=(12, 18))
 fig.suptitle('The Gender Gap in College Majors in the US\n\n STEM                            Liberal Arts                            Other',
              fontsize=16, fontweight='bold', y=.94)
 
-# Iterate over our STEM cats, plotting our subplots in the correct location
+# Iterate over STEM cats, plotting subplots in the correct location
 for i in range(0,18,3):
     ax = fig.add_subplot(6,3,i+1)
     r = int(i/3)
@@ -187,7 +187,7 @@ for i in range(0,18,3):
 ax.tick_params(labelbottom=True)
 
 
-# Iterate over our LIBERAL ARTS cats, plotting our subplots in the correct location
+# Iterate over LIBERAL ARTS cats, plotting our subplots in the correct location
 for i in range(1, 14, 3):
     ax = fig.add_subplot(6,3,i+1)
     r = int((i-1)/3)
@@ -218,7 +218,7 @@ for i in range(1, 14, 3):
 # Enable tick lables on bottom chart
 ax.tick_params(labelbottom=True)
 
-# Iterate over our OTHER cats, plotting our subplots in the correct location
+# Iterate over OTHER cats, plotting our subplots in the correct location
 for i in range(2, 18, 3):
     ax = fig.add_subplot(6,3,i+1)
     r = int((i-2)/3)
@@ -251,7 +251,7 @@ for i in range(2, 18, 3):
 # Enable tick lables on bottom chart
 ax.tick_params(labelbottom=True)
 
-# Export our figure
+# Export figure
 plt.savefig('gender_degrees.png')
 plt.show()
 {% endhighlight %}
@@ -260,12 +260,12 @@ plt.show()
 
 # Conclusion
 
-In this project we to used visualisations to communicate the historical narrative of the gender gap in different fields of study.
+In this project I created visualisations to communicate the historical narrative of the gender gap in different fields of study.
 
-It's quite interesting to see how the gaps have trended over time in different fields, and in my opinion, even more so to notice our responses to the results. These responses raise all sorts of interesting questions about our own conditioning and biases.
+I also practiced some techniques to remove chartjunk and maximise the data-ink ratio, with the aim of having these visuals work effectively as standalone artefacts.
 
-What are our biases when we think of certain fields and professions? Who do we picture more in these roles? What are the attributes of these fields and roles that go towards us unconsciously considering them more masculine or feminine? 
+It's quite interesting to see how the gaps have trended over time in different fields, and in my opinion, even more so to notice my responses to the results, which raise all sorts of interesting questions about my own conditioning and biases.
 
-What were the events which brought about the changes in mindsets and behaviours and influenced all these transitions over time?
+What are our biases when we think of certain fields and professions? Who do we picture more in these roles? What are the attributes of these fields and roles that go towards us unconsciously considering them more masculine or feminine? What were the events which brought about the changes in mindsets and behaviours and influenced all these transitions over time?
 
 Would you have predicted the results panned out the way they did?
