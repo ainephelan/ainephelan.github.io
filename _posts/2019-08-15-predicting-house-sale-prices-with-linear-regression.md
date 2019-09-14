@@ -5,9 +5,9 @@ date:   2019-08-15 14:40:42 +1000
 categories: jekyll update
 ---
 
-# Predicting House Sale Prices with Linear Regression
+## Predicting House Sale Prices with Linear Regression
 
-## Introduction
+# Introduction
 
 The purpose of this project is to build a Linear Regression work flow by creating a pipeline of functions as follows:
 
@@ -95,7 +95,7 @@ Let's begin by setting up my basic pipeline of helper functions that will let me
     - trains a model using all numerical columns except our target `SalePrice` from the dataframe returned from `select_features()`
     - tests the model on the test set and evaluates, returning the `RMSE` value
 
-### A note on RMSE
+### A Note on RMSE
 The RMSE is the absolute fit of the model to the data - the measure of how close the model's predicted values are to the observed data. It is the standard deviation of the prediction errors, so tells us the average variability of our predictions above and below the line of best fit or regression line. As such, the lower the RMSE the more accurate we can say our model is at predicting the response. 
 
 The RMSE is in the same units as our target variable, which makes for intuitive understanding of the model's evaluation.
