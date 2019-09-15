@@ -29,7 +29,6 @@ Here I'll train and test the model, building it to handle holdout and k-fold cro
 
 ### Data Set
 
-Details can be found as follows.
 - Data column descriptions [here](https://s3.amazonaws.com/dq-content/307/data_description.txt).
 - Info about why the data was collected [here](https://www.tandfonline.com/doi/abs/10.1080/10691898.2011.11889627)
 - The dataset itself can be downloaded from [here](https://dsserver-prod-resources-1.s3.amazonaws.com/235/AmesHousing.txt)
@@ -109,12 +108,12 @@ Let's begin by setting up my basic pipeline of helper functions that will let me
     - trains a model using all numerical columns except our target `SalePrice` from the dataframe returned from `select_features()`
     - tests the model on the test set and evaluates, returning the `RMSE` value
 
-#### A Note on RMSE
-The RMSE is the absolute fit of the model to the data - the measure of how close the model's predicted values are to the observed data. It is the standard deviation of the prediction errors, so tells us the average variability of our predictions above and below the line of best fit or regression line. As such, the lower the RMSE, the closer our predictions are to the observed data, the more accurate we can say our model is at predicting the response. 
+#### A Note on `RMSE`
+The `RMSE` is the absolute fit of the model to the data - the measure of how close the model's predicted values are to the observed data. It is the standard deviation of the prediction errors, so tells us the average variability of our predictions above and below the line of best fit or regression line. As such, the lower the `RMSE`, the closer our predictions are to the observed data, the more accurate we can say our model is at predicting the response. 
 
-The RMSE is in the same units as our target variable, which makes for intuitive understanding of the model's evaluation.
+The `RMSE` is in the same units as our target variable, which makes for intuitive understanding of the model's evaluation.
 
-e.g. if my RMSE is 50,000, I can say that on average my model is predicting \$50,000 above or below the observed house sale price.
+e.g. if my `RMSE` is 50,000, I can say that on average my model is predicting \$50,000 above or below the observed house sale price.
 
 {% highlight python %}
 def transform_features(data):
@@ -421,7 +420,7 @@ data = data.drop(['Year Built', 'Year Remod/Add'], axis = 1)
 
 ### Drop Columns
 
-I'm going to get rid of columns which
+I'll now get rid of columns which:
 
 - are irrelevant or provide no value to the model
 - will leak data about the final sale, thereby overfitting the model
@@ -567,7 +566,7 @@ I can see strong correlation between the following pairs of features so I invest
 - `Garage Cars` and `Garage Area`
 - `1st Flr SF` and `Total Basement SF`
 
-I decide there is repetition of data between the first 2 pairs. I will drop `TotRms AbvGrd` and `Garage Cars`, as both `Gr Liv Area` and `Garage Area` are continuous variables, containing more nuanced data than their counterparts.
+I decide there is repetition of data between the first 2 pairs. I will drop `TotRms AbvGrd` and `Garage Cars`, as both `Gr Liv Area` and `Garage Area` are continuous and contain more nuanced data than their counterparts.
 
 While there is strong correlation between `1st Flr SF` and `Total Basement SF`, I decide not to drop either, as some houses might not have a basement, and some might not have a 1st floor.
 
@@ -800,11 +799,11 @@ memory usage: 411.2+ KB
 I change the data type, then use dummy coding to convert the features into binary columns, keeping the original column name as a prefix, and append these new binary columns to the dataframe.
 
 {% highlight python %}
-# # Convert to ategorical data type 
+# Convert to categorical data type 
 for col in transformed[cat_feats]:
     transformed[col] = transformed[col].astype('category')
 
-# # Convert to binary columns
+# Convert to binary columns
 transformed = pd.concat([transformed, pd.get_dummies(transformed.select_dtypes(include='category'))], axis=1)
 transformed[cat_feats].info()
 transformed.shape
@@ -854,7 +853,7 @@ After: (2924, 107)
 
 Now I'll update my `select_features()` function with the changes above. I'll include parameters for the correlation coefficient threshold and the number of unique categories threshold.
 
-This time when I run my pipeline below I get a much-improved RMSE of 24087. My model is now predicting on average with an error of $24,087 above or below the observed house sale prices.
+This time when I run my pipeline below I get a much-improved RMSE of 24,087. My model is now predicting on average with an error of $24,087 above or below the observed house sale prices.
 
 I still have my `train_and_test()` function to update. Let's see if we can improve the RMSE any further.
 
@@ -1093,7 +1092,7 @@ Oops! You need at least 2 folds for k-folds cross validation. Please try again.
 
 ## Evaluate
 
-Now we have built our pipeline we can iterate over the model, experimenting by passing in different arguments to see how they impact model accuracy.
+Now that I've built my pipeline I can iterate over the model, experimenting by passing in different arguments to see how they impact model accuracy.
 
 In the below example I have set:
 - the null threshold to `0.2`
