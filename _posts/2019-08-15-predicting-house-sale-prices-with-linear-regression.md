@@ -106,11 +106,11 @@ Let's begin by setting up my basic pipeline of helper functions that will let me
     - tests the model on the test set and evaluates, returning the `RMSE` value
 
 ### A Note on RMSE
-The RMSE is the absolute fit of the model to the data - the measure of how close the model's predicted values are to the observed data. It is the standard deviation of the prediction errors, so tells us the average variability of our predictions above and below the line of best fit or regression line. As such, the lower the RMSE the more accurate we can say our model is at predicting the response. 
+The RMSE is the absolute fit of the model to the data - the measure of how close the model's predicted values are to the observed data. It is the standard deviation of the prediction errors, so tells us the average variability of our predictions above and below the line of best fit or regression line. As such, the lower the RMSE, the closer our predictions are to the observed data, the more accurate we can say our model is at predicting the response. 
 
 The RMSE is in the same units as our target variable, which makes for intuitive understanding of the model's evaluation.
 
-e.g. if my RMSE is 50,000, I know that I am on average predicting \$50,000 above or below the observed house sale price.
+e.g. if my RMSE is 50,000, I can say that on average my model is predicting \$50,000 above or below the observed house sale price.
 
 {% highlight python %}
 def transform_features(data):
@@ -261,28 +261,45 @@ remaining_nulls = data.isnull().sum()[data.isnull().sum() > 0]
 # Numeric dtypes are floats
 data[remaining_nulls.index].dtypes 
 float_data = data[remaining_nulls.index].select_dtypes(include=['float', 'integer'])
+cols = float_data.columns
+print(cols)
 
-# Examine the distributions to see how best to determine the 'average' 
-for col in float_data.columns:
-    float_data[col].plot.kde()
-    plt.xlim(float_data[col].min(), float_data[col].max())
-    plt.title(col)
-    plt.show()
-    
-# look for outliers
-import seaborn as sns
-for col in float_data.columns:
-    sns.boxplot(float_data[col])
-    plt.title(col)
-    plt.show()
+# Create figure showing distributions of columns with nulls
+fig = plt.figure(figsize=(30, 40))
+fig.subplots_adjust(wspace=.5, hspace=0.5)
+fig.suptitle('Distributions of Variables With Null Values', y=.92, fontsize=30, fontweight='bold')
+
+# show boxplots in column 1 of figure
+for i in range(0,22,2):
+    ax = fig.add_subplot(11,2,i+1)
+    r = int(i/2)
+    sns.boxplot(float_data[cols[r]])
+    ax.set_xlabel('')
+    ax.set_title("'" + str(cols[r]) + "'" + ' outliers', fontsize=16)
+
+# show kdes in column 2 of figure
+for i in range(0,22,2): 
+    ax = fig.add_subplot(11,2,i+2)
+    r = int(i/2)
+    float_data[cols[r]].plot.kde()
+    ax.set_xlim(float_data[cols[r]].min(), float_data[cols[r]].max())
+    ax.set_title("'" + str(cols[r]) + "'" + ' shape', fontsize=16)
+
+plt.show()
 {% endhighlight %}
 
+```
+Index(['Lot Frontage', 'Mas Vnr Area', 'BsmtFin SF 1', 'BsmtFin SF 2',
+       'Bsmt Unf SF', 'Total Bsmt SF', 'Bsmt Full Bath', 'Bsmt Half Bath',
+       'Garage Yr Blt', 'Garage Cars', 'Garage Area'],
+      dtype='object')
+```
 
 
-![lot_frontage_box]({{ site.baseurl }}/images/Lot Frontage.png)
-![Mas_vnr_area_box]({{ site.baseurl }}/images/Mas Vnr Area.png)
-![BsmtFin1_box]({{ site.baseurl }}/images/BsmtFin SF 1.png)
-![BsmtFin1_box]({{ site.baseurl }}/images/BsmtFin SF 2.png)
+![ames_null_distros]({{ site.baseurl }}/images/ames_null_distros.png)
+
+
+
 
 ![BsmtUnf_box]({{ site.baseurl }}/images/Bsmt Unf SF.png)
 ![Mas_vnr_area_box]({{ site.baseurl }}/images/Mas Vnr Area.png)
