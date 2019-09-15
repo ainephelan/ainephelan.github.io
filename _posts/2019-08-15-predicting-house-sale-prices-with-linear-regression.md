@@ -299,10 +299,7 @@ Index(['Mas Vnr Area', 'BsmtFin SF 1', 'BsmtFin SF 2', 'Bsmt Unf SF',
       dtype='object')
 ```
 
-![ames_null_distros]({{ site.baseurl }}/images/ames_null_distros.png)
-
-
-<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/ames_null_distros.png" alt="drawing" width="800px"/>
+<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/ames_null_distros.png" alt="drawing" width="1000px"/>
 
 The remaining numeric columns with nulls are all on the interval/ratio scale, containing continuous and discrete values, as per the [documentation](http://jse.amstat.org/v19n3/decock/DataDocumentation.txt)
 
