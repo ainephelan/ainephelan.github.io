@@ -1,9 +1,11 @@
 ---
 layout: post
-title:  "Homes Under the Hammer - a Prediction Pipeline with Linear Regression"
+title:  "Sold! A House Price Prediction Pipeline with Linear Regression"
 date:   2019-08-15 14:40:42 +1000
 categories: jekyll update
 ---
+
+![painted_houses]({{ site.baseurl }}/images/Painted_Houses.png)
 
 # Introduction
 
