@@ -377,7 +377,7 @@ Looking at the existing columns, I see I can create two useful features that wil
 - Years since remodelling  
 
 
-1. `age_at_sale`
+#### 1. `age_at_sale`
 
 {% highlight python %}
 age_at_sale = data['Yr Sold'] - data['Year Built']
@@ -386,7 +386,7 @@ age_at_sale = data['Yr Sold'] - data['Year Built']
 age_at_sale[age_at_sale < 0]
 {% endhighlight %}
 
-2. `years_since_remodel`  
+#### 2. `years_since_remodel`  
 
 There is one row which returns a negative value here - the remodelled date is greater than the sold date. This is either data leakage or, more likely, an error in the data. Either way I decide to drop it.
 
@@ -536,6 +536,7 @@ strong_corrs = transformed[strong_corr_cols].corr().abs()
 # Generate heatmap
 plt.figure(figsize=(14,12))
 sns.heatmap(strong_corrs, annot=True)
+plt.title('Pairwise Correlation Heatmap', fontsize=16, fontweight='bold')
 plt.show()
 {% endhighlight %}
 
