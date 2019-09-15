@@ -479,8 +479,6 @@ def select_features(data):
     return data[['Gr Liv Area', 'SalePrice']]
 
 def train_and_test(data):
-#     train = data[:1460].copy()
-#     test = data[1460:].copy()
     train, test = train_test_split(data, test_size=0.50, random_state = 1)
     
     # Get numeric train and test
@@ -798,65 +796,336 @@ memory usage: 411.2+ KB
 I change the data type, then use dummy coding to convert the features into binary columns, keeping the original column name as a prefix, and append these new binary columns to the dataframe.
 
 {% highlight python %}
+# # Convert to ategorical data type 
+for col in transformed[cat_feats]:
+    transformed[col] = transformed[col].astype('category')
+
+# # Convert to binary columns
+transformed = pd.concat([transformed, pd.get_dummies(transformed.select_dtypes(include='category'))], axis=1)
+transformed[cat_feats].info()
+transformed.shape
 {% endhighlight %}
-
-{% highlight python %}
-{% endhighlight %}
-
-{% highlight python %}
-{% endhighlight %}
-
-{% highlight python %}
-{% endhighlight %}
-
-{% highlight python %}
-{% endhighlight %}
-
-
-
-{% highlight python %}
-{% endhighlight %}
-```
 
 ```
+<class 'pandas.core.frame.DataFrame'>
+Int64Index: 2924 entries, 0 to 2929
+Data columns (total 17 columns):
+MS Zoning       2924 non-null category
+Lot Shape       2924 non-null category
+Land Contour    2924 non-null category
+Lot Config      2924 non-null category
+Condition 1     2924 non-null category
+Bldg Type       2924 non-null category
+House Style     2924 non-null category
+Overall Qual    2924 non-null category
+Roof Style      2924 non-null category
+Exter Qual      2924 non-null category
+Exter Cond      2924 non-null category
+Foundation      2924 non-null category
+Heating QC      2924 non-null category
+Central Air     2924 non-null category
+Kitchen Qual    2924 non-null category
+Functional      2924 non-null category
+Paved Drive     2924 non-null category
+dtypes: category(17)
+memory usage: 75.4 KB
+(2924, 124)
+```
 
-
-
-![Mas_vnr_area_box]({{ site.baseurl }}/images/Mas Vnr Area.png)
-![BsmtFin1_box]({{ site.baseurl }}/images/BsmtFin SF 1.png)
-![BsmtFin1_box]({{ site.baseurl }}/images/BsmtFin SF 2.png)
-
-![lot_frontage_box]({{ site.baseurl }}/images/Lot Frontage.png)
-![Mas_vnr_area_box]({{ site.baseurl }}/images/Mas Vnr Area.png)
-![BsmtFin1_box]({{ site.baseurl }}/images/BsmtFin SF 1.png)
-![BsmtFin1_box]({{ site.baseurl }}/images/BsmtFin SF 2.png)
-
-{% highlight python %}
-{% endhighlight %}
-
-{% highlight python %}
-{% endhighlight %}
-
-{% highlight python %}
-{% endhighlight %}
-
-{% highlight python %}
-{% endhighlight %}
-
-{% highlight python %}
-{% endhighlight %}
-
-{% highlight python %}
-{% endhighlight %}
+Lastly I drop the original categorical features.
 
 {% highlight python %}
+# Drop original categorical cols
+print('Before:', transformed.shape)
+transformed.drop(cat_feats, axis=1, inplace=True)
+print('After:', transformed.shape)
 {% endhighlight %}
 
-{% highlight python %}
-{% endhighlight %}
+```
+Before: (2924, 124)
+After: (2924, 107)
+```
+
+### Update function `select_features()`
+
+Now I'll update my `select_features()` function with the changes above. I'll include parameters for the correlation coefficient threshold and the number of unique categories threshold.
+
+This time when I run my pipeline below I get a much-improved RMSE of 24087. My model is now predicting on average with an error of $24,087 above or below the observed house sale prices.
+
+I still have my `train_and_test()` function to update. Let's see if we can improve the RMSE any further.
 
 {% highlight python %}
+def transform_features(data, null_thresh=0.05):    
+    # Drop the outliers as advised in the documetation
+    data.drop(data[data['Gr Liv Area'] > 4000].index, inplace=True)
+    
+    # Drop cols with missing values > our threshold (default 5%)
+    nulls_over_thresh = data.isnull().sum()[data.isnull().sum() > len(data)*null_thresh]
+    data.drop(nulls_over_thresh.index, axis=1, inplace=True)    
+    
+    # Impute values for remaining numeric null cols
+    remaining_nulls = data.isnull().sum()[data.isnull().sum() > 0]
+    numeric_nulls = data[remaining_nulls.index].select_dtypes(include=['float', 'integer'])
+    data[numeric_nulls.columns] = data[numeric_nulls.columns].fillna(data[numeric_nulls.columns].median())
+    
+    # Drop remainging rows with any nulls (all text)
+    data.dropna(axis = 1, inplace=True)
+    
+    # Add features
+    data['age_at_sale'] = data['Yr Sold'] - data['Year Built']
+    data['years_since_remodel'] = data['Yr Sold'] - data['Year Remod/Add']
+    
+    # Drop incorrect values
+    data = data.drop(1702, axis=0)
+    
+    # Drop unhelpful / data leakage cols
+    data = data.drop(['Order', 'PID', 'Mo Sold', 'Sale Type', 'Sale Condition', 'Year Built', 'Year Remod/Add'], axis=1)
+    return data
+
+def select_features(data, corr_coeff_thresh, unique_cats_thresh):
+    # Drop features with below our correlation coefficient threshold
+    numerical_data = data.select_dtypes(include=['float', 'integer'])
+    target_data_corr = numerical_data.corr().abs()['SalePrice'].sort_values(ascending=False)
+    weak_corr_cols = target_data_corr[target_data_corr < corr_coeff_thresh].index
+    data.drop(weak_corr_cols, axis=1, inplace=True)
+
+    # Drop features with repetition of data
+    if 'TotRms AbvGrd' in data.columns:
+        data = data.drop('TotRms AbvGrd', axis=1)
+    
+    if 'Garage Cars' in data.columns:
+        data = data.drop('Garage Cars', axis=1)
+    
+    # Drop nominal and ordinal features with no of categories > unique category threshold
+    nom_ord_features = ["PID", "MS SubClass", "MS Zoning", "Street", "Alley", "Land Contour", "Lot Config", "Neighborhood", 
+                    "Condition 1", "Condition 2", "Bldg Type", "House Style", "Roof Style", "Roof Matl", "Exterior 1st", 
+                    "Exterior 2nd", "Mas Vnr Type", "Foundation", "Heating", "Central Air", "Garage Type", 
+                    "Misc Feature", "Sale Type", "Sale Condition", 'Lot Shape', 'Utilities', 'Land Slope', 'Overall Qual', 'Overall Cond', 'Exter Qual', 'Exter Cond', 
+                    'Bsmt Qual', 'Bsmt Cond', 'Bsmt Exposure', 'BsmtFin Type 1', 'BsmtFin Type 2', 'Heating QC', 'Electrical', 
+                   'Kitchen Qual', 'Functional', 'Fireplace Qu', 'Garage Finish', 'Garage Qual', 'Garage Cond', 'Paved Drive',
+                   'Pool QC', 'Fence']
+    transform_nom_ord_cols = [col for col in data.columns if col in nom_ord_features]
+    nom_cols_unique_count = data[transform_nom_ord_cols].apply(lambda col: len(col.value_counts())).sort_values()
+    data = data.drop(nom_cols_unique_count[nom_cols_unique_count > unique_cats_thresh].index, axis=1)
+    
+    # Drop features with low variance
+    low_variance = [] 
+    for col in data:
+        val_counts = (data[col].value_counts(normalize=True) *100)
+        if val_counts.values[0] > 94:
+            low_variance.append(col)
+    data = data.drop(low_variance, axis=1)
+    
+    # Transform nominal and ordinal features to categorical
+    cat_feats = [col for col in data.columns if col in nom_ord_features]
+    for col in cat_feats:
+        data[col] = data[col].astype('category')
+    
+    # Transform categorial features to binary and drop the original categorical features
+    data = pd.concat([data, pd.get_dummies(data.select_dtypes(include='category'))], axis=1)
+    data.drop(cat_feats, axis=1, inplace=True)
+    
+    return data    
+    
+def train_and_test(data):
+    train, test = train_test_split(data, test_size=0.50, random_state = 1) 
+    
+    # Get numeric train and test
+    numeric_train = train.select_dtypes(include=['integer', 'float'])
+    numeric_test = test.select_dtypes(include=['integer', 'float'])
+    
+    # Features and target
+    target = 'SalePrice'
+    features = numeric_train.drop('SalePrice', axis=1).columns
+    
+    # Model
+    lr = LinearRegression()
+    lr.fit(numeric_train[features], numeric_train[target])
+    predictions = lr.predict(numeric_test[features])
+    
+    mse = mean_squared_error(predictions, numeric_test[target])
+    rmse = np.sqrt(mse)
+    return rmse
+
+data = pd.read_csv("AmesHousing.tsv", delimiter="\t")
+
+transformed = transform_features(data)
+selected = select_features(transformed, 0.4, 10)
+rmse = train_and_test(selected)
+
+rmse
 {% endhighlight %}
 
+```
+24087.258401239073
+```
+
+## Train and Test
+Now I'll update `train_and_test()` to be able to handle both holdout (already included) and k-folds cross validation.
+
+To do this I'll include a parameter for number of folds. 
+
+`0` will be the default, implementing holdout validation if no argument is passed. 
+
+As k-folds cross validation requires at least 2 folds, I'll include an custom exception if the value `1` is inputted. 
+
 {% highlight python %}
+def transform_features(data, null_thresh=0.05):    
+    # Drop the outliers as advised in the documetation
+    data.drop(data[data['Gr Liv Area'] > 4000].index, inplace=True)
+    
+    # Drop cols with missing values > our threshold (default 5%)
+    nulls_over_thresh = data.isnull().sum()[data.isnull().sum() > len(data)*null_thresh]
+    data.drop(nulls_over_thresh.index, axis=1, inplace=True)    
+    
+    # Impute values for remaining numeric null cols
+    remaining_nulls = data.isnull().sum()[data.isnull().sum() > 0]
+    numeric_nulls = data[remaining_nulls.index].select_dtypes(include=['float', 'integer'])
+    data[numeric_nulls.columns] = data[numeric_nulls.columns].fillna(data[numeric_nulls.columns].median())
+    
+    # Drop remainging rows with any nulls (all text)
+    data.dropna(axis = 1, inplace=True)
+    
+    # Add features
+    data['age_at_sale'] = data['Yr Sold'] - data['Year Built']
+    data['years_since_remodel'] = data['Yr Sold'] - data['Year Remod/Add']
+    
+    # Drop incorrect values
+    data = data.drop(1702, axis=0)
+    
+    # Drop unhelpful / data leakage cols
+    data = data.drop(['Order', 'PID', 'Mo Sold', 'Sale Type', 'Sale Condition', 'Year Built', 'Year Remod/Add'], axis=1)
+    return data
+
+def select_features(data, corr_coeff_thresh, unique_cats_thresh):
+    # Drop features with below our correlation coefficient threshold
+    numerical_data = data.select_dtypes(include=['float', 'integer'])
+    target_data_corr = numerical_data.corr().abs()['SalePrice'].sort_values(ascending=False)
+    weak_corr_cols = target_data_corr[target_data_corr < corr_coeff_thresh].index
+    data.drop(weak_corr_cols, axis=1, inplace=True)
+
+    # Drop features with repetition of data
+    if 'TotRms AbvGrd' in data.columns:
+        data = data.drop('TotRms AbvGrd', axis=1)
+    
+    if 'Garage Cars' in data.columns:
+        data = data.drop('Garage Cars', axis=1)
+    
+    # Drop nominal and ordinal features with no of categories > unique category threshold
+    nom_ord_features = ["PID", "MS SubClass", "MS Zoning", "Street", "Alley", "Land Contour", "Lot Config", "Neighborhood", 
+                    "Condition 1", "Condition 2", "Bldg Type", "House Style", "Roof Style", "Roof Matl", "Exterior 1st", 
+                    "Exterior 2nd", "Mas Vnr Type", "Foundation", "Heating", "Central Air", "Garage Type", 
+                    "Misc Feature", "Sale Type", "Sale Condition", 'Lot Shape', 'Utilities', 'Land Slope', 'Overall Qual', 'Overall Cond', 'Exter Qual', 'Exter Cond', 
+                    'Bsmt Qual', 'Bsmt Cond', 'Bsmt Exposure', 'BsmtFin Type 1', 'BsmtFin Type 2', 'Heating QC', 'Electrical', 
+                   'Kitchen Qual', 'Functional', 'Fireplace Qu', 'Garage Finish', 'Garage Qual', 'Garage Cond', 'Paved Drive',
+                   'Pool QC', 'Fence']
+    transform_nom_ord_cols = [col for col in data.columns if col in nom_ord_features]
+    nom_cols_unique_count = data[transform_nom_ord_cols].apply(lambda col: len(col.value_counts())).sort_values()
+    data = data.drop(nom_cols_unique_count[nom_cols_unique_count > unique_cats_thresh].index, axis=1)
+    
+    # Drop features with low variance
+    low_variance = [] 
+    for col in data:
+        val_counts = (data[col].value_counts(normalize=True) *100)
+        if val_counts.values[0] > 94:
+            low_variance.append(col)
+    data = data.drop(low_variance, axis=1)
+    
+    # Transform nominal and ordinal features to categorical
+    cat_feats = [col for col in data.columns if col in nom_ord_features]
+    for col in cat_feats:
+        data[col] = data[col].astype('category')
+    
+    # Transform categorial features to binary and drop the original categorical features
+    data = pd.concat([data, pd.get_dummies(data.select_dtypes(include='category'))], axis=1)
+    data.drop(cat_feats, axis=1, inplace=True)
+    
+    return data    
+    
+def train_and_test(data, k=0):
+    # Define features, target and 
+    target = 'SalePrice'
+    features = data.select_dtypes(include=['integer', 'float']).drop('SalePrice', axis=1).columns
+    lr = LinearRegression()
+    
+    if k == 0:
+        train, test = train_test_split(data, test_size=0.50, random_state = 1)
+
+        # model
+        lr.fit(train[features], train[target])
+        predictions = lr.predict(test[features])
+
+        mse = mean_squared_error(predictions, test[target])
+        rmse = np.sqrt(mse)
+        return rmse
+    
+    elif k == 1:
+        print('Oops! You need at least 2 folds for k-folds cross validation. Please try again.')
+    
+    else:
+        kf = KFold(k, shuffle=True, random_state=1)
+
+        mses = cross_val_score(lr, data[features], data[target], 
+                               scoring='neg_mean_squared_error', 
+                               cv=kf)
+        rmses = np.sqrt(np.abs(mses))
+        print(rmses)
+        avg_rmse = np.mean(rmses)
+        
+        return avg_rmse
+
+data = pd.read_csv("AmesHousing.tsv", delimiter="\t")
+
+transformed = transform_features(data)
+selected = select_features(transformed, 0.4, 10)
+rmse = train_and_test(selected, 1)
+
+rmse
 {% endhighlight %}
+
+```
+Oops! You need at least 2 folds for k-folds cross validation. Please try again.
+```
+
+### Evaluate
+
+Now we have built our pipeline we can iterate over the model, experimenting by passing in different arguments to see how they impact model accuracy.
+
+In the below example I have set:
+- the null threshold to `0.2`
+- the correlation coefficient threshold to `0.3`
+- the unique category threshold to `10`
+- the number of folds to `20`
+
+Giving `RMSE` of just below 24,000.
+
+This is telling me that this particular iteration of my model is, on average, predicting house sale prices with a variability of \$24K around the observed house sale price.
+
+*Note*: while experimenting it was interesting to note that passing in a unique category threshold value below `10` had a discernible impact on the evaluation. My assumption is that this is due to the model now excluding the feature `Overall Qual`, which had the highest correlation with the response variable.
+
+{% highlight python %}
+data = pd.read_csv("AmesHousing.tsv", delimiter="\t")
+
+transformed = transform_features(data, 0.2)
+selected = select_features(transformed, 0.3, 10)
+rmse = train_and_test(selected, 20)
+
+rmse
+{% endhighlight %}
+
+```
+[19675.06279037 18288.97175461 25045.22704703 27207.57140488
+ 25161.40698407 23172.94854065 23189.23625569 23978.1374733
+ 24265.35102604 22030.84003668 22507.30967812 30461.71616112
+ 19107.87484188 20488.83361378 20355.86101815 26532.62515809
+ 24714.24995271 30466.23487708 23172.18672488 29438.47454499]
+23963.00599420598
+```
+
+# Conclusion
+
+In this project I built a pipeline of functions which engineer and select features, and train and test a Linear Regression model to predict house sale prices.
+
+#### data in -> `transform_features()` -> `select_features()` -> `train_and_test()` -> evaluation out   
+
+The functions allow me to iterate over the model, passing in different arguments for a number of parameters, thus enabling rapid experimentation with different inputs to see how the model responds.
