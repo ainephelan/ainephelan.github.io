@@ -5,7 +5,7 @@ date:   2019-08-15 14:40:42 +1000
 categories: jekyll update
 ---
 
-![painted_houses]({{ site.baseurl }}/images/Painted_Houses.png)
+![painted_houses]({{ site.baseurl }}/images/Painted_Houses.jpg)
 
 # Introduction
 
@@ -13,7 +13,7 @@ Today I'll be creating a linear regression model to predict house sale prices, t
 
 I will build a linear regression work flow, creating a pipeline of functions as follows:
 
-#### data in -> `transform_features()` -> `select_features()` -> `train_and_test()` -> evaluation out  
+#### Data In -> `transform_features()` -> `select_features()` -> `train_and_test()` -> Evaluation Out  
 
 Once I have my functions set up it should be easy to iterate on different models, experimenting with arguments and evaluating the results to see how these impact the accuracy of my model's house sale price predictions.  
 
@@ -61,7 +61,7 @@ data.head()
 |       5 | 527105010 |            60 | RL          |             74 |      13830 | Pave     |     nan | IR1         | Lvl            | AllPub      | Inside       | Gtl          | Gilbert        | Norm          | Norm          | 1Fam        | 2Story        |              5 |              5 |         1997 |             1998 | Gable        | CompShg     | VinylSd        | VinylSd        | None           |              0 | TA           | TA           | PConc        | Gd          | TA          | No              | GLQ              |            791 | Unf              |              0 |           137 |             928 | GasA      | Gd           | Y             | SBrkr        |          928 |          701 |                 0 |          1629 |                0 |                0 |           2 |           1 |               3 |               1 | TA             |               6 | Typ          |            1 | TA             | Attchd        |            1997 | Fin             |             2 |           482 | TA            | TA            | Y             |            212 |              34 |                0 |            0 |              0 |           0 |       nan | MnPrv   | nan            |          0 |         3 |      2010 | WD          | Normal           |      189900 |
 
 
-## Outliers
+### Removing Outliers
 As per the [documentation special notes](http://jse.amstat.org/v19n3/decock/DataDocumentation.txt), I remove the below 5 outliers.
 
 {% highlight python %}
@@ -95,6 +95,8 @@ Before: (5, 82)
 After: (0, 82)
 ```
 
+### Set Up Basic Pipeline
+
 Let's begin by setting up my basic pipeline of helper functions that will let me quickly iterate on different models.
 
 - `transform_features()`  
@@ -107,7 +109,7 @@ Let's begin by setting up my basic pipeline of helper functions that will let me
     - trains a model using all numerical columns except our target `SalePrice` from the dataframe returned from `select_features()`
     - tests the model on the test set and evaluates, returning the `RMSE` value
 
-### A Note on RMSE
+#### A Note on RMSE
 The RMSE is the absolute fit of the model to the data - the measure of how close the model's predicted values are to the observed data. It is the standard deviation of the prediction errors, so tells us the average variability of our predictions above and below the line of best fit or regression line. As such, the lower the RMSE, the closer our predictions are to the observed data, the more accurate we can say our model is at predicting the response. 
 
 The RMSE is in the same units as our target variable, which makes for intuitive understanding of the model's evaluation.
@@ -151,7 +153,7 @@ Let's experiment with transforming our features, then once I'm satisfied, build 
 
 
 ### Nulls / Missing Values
-First I want to get a sense of the distribution of missing values in the data. I'm going to use the following to help me out.
+First I want to get a sense of the distribution of missing values in the data. I'm going to use the following to help me out:
 - Heatmap of null values
 - Null count
 
@@ -233,7 +235,7 @@ dtype: float64
 - For the remaining text columns with missing values, I will drop the rows where there are missing values
 
 
-1. Drop all columns with > 5% missing values
+#### 1. Drop all columns with > 5% missing values
 
 {% highlight python %}
 # Shape before drop
@@ -254,7 +256,7 @@ Before: (2925, 82)
 After: (2925, 71)
 ```
 
-2. For the remaining nulls in the remaining numeric columns , replace with the 'average' value
+#### 2. For the remaining nulls in the remaining numeric columns , replace with the 'average' value
 
 What statistic should I use as my average? Let's take a look at the data.
 
@@ -326,7 +328,7 @@ Year Remod/Add     0
 dtype: int64
 ```
 
-3. For the remaining text columns with missing values, I drop the rows where there are missing values 
+#### 3. For the remaining text columns with missing values, I drop the rows where there are missing values 
 
 {% highlight python %}
 # Ensure remaining cols with nulls are text cols
@@ -417,7 +419,7 @@ data[data['years_since_remodel'] < 0]
 data = data.drop(['Year Built', 'Year Remod/Add'], axis = 1)
 {% endhighlight %}
 
-### Drop columns
+### Drop Columns
 
 I'm going to get rid of columns which
 
@@ -651,7 +653,7 @@ I decide to try an arbitrary unique category count cutoff of 10, dropping column
 # Drop variables with more than 10 unique categories/values
 transformed = transformed.drop(nom_cols_unique_count[nom_cols_unique_count > 10].index, axis=1)
 
-# check
+# Check
 transformed.columns
 {% endhighlight %}
 
@@ -848,7 +850,7 @@ Before: (2924, 124)
 After: (2924, 107)
 ```
 
-### Update function `select_features()`
+### Update Function `select_features()`
 
 Now I'll update my `select_features()` function with the changes above. I'll include parameters for the correlation coefficient threshold and the number of unique categories threshold.
 
@@ -1089,7 +1091,7 @@ rmse
 Oops! You need at least 2 folds for k-folds cross validation. Please try again.
 ```
 
-### Evaluate
+## Evaluate
 
 Now we have built our pipeline we can iterate over the model, experimenting by passing in different arguments to see how they impact model accuracy.
 
@@ -1128,6 +1130,6 @@ rmse
 
 In this project I built a pipeline of functions which engineer and select features, and train and test a Linear Regression model to predict house sale prices.
 
-#### data in -> `transform_features()` -> `select_features()` -> `train_and_test()` -> evaluation out   
+#### Data In -> `transform_features()` -> `select_features()` -> `train_and_test()` -> Evaluation Out   
 
 The functions allow me to iterate over the model, passing in different arguments for a number of parameters, thus enabling rapid experimentation with different inputs to see how the model responds.
