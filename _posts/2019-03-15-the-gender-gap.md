@@ -38,7 +38,7 @@ women_degrees = pd.read_csv('percent-bachelors-degrees-women-usa.csv')
 women_degrees
 {% endhighlight %}
 
-
+```
 |   Year |   Agriculture |   Architecture |   Art and Performance |   Biology |   Business |   Communications and Journalism |   Computer Science |   Education |   Engineering |   English |   Foreign Languages |   Health Professions |   Math and Statistics |   Physical Sciences |   Psychology |   Public Administration |   Social Sciences and History |
 |-------:|--------------:|---------------:|----------------------:|----------:|-----------:|--------------------------------:|-------------------:|------------:|--------------:|----------:|--------------------:|---------------------:|----------------------:|--------------------:|-------------:|------------------------:|------------------------------:|
 |   1970 |       4.2298  |        11.921  |                  59.7 |   29.0884 |    9.06444 |                            35.3 |               13.6 |     74.5353 |           0.8 |   65.5709 |                73.8 |                 77.1 |                  38   |                13.8 |         44.4 |                    68.4 |                          36.8 |
@@ -83,7 +83,7 @@ women_degrees
 |   2009 |      48.6672  |        43.3489 |                  61   |   58.4896 |   48.8405  |                            62.8 |               18.1 |     79.5329 |          16.8 |   67.9698 |                69.3 |                 85.1 |                  43.3 |                40.7 |         77.1 |                    82   |                          49.4 |
 |   2010 |      48.73    |        42.0667 |                  61.3 |   59.0103 |   48.758   |                            62.5 |               17.6 |     79.6186 |          17.2 |   67.9281 |                69   |                 85   |                  43.1 |                40.2 |         77   |                    81.7 |                          49.3 |
 |   2011 |      50.0372  |        42.7734 |                  61.2 |   58.7424 |   48.1804  |                            62.2 |               18.2 |     79.4328 |          17.5 |   68.4267 |                69.5 |                 84.8 |                  43.1 |                40.1 |         76.7 |                    81.9 |                          49.2 |
-
+```
 
 The data has been cleaned already. I do a quick check to confirm the data is complete and in a usable format.
 
