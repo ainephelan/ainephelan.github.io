@@ -13,7 +13,8 @@ Today I'll be creating a linear regression model to predict house sale prices, t
 
 I'm building a linear regression work flow, creating a pipeline of functions as follows:
 
-> #### Data In -> `transform_features()` -> `select_features()` -> `train_and_test()` -> Evaluation Out
+> #### Data In -> `transform_features()` -> `select_features()` -> `train_and_test()` -> 
+> #### Evaluation Out
 
 The goal is to enable rapid iteration on different models, and once I have my function pipeline set up it should be easy to do so; experimenting with passing in different arguments and evaluating the results to determine their impact on the accuracy of my model's house sale price predictions.
 
