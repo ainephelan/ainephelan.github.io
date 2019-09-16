@@ -1143,4 +1143,4 @@ In building this pipeline I used a range of techniques to:
 - Discuss RMSE and data leakage
 - Make explicit the logic I used to make decisions
 
-The resulting product created here allows me to iterate over the model, passing in varying arguments for a number of parameters, thus enabling rapid experimentation with different inputs to see how the model responds.
+The resulting product allows me to iterate over the model, easily passing in different arguments for a number of parameters, thus enabling rapid experimentation to see how the model responds.
