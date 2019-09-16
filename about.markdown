@@ -16,4 +16,4 @@ So that's me.
 
 I'll be using this site to share some things I've worked on, and to make myself be better at what I do along the way. 
 
-You can connect with me [here](https://www.linkedin.com/in/aine-phelan/), and check out my full Github repo [here](https://github.com/ainephelan).
+Check out the links below to view my Github or connect with me.
