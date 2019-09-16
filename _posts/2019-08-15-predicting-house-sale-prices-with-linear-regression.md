@@ -1132,7 +1132,9 @@ rmse
 
 In this project I built a pipeline of functions which engineer and select features, and train and test a Linear Regression model to predict house sale prices.
 
-#### Data In -> `transform_features()` -> `select_features()` -> `train_and_test()` -> Evaluation Out   
+> #### Data In -> 
+> #### `transform_features()` -> `select_features()` -> `train_and_test()` -> 
+> #### Evaluation Out
 
 In building this pipeline I used a range of techniques to:
 - Find and removed outliers
