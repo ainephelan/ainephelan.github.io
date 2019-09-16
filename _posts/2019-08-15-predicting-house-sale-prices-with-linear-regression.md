@@ -13,7 +13,7 @@ Today I'll be creating a linear regression model to predict house sale prices, t
 
 I'm building a linear regression work flow, creating a pipeline of functions as follows:
 
-#### Data In -> `transform_features()` -> `select_features()` -> `train_and_test()` -> Evaluation Out  
+> #### Data In -> `transform_features()` -> `select_features()` -> `train_and_test()` -> Evaluation Out
 
 Once I have my functions set up it should be easy to rapidly iterate on different models, experimenting with arguments and evaluating the results to see how these impact the accuracy of my model's house sale price predictions.  
 
