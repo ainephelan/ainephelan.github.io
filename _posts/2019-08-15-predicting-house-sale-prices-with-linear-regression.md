@@ -11,11 +11,11 @@ categories: jekyll update
 
 Today I'll be creating a linear regression model to predict house sale prices, training it on a data set describing the sale of individual residential property in Ames, Iowa from 2006 to 2010. The data set contains 2930 observations and 80 explanatory variables involved in assessing home values.
 
-I will build a linear regression work flow, creating a pipeline of functions as follows:
+I'm building a linear regression work flow, creating a pipeline of functions as follows:
 
 #### Data In -> `transform_features()` -> `select_features()` -> `train_and_test()` -> Evaluation Out  
 
-Once I have my functions set up it should be easy to iterate on different models, experimenting with arguments and evaluating the results to see how these impact the accuracy of my model's house sale price predictions.  
+Once I have my functions set up it should be easy to rapidly iterate on different models, experimenting with arguments and evaluating the results to see how these impact the accuracy of my model's house sale price predictions.  
 
 `transform_features()`  
 This is where I will do my feature engineering - imputing values and stripping out nulls, unwanted data types, columns with data leakage and incorrect values.
