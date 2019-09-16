@@ -17,7 +17,7 @@ I'm building a linear regression work flow, creating a pipeline of functions as 
 > #### `transform_features()` -> `select_features()` -> `train_and_test()` -> 
 > #### Evaluation Out
 
-The goal is to enable rapid iteration on different models, and once I have my function pipeline set up it should be easy to do so; experimenting with passing in different arguments and evaluating the results to determine their impact on the accuracy of my model's house sale price predictions.
+The goal is to enable rapid iteration on different models, and once I have my function pipeline set up it should be easy to do so; experimenting by passing in different arguments and evaluating the results to determine their impact on the accuracy of my model's house sale price predictions.
 
 `transform_features()`  
 This is where I will do my feature engineering - imputing values and stripping out nulls, unwanted data types, columns with data leakage and incorrect values.
