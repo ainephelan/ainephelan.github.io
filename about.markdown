@@ -4,16 +4,16 @@ title: About
 permalink: /about/
 ---
 
-Hello! I'm Áine. I do data science. I'm working mostly in Python and SQL. I enjoy learning and the more I learn, the more I build. The more I build, the more I enjoy building.
+![photo_by_Pixabay]({{ site.baseurl }}/images/road_path_green_grasses.jpg)
 
-What I like about data is that it touches *everything*; it is applicable in every field. Instead of a job narrowing your horizons to some few, discrete, specific areas, data opens the world right up to you, serves it up on a platter. 
+Hello, I'm Áine and I do data science. I work in Python and SQL, incorporating all the miscellaneous nuggety, hacky bits of wisdom I pick up along the way.
 
-Also I just really dig the analysis of it all. When you get your Keyser Söze moments, when the puzzle pieces all slot into place, I mean, is there anything more satisfying?
+Data science was an easy sell for me. My analytical skills are far and away my favourite to use, followed by communication, curiosity and an impulse towards excellence. I couple this with a passionate interest in human behaviour, storytelling and business.
 
-So that's me and data. Other things I care about: gender disparity, mental health and waste.  
+This is what data science is to me - the meeting of analysis and excellence and curiosity and business and behaviour and storytelling, with boundless potential. It touches everything. You have an interest? Go forth and explore it. A skill you wish to develop? Right this way ma'am.
 
-In my spare time, *LOL*, just kidding, who has any of that?  
+So that's me. 
 
-I aspire to have spare time to watch films, run, read, hike, watch live music and talk at length to interesting people about interesting things.  
+I'll be using this site to share some things I've worked on, and to make myself be better at what I do along the way. 
 
-That's it from me. Remember, be excellent to each other!  
+You can connect with me [here](https://www.linkedin.com/in/aine-phelan/), and check out my full Github repo [here](https://github.com/ainephelan).
