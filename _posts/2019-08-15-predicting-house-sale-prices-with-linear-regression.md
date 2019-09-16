@@ -68,6 +68,7 @@ As per the [documentation special notes](http://jse.amstat.org/v19n3/decock/Data
 
 {% highlight python %}
 # Plot the outliers
+plt.figure(figsize=(8,6))
 x = data.loc[data['Gr Liv Area'] > 4000, 'SalePrice']
 y = data.loc[data['Gr Liv Area'] > 4000, 'Gr Liv Area']
 plt.scatter(x, y, cmap='viridis')
@@ -78,7 +79,7 @@ plt.scatter(x, y, cmap='viridis')
 
 plt.xlabel('House Sale Price')
 plt.ylabel('Living Area Square Foot')
-plt.title('Outliers for Removal')
+plt.title('Outliers for Removal', fontsize=14, fontweight='bold')
 plt.show()
 
 print('Before:', data[data['Gr Liv Area'] > 4000].shape)
