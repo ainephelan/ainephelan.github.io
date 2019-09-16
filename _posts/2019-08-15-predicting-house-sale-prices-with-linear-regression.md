@@ -9,13 +9,13 @@ categories: jekyll update
 
 # Introduction
 
-Today I'll be creating a linear regression model to predict house sale prices, training it on a data set describing the sale of individual residential property in Ames, Iowa from 2006 to 2010. The data set contains 2930 observations and 80 explanatory variables involved in assessing home values.
+Today I'll be creating a linear regression model to predict house sale prices, training it on a data set describing the sale of individual residential property in Ames, Iowa from 2006 to 2010. 
 
 I'm building a linear regression work flow, creating a pipeline of functions as follows:
 
 > #### Data In -> `transform_features()` -> `select_features()` -> `train_and_test()` -> Evaluation Out
 
-Once I have my functions set up it should be easy to rapidly iterate on different models, experimenting with arguments and evaluating the results to see how these impact the accuracy of my model's house sale price predictions.  
+The goal is to enable rapid iteration on different models, and once I have my function pipeline set up it should be easy to do so; experimenting with passing in different arguments and evaluating the results to determine the impact on the accuracy of my model's house sale price predictions.
 
 `transform_features()`  
 This is where I will do my feature engineering - imputing values and stripping out nulls, unwanted data types, columns with data leakage and incorrect values.
@@ -28,6 +28,7 @@ Here I'll train and test the model, building it to handle holdout and k-fold cro
 
 
 ### Data Set
+The data set contains 2930 observations and 80 explanatory variables involved in assessing home values.  
 
 - Data column descriptions [here](https://s3.amazonaws.com/dq-content/307/data_description.txt).
 - Info about why the data was collected [here](https://www.tandfonline.com/doi/abs/10.1080/10691898.2011.11889627)
