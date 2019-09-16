@@ -9,7 +9,7 @@ categories: jekyll update
 
 # Introduction
 
-Today I'll be creating a linear regression model to predict house sale prices, training it on a data set describing the sale of individual residential property in Ames, Iowa from 2006 to 2010. 
+Today I'll be creating a linear regression model to predict house sale prices, training it on a data set describing the sale of individual residential properties in Ames, Iowa from 2006 to 2010. 
 
 I'm building a linear regression work flow, creating a pipeline of functions as follows:
 
