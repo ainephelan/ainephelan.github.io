@@ -257,7 +257,9 @@ After: (2925, 71)
 
 #### 2. For the remaining nulls in the remaining numeric columns , replace with the 'average' value
 
-What statistic should I use as my average? Let's take a look at the data.
+What statistic should I use as my average? Let's take a look at the data.  
+
+As per the [documentation](http://jse.amstat.org/v19n3/decock/DataDocumentation.txt) the remaining numeric columns with nulls are all on the interval or ratio scale, with continuous and discrete values. Now, what about the distribution of values?
 
 {% highlight python %}
 # Get remaining null cols
@@ -300,8 +302,6 @@ Index(['Mas Vnr Area', 'BsmtFin SF 1', 'BsmtFin SF 2', 'Bsmt Unf SF',
 ```
 
 <img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/ames_null_distros.png" alt="drawing" width="1000px"/>
-
-The remaining numeric columns with nulls are all on the interval/ratio scale, containing continuous and discrete values, as per the [documentation](http://jse.amstat.org/v19n3/decock/DataDocumentation.txt)
 
 I can see the distributions are heavily skewed, so I decide to impute using the `median` value as it more resistant to the effects of outliers.
 
