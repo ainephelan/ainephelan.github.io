@@ -16,5 +16,5 @@ I'll be using this site to share some things I've worked on, and to make myself 
 
 Come connect with me by checking out the links below!
 
-Yours in aspiring to be better,
+Yours in aspiring to be better,  
 Áine
