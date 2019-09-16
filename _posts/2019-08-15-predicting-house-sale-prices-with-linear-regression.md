@@ -644,10 +644,9 @@ Neighborhood    28
 dtype: int64
 ```
 
-I decide to try an arbitrary unique category count cutoff of 10, dropping columns with more than 10 unique categories or values. We can iterate on this later.
+*Note:* `Overall Qual`, when treated as a numeric column in the correlation heatmap above, was the feature with the highest correlation to my target. It has 10 unique values and for now I am interested in including it in my model.
 
-*Note:* `Overall Qual`, when treated as a numeric column in the correlation heatmap above, was the feature with the highest correlation to my target. It has 10 unique values and for now I am interested in including it.
-
+I decide to go with a unique category count cutoff of 10, dropping columns with more than 10 unique categories or values. I'll include this unique category threshold as a parameter in my function so I can iterate on it later.
 
 {% highlight python %}
 # Drop variables with more than 10 unique categories/values
@@ -1132,4 +1131,16 @@ In this project I built a pipeline of functions which engineer and select featur
 
 #### Data In -> `transform_features()` -> `select_features()` -> `train_and_test()` -> Evaluation Out   
 
-The functions allow me to iterate over the model, passing in different arguments for a number of parameters, thus enabling rapid experimentation with different inputs to see how the model responds.
+In building this pipeline I used a range of techniques to:
+- Find and removed outliers
+- Investigate null values and employ different strategies for their removal or imputation
+- Create useful new features from existing ones
+- Handle features of no value and those causing data leakage
+- Investigate features for correlation and collinearity
+- Transform features to binary data
+- Remove features with low variance
+- Explore holdout and k-folds cross validation
+- Discuss RMSE and data leakage
+- Make explicit the logic I used to make decisions
+
+The resulting product created here allows me to iterate over the model, passing in different arguments for a number of parameters, thus enabling rapid experimentation with different inputs to see how the model responds.
