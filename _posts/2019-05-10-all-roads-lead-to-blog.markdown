@@ -30,6 +30,23 @@ Blog it is then.
 <center><iframe src="https://public.tableau.com/views/ATaleof50Cities/ATaleof50Cities?:embed=y&:display_count=yes&:toolbar=no" width="1004" height="1269" frameborder="0"></iframe></center>  
 
 
-<center><iframe src="https://public.tableau.com/profile/aine.phelan#!/vizhome/Salesvs_TargetbyDepartment/Dashboard1" width="1004" height="1269" frameborder="0"></iframe></center>
+<center><iframe src="https://public.tableau.com/views/Salesvs_TargetbyDepartment/Dashboard1?:embed=y&:display_count=yes&:origin=viz_share_link" width="1004" height="1269" frameborder="0"></iframe></center>
+
+
+function initializeViz() {
+  // JS object that points at empty div in the html
+  var placeholderDiv = document.getElementById("tableauViz");
+  // URL of the viz to be embedded
+  var url = "http://public.tableau.com/views/WorldIndicators/GDPpercapita";
+  // An object that contains options specifying how to embed the viz
+  var options = {
+    width: '600px',
+    height: '600px',
+    hideTabs: true,
+    hideToolbar: true,
+  };
+  viz = new tableau.Viz(placeholderDiv, url, options);
+}
+
 
 
