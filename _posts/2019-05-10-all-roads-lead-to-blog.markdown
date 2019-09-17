@@ -4,9 +4,11 @@ title:  "All roads lead to blog"
 date:   2017-05-10 21:06:48 +1000
 categories: jekyll update
 ---
+
+![path]({{ site.baseurl }} /images/road_path_green_grasses.jpg)
+
 So, why a blog? I wouldn’t have thought it of me either, but frankly, the universe seems to be converging on a single point when it comes to this. Who am I to argue with the universe?
 
-![photos](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/journal.png)
 
 ### Journaling
 A friend bought me a goal-tracking journal. I started using it (a year later, but moving on) and… I liked it. I found it valuable; small moments of structured reflection and planning in the morning and at night, the flow of my own thoughts, bookending my day.
