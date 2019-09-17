@@ -5,7 +5,7 @@ date:   2017-05-10 21:06:48 +1000
 categories: jekyll update
 ---
 
-![path]({{ site.baseurl }} /images/road_path_green_grasses.jpg)
+![path]({{ site.baseurl }}/images/road_path_green_grasses.jpg)
 
 So, why a blog? I wouldn’t have thought it of me either, but frankly, the universe seems to be converging on a single point when it comes to this. Who am I to argue with the universe?
 
@@ -30,6 +30,6 @@ Blog it is then.
 <center><iframe src="https://public.tableau.com/views/ATaleof50Cities/ATaleof50Cities?:embed=y&:display_count=yes&:toolbar=no" width="1004" height="1269" frameborder="0"></iframe></center>
 
 
-<center><iframe src="https://public.tableau.com/views/Salesvs_TargetbyDepartment/Dashboard1?:embed=y&:display_count=yes&:origin=viz_share_link" width="1004" height="1269" frameborder="0"></iframe></center>
+<center><iframe src="https://public.tableau.com/profile/aine.phelan#!/vizhome/Salesvs_TargetbyDepartment/Dashboard1" width="1004" height="1269" frameborder="0"></iframe></center>
 
 
