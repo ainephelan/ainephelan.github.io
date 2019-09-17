@@ -52,4 +52,17 @@ Blog it is then.
 
 
 
-![Embed Code]({{ site.baseurl }}/img/embed_code.png)
+![Embed Code]({{ site.baseurl }}/img/embed_code.png)  
+
+
+<center>
+
+<iframe src="https://public.tableau.com/views/Salesvs_TargetbyDepartment/Dashboard1?:embed=y&:display_count=yes&:origin=viz_share_link" width="450" height="975"  > </p>
+
+ 
+
+ 
+
+  <p>Your browser does not support iframes.</p></center>
+
+</iframe>
