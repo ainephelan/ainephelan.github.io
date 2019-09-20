@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "Buddies! SQL and Python to Answer Business Questions"
+date:   2019-03-15 20:40:42 +1000
+categories: jekyll update
+---
+
 ![buddies]({{ site.baseurl }}/images/buddies.jng)
 
 # Mining the Chinook Database with SQL and Python
