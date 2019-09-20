@@ -457,7 +457,274 @@ plt.show()
 
 ```
 
-
 ![chinook_distros]({{ site.baseurl }}/images/chinook_distros.png)
 
+## Task 3: Analysing Sales by Country
 
+I'm looking for growth opportunities in different markets, so I decide to investigate sales by country level. In particular I'm going to look at, for each country:
+- Total number of customers
+- Total value of sales
+- Average value of sales per customer
+- Average order value
+
+There are a number of countries with only one customer. I'm going to group these countries as `Other`, and force these `Other` customers to the bottom of my results, which will otherwise be sorted by the average customer spend from highest to lowest.
+
+```python
+# Rename countries with 1 customer as 'Other'
+# Push 'Other' down to the bottom of results
+
+q3 = '''
+WITH dataset AS
+    (
+        SELECT
+            CASE
+                WHEN n.customer_count = 1 THEN 'Other'
+                ELSE c.country
+            END AS other,
+            c.country,
+            c.customer_id,
+            i.total,
+            i.invoice_id
+        FROM customer c
+        INNER JOIN (
+                    SELECT 
+                        country, 
+                        count(customer_id) customer_count
+                    FROM customer
+                    group by 1
+                    ) n ON n.country = c.country
+        INNER JOIN invoice i ON i.customer_id = c.customer_id
+    )
+
+SELECT 
+    other country, 
+    count(distinct customer_id) total_customers,
+    sum(total) total_sales,
+    round(sum(total)/count(distinct customer_id), 2) avg_customer_spend,
+    round(sum(total)/count(distinct invoice_id), 2) avg_order_value
+FROM (
+    SELECT
+        *,
+        CASE
+            WHEN other = 'Other' THEN 1
+            ELSE 0
+        END AS sort
+    FROM dataset)
+group by other
+order by sort, avg_customer_spend desc
+;
+'''
+
+run_query(q3)
+```
+
+| country        |   total_customers |   total_sales |   avg_customer_spend |   avg_order_value |
+|:---------------|------------------:|--------------:|---------------------:|:-----------------:|
+| Czech Republic |                 2 |        273.24 |               136.62 |              9.11 |
+| Portugal       |                 2 |        185.13 |                92.57 |              6.38 |
+| India          |                 2 |        183.15 |                91.57 |              8.72 |
+| Brazil         |                 5 |        427.68 |                85.54 |              7.01 |
+| Germany        |                 4 |        334.62 |                83.66 |              8.16 |
+| United Kingdom |                 3 |        245.52 |                81.84 |              8.77 |
+| USA            |                13 |       1040.49 |                80.04 |              7.94 |
+| France         |                 5 |        389.07 |                77.81 |              7.78 |
+| Canada         |                 8 |        535.59 |                66.95 |              7.05 |
+| Other          |                15 |       1094.94 |                73    |              7.45 |
+
+Now let's plot this data.
+
+I'm looking for opportunities in different markets, so I want to find countries with customers demonstrating high value spending habits.
+
+From the below I can see that the **Czech Republic**, **India** and **the UK** might be of interest. On average relative to the existing customer base they have high spend per customer, high value individual orders, and good customer lifetime value. 
+
+Of course, our population here is very small. However, based on these results, the above are the countries I would put forward as warranting further investigation as potential markets. 
+
+```python
+import numpy as np
+
+# Assign dataframe, make country index, remove index header
+country_sales = run_query(q3)
+country_sales.set_index("country", drop=True, inplace=True)
+country_sales.index.name= ''
+
+# Initialise figure and axes
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(15, 15))
+ax1, ax2, ax3, ax4 = axes.flatten()
+fig.subplots_adjust(hspace=.5, wspace=.3)
+
+
+## ax1 - pie plot of total sales $
+# Remove column name
+sales_breakdown = country_sales["total_sales"].copy().rename('')
+sales_breakdown.sort_values().plot.pie(
+    ax=ax1,
+    startangle=90,
+    counterclock=False,
+    title='$ Sales by Country'    
+)
+
+
+## ax2 - compare % customers to % sale value
+customers_sales = country_sales[['total_customers', 'total_sales']].copy()
+
+# Get values as %
+customers_sales['total_customers'] /= customers_sales['total_customers'].sum() / 100
+customers_sales['total_sales'] /= customers_sales['total_sales'].sum() / 100
+
+# Rename for legend
+customers_sales.rename({'total_customers' : '% Customers', 'total_sales' : '% Sales Value'}, axis = 1, inplace=True)
+
+# Plot
+customers_sales.sort_values('% Customers').plot.bar(
+    ax=ax2,
+    title="% Customers vs % Sales"
+)
+ax2.tick_params(top=False, right=False, left=False, bottom=False)
+for value in ax2.spines.values():
+    value.set_visible(False)
+
+
+## ax3 - Average order value, difference from the mean
+avg_order = country_sales['avg_order_value'].copy()
+
+# Get % above the mean
+difference_from_avg = (avg_order / avg_order.mean() * 100) - 100
+
+# Plot
+difference_from_avg.plot.bar(
+    ax=ax3,
+    title="Average Order Value\n % Difference from Mean"
+)
+
+# Remove tick params and spines
+ax3.tick_params(top=False, right=False, left=False, bottom=False)
+ax3.axhline(0, color='k', alpha=0.3)
+for value in ax3.spines.values():
+    value.set_visible(False)
+
+
+## ax4 - average cusotmer spend as customer lifetime value
+ltv = country_sales["avg_customer_spend"].copy()
+
+# Plot
+ltv.sort_values(ascending=False).plot.bar(
+    ax=ax4,
+    title = '$ Customer Lifetime Value'
+)
+
+# Remove tick params and spines
+ax4.tick_params(top=False, right=False, left=False, bottom=False)
+for value in ax4.spines.values():
+    value.set_visible(False)
+    
+plt.savefig('chinook_countries.png')
+plt.show()
+```
+
+![chinook_countries]({{ site.baseurl }}/images/chinook_countries.png)
+
+## Task #4: Albums vs Individual Tracks
+
+In a transaction, customers can purchase music in one of two ways:
+- Purchase individual tracks 
+- Purchase an entire album
+
+Customers do not have the option to combine these methods, i.e. they are unable to purchase an album and also purchase individual tracks in the same transaction.
+
+Management are considering lowering their costs by not purchasing entire albums, but instead only buying the more popular tracks off an album.
+
+It's my job to explore the behaviour of the market. What proportion of purchases are whole-album purchases vs a collection of individual tracks purchases?
+
+To do this I will compare invoices and albums
+- Take the first track on the invoice
+- Get the album it belongs to
+- Compare all tracks on the album with all tracks on the invoice
+- If there is a full match without exceptions they I can say it was a full album purchase
+
+#### Results
+From the below I can see that 81% of purchases were collections of individual tracks, and 19% were whole-album purchases.
+
+If management were to change purchasing strategy to purchasing individual tracks only, they would be failing to cater to almost one fifth of their market. 
+
+In this case, my recommendation is that further analysis should be done to determine if the cost savings from changing purchasing strategy would outweigh the potential revenue loss from these album-buying customers.
+
+```python
+q4 = '''
+WITH 
+album_invoice AS
+    (
+        SELECT 
+            t.album_id,
+            n.invoice_id,
+            n.invoice_track_id
+        FROM track t
+        INNER JOIN (
+                    SELECT 
+                        il.invoice_id,
+                        min(il.track_id) as invoice_track_id
+                    FROM invoice_line il
+                    INNER JOIN track t ON il.track_id = t.track_id
+                    GROUP BY 1
+                    ) n ON n.invoice_track_id = t.track_id
+    ),
+
+compare_tracks AS
+    (
+        SELECT 
+            ai.*,
+            CASE
+                WHEN
+                    (
+                        SELECT t.track_id from track t
+                        where t.album_id = ai.album_id
+                        
+                        EXCEPT
+                        
+                        SELECT il.track_id from invoice_line il
+                        where il.invoice_id = ai.invoice_id
+                    )  IS NULL
+                    
+                    AND
+                    (
+                        SELECT il.track_id from invoice_line il
+                        where il.invoice_id = ai.invoice_id
+                        
+                        EXCEPT
+                        
+                        SELECT t.track_id from track t
+                        where t.album_id = ai.album_id
+                                                
+                    )  IS NULL
+                THEN "Yes"
+                ELSE "No"
+            END AS "album_purchased"
+        FROM album_invoice ai
+    )
+
+SELECT 
+    album_purchased,
+    count(invoice_id) no_of_purchases,
+    round(cast(count(invoice_id) as float)/(select count(*) from invoice)*100, 2) percentage
+FROM compare_tracks
+group by 1
+;
+'''
+
+run_query(q4)
+```
+
+| album_purchased   |   no_of_purchases |   percentage |
+|:------------------|------------------:|:------------:|
+| No                |               500 |        81.43 |
+| Yes               |               114 |        18.57 |
+
+
+# Conclusion
+
+In this project I combined SQL and Python to mine, analyse and manipulate data from a database.
+
+I created a helper function in Python to manages the connection to the database, passing in the SQL query and outputting the results in a pandas dataframe.
+
+I wrote SQL queries to retrieve data to answer complex and particular business questions. 
+
+I then created tables and visualisations to assist in presenting my findings and give my recommendations.
