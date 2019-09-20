@@ -455,8 +455,7 @@ plt.savefig('chinook_distros.png')
 plt.show()
 
 ```
-
-<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/chinook_distros_a.png" alt="drawing" width="1000px" height="350px"/>
+![chinook_distros]({{ site.baseurl }}/images/chinook_distros_a.png)
 
 
 ## Task 3: Analysing Sales by Country
