@@ -414,11 +414,11 @@ We can see that more of Jane's and Steve's sales fall below the average sale val
 
 Jane however, does appear to outperform, with more higher value sales than her counterparts.
 
-```python
+```python# 
 # Plot figure with 2 axes
-fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(20, 6))
+fig, axes = plt.subplots(nrows=2, ncols=1, figsize=(10, 14))
 ax1, ax2 = axes.flatten()
-fig.suptitle('$ Monthly Sales Performace', fontsize=16, fontweight='bold')
+fig.suptitle('$ Monthly Sales Performace', y=.93, fontsize=16, fontweight='bold')
 
 ## ax1 = kde
 for rep in reps:
@@ -451,8 +451,9 @@ for key, value in ax2.spines.items():
     value.set_visible(False)
 
 plt.legend(loc='upper left')
-plt.savefig('chinook_distros.png')
+plt.savefig('chinook_distros_a.png')
 plt.show()
+
 
 ```
 ![chinook_distros]({{ site.baseurl }}/images/chinook_distros_a.png)
