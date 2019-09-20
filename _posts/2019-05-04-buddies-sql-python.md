@@ -458,6 +458,6 @@ plt.show()
 ```
 
 
-![chinook_distros]({{ site.baseurl }}/images/chinook_distros.png =1000x600)
+![chinook_distros]({{ site.baseurl }}/images/chinook_distros.png)
 
 
