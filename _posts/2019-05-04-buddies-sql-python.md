@@ -400,7 +400,8 @@ plt.show()
 
 ```
 
-<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/chinook_monthly.png" alt="drawing" width="1000px" height="600px"/>
+
+![chinook_monthly]({{ site.baseurl }}/images/chinook_monthly.png =1000x600)
 
 
 #### 4. Distribution of Sales Values
@@ -456,8 +457,7 @@ plt.show()
 
 ```
 
-<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/chinook_distros.png" alt="drawing" width="1000px" height="600px"/>
 
-
+![chinook_distros]({{ site.baseurl }}/images/chinook_distros.png =1000x600)
 
 
