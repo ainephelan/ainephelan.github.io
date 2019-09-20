@@ -5,7 +5,7 @@ date:   2019-03-15 20:40:42 +1000
 categories: jekyll update
 ---
 
-![buddies]({{ site.baseurl }}/images/buddies.jng)
+![buddies]({{ site.baseurl }}/images/buddies.jpg)
 
 # Mining the Chinook Database with SQL and Python
 
@@ -145,9 +145,9 @@ Once I have this data I plot it.
 
 Based on the results below for sales data of music genres in the USA, the 3 artists we should purchase, in order of genre performance, are:
 
-1. Red Tone | Punk
-2. Slim Jim Bites | Blues
-3. Meteor and the Girls | Pop
+1. Red Tone - Punk
+2. Slim Jim Bites - Blues
+3. Meteor and the Girls - Pop
 
 *Note:* these 3 genres combined make up only 18% of total sales, whereas `Rock` as a genre on its own makes up over 53% of the market. 
 
@@ -400,7 +400,8 @@ plt.show()
 
 ```
 
-![chinook_monthly]({{ site.baseurl }}/images/chinook_monthly.png)
+<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/chinook_monthly.jpg" alt="drawing" width="1000px"/>
+
 
 #### 4. Distribution of Sales Values
 Let's take a look at the distributions of sales made instead.
