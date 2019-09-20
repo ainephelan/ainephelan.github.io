@@ -1,3 +1,14 @@
+---
+layout: post
+title:  "Dashboards for Days"
+date:   2019-07-23 14:21:29 +1000
+categories: jekyll update
+---
+
+![dash_bunny_banner]({{ site.baseurl }}/images/dash_bunny_banner.png)
+
+A home for my Tableau Dashboards. I'll update this with new boards as I make them.
+
 
 <center><iframe src="https://public.tableau.com/views/ATaleof50Cities/ATaleof50Cities?:embed=y&:display_count=yes&:toolbar=no" width="1004" height="1269" frameborder="0"></iframe></center>  
 
