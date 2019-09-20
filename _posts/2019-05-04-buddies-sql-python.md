@@ -409,9 +409,7 @@ Let's take a look at the distributions of sales made instead.
 I'll display the median sales value as well. I'm choosing median as the most representative value as I can see all three distributions are a bit skewed, and the median is a robust statistic, resistant to the pull of outliers.
 
 While we can see that the distributions are not incredibly dissimilar from each other, we have more of a granular understanding now of the types of sales that the reps are making. 
-
-We can see that more of Jane's and Steve's sales fall below the average sale value, whereas more of Margaret's are above the average sale value. 
-
+#################################### sdfgsfd
 Jane however, does appear to outperform, with more higher value sales than her counterparts.
 
 ```python
