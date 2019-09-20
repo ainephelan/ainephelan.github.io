@@ -5,7 +5,7 @@ date:   2019-07-23 14:21:29 +1000
 categories: jekyll update
 ---
 
-![dash_bunny_banner]({{ site.baseurl }}/images/dash_bunny_banner.png)
+![dash_bunny_full]({{ site.baseurl }}/images/dash_bunny_full.png)
 
 A home for my Tableau Dashboards. I'll update this with new boards as I make them.
 
