@@ -414,7 +414,7 @@ We can see that more of Jane's and Steve's sales fall below the average sale val
 
 Jane however, does appear to outperform, with more higher value sales than her counterparts.
 
-```python# 
+```python
 # Plot figure with 2 axes
 fig, axes = plt.subplots(nrows=2, ncols=1, figsize=(10, 14))
 ax1, ax2 = axes.flatten()
