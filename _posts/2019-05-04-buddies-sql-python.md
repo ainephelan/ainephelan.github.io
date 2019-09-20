@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Buddies: Using SQL and Python to Answer Business Questions"
+title:  "Buddies! Using SQL and Python to Answer Business Questions"
 date:   2019-03-15 20:40:42 +1000
 categories: jekyll update
 ---
