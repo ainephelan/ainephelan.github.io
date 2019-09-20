@@ -456,7 +456,10 @@ plt.show()
 
 ```
 
-<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/chinook_distros.png" alt="drawing" width="1000px" height="500px"/>
+<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/chinook_distros.png" alt="drawing" width="1000px" height="400px"/>
+
+<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/chinook_distros_a.png" alt="drawing" width="1000px" height="400px"/>
+
 
 ## Task 3: Analysing Sales by Country
 
