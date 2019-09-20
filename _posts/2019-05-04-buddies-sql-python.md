@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Buddies! SQL and Python to Answer Business Questions"
+title:  "Buddies: Using SQL and Python to Answer Business Questions"
 date:   2019-03-15 20:40:42 +1000
 categories: jekyll update
 ---
@@ -400,8 +400,7 @@ plt.show()
 
 ```
 
-
-![chinook_monthly]({{ site.baseurl }}/images/chinook_monthly.png =1000x600)
+<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/chinook_monthly.png" alt="drawing" width="1000px" height="400px"/>
 
 
 #### 4. Distribution of Sales Values
@@ -457,7 +456,7 @@ plt.show()
 
 ```
 
-![chinook_distros]({{ site.baseurl }}/images/chinook_distros.png)
+<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/chinook_monthly.png" alt="drawing" width="1000px" height="400px"/>
 
 ## Task 3: Analysing Sales by Country
 
