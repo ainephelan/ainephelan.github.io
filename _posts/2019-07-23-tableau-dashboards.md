@@ -7,7 +7,9 @@ categories: jekyll update
 
 ![dash_bunny_full]({{ site.baseurl }}/images/dash_bunny_full.png)
 
-A home for my Tableau Dashboards. I'll update this with new boards as I make them.
+#### A home for my Tableau Dashboards
+
+I'll update this with new boards as I make them.
 
 
 <center><iframe src="https://public.tableau.com/views/ATaleof50Cities/ATaleof50Cities?:embed=y&:display_count=yes&:toolbar=no" width="1004" height="1269" frameborder="0"></iframe></center>  
