@@ -14,7 +14,7 @@ I'll be accessing the Chinook database, a sample data base representing a digita
 More details about the Chinook database can be found [here](https://github.com/lerocha/chinook-database/tree/master/ChinookDatabase). A copy of the database schema can be found [here](https://github.com/lerocha/chinook-database/wiki/Chinook-Schema)
 
 **Chinook Schema:**
-![chinook_schema](chinook_schema_2.png)
+![chinook_schema]({{ site.baseurl }}/images/chinook_schema_2.png)
 
 Source: [Github](https://github.com/lerocha/chinook-database/wiki/Chinook-Schema)
 
@@ -26,7 +26,7 @@ This will take an SQL query as an argument and return the results of that query 
 
 *Note:* As this function will be reading the results into a dataframe, this will be used exclusively for `SELECT` statements.
 
-```Python
+```python
 import sqlite3
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -46,8 +46,7 @@ def run_query(q):
 test = '''
 SELECT 
     name,
-    tbl_name,
-    sql
+    tbl_name
 FROM sqlite_master 
 WHERE type IN ('table', 'view') 
 ORDER BY type;
@@ -56,128 +55,19 @@ ORDER BY type;
 run_query(test)
 ```
 
-| name           | tbl_name       | sql                                                                          |
-|:---------------|:---------------|:----------------------------------------------------------------------------:|
-| album          | album          | CREATE TABLE [album]                                                         |
-|                |                | (                                                                            |
-|                |                |     [album_id] INTEGER PRIMARY KEY NOT NULL,                                 |
-|                |                |     [title] NVARCHAR(160)  NOT NULL,                                         |
-|                |                |     [artist_id] INTEGER  NOT NULL,                                           |
-|                |                |     FOREIGN KEY ([artist_id]) REFERENCES [artist] ([artist_id])              |
-|                |                | 		ON DELETE NO ACTION ON UPDATE NO ACTION                                    |
-|                |                | )                                                                            |
-| artist         | artist         | CREATE TABLE [artist]                                                        |
-|                |                | (                                                                            |
-|                |                |     [artist_id] INTEGER PRIMARY KEY NOT NULL,                                |
-|                |                |     [name] NVARCHAR(120)                                                     |
-|                |                | )                                                                            |
-| customer       | customer       | CREATE TABLE [customer]                                                      |
-|                |                | (                                                                            |
-|                |                |     [customer_id] INTEGER PRIMARY KEY NOT NULL,                              |
-|                |                |     [first_name] NVARCHAR(40)  NOT NULL,                                     |
-|                |                |     [last_name] NVARCHAR(20)  NOT NULL,                                      |
-|                |                |     [company] NVARCHAR(80),                                                  |
-|                |                |     [address] NVARCHAR(70),                                                  |
-|                |                |     [city] NVARCHAR(40),                                                     |
-|                |                |     [state] NVARCHAR(40),                                                    |
-|                |                |     [country] NVARCHAR(40),                                                  |
-|                |                |     [postal_code] NVARCHAR(10),                                              |
-|                |                |     [phone] NVARCHAR(24),                                                    |
-|                |                |     [fax] NVARCHAR(24),                                                      |
-|                |                |     [email] NVARCHAR(60)  NOT NULL,                                          |
-|                |                |     [support_rep_id] INTEGER,                                                |
-|                |                |     FOREIGN KEY ([support_rep_id]) REFERENCES [employee] ([employee_id])     |
-|                |                | 		ON DELETE NO ACTION ON UPDATE NO ACTION                                    |
-|                |                | )                                                                            |
-| employee       | employee       | CREATE TABLE [employee]                                                      |
-|                |                | (                                                                            |
-|                |                |     [employee_id] INTEGER PRIMARY KEY NOT NULL,                              |
-|                |                |     [last_name] NVARCHAR(20)  NOT NULL,                                      |
-|                |                |     [first_name] NVARCHAR(20)  NOT NULL,                                     |
-|                |                |     [title] NVARCHAR(30),                                                    |
-|                |                |     [reports_to] INTEGER,                                                    |
-|                |                |     [birthdate] DATETIME,                                                    |
-|                |                |     [hire_date] DATETIME,                                                    |
-|                |                |     [address] NVARCHAR(70),                                                  |
-|                |                |     [city] NVARCHAR(40),                                                     |
-|                |                |     [state] NVARCHAR(40),                                                    |
-|                |                |     [country] NVARCHAR(40),                                                  |
-|                |                |     [postal_code] NVARCHAR(10),                                              |
-|                |                |     [phone] NVARCHAR(24),                                                    |
-|                |                |     [fax] NVARCHAR(24),                                                      |
-|                |                |     [email] NVARCHAR(60),                                                    |
-|                |                |     FOREIGN KEY ([reports_to]) REFERENCES [employee] ([employee_id])         |
-|                |                | 		ON DELETE NO ACTION ON UPDATE NO ACTION                                    |
-|                |                | )                                                                            |
-| genre          | genre          | CREATE TABLE [genre]                                                         |
-|                |                | (                                                                            |
-|                |                |     [genre_id] INTEGER PRIMARY KEY NOT NULL,                                 |
-|                |                |     [name] NVARCHAR(120)                                                     |
-|                |                | )                                                                            |
-| invoice        | invoice        | CREATE TABLE [invoice]                                                       |
-|                |                | (                                                                            |
-|                |                |     [invoice_id] INTEGER PRIMARY KEY NOT NULL,                               |
-|                |                |     [customer_id] INTEGER  NOT NULL,                                         |
-|                |                |     [invoice_date] DATETIME  NOT NULL,                                       |
-|                |                |     [billing_address] NVARCHAR(70),                                          |
-|                |                |     [billing_city] NVARCHAR(40),                                             |
-|                |                |     [billing_state] NVARCHAR(40),                                            |
-|                |                |     [billing_country] NVARCHAR(40),                                          |
-|                |                |     [billing_postal_code] NVARCHAR(10),                                      |
-|                |                |     [total] NUMERIC(10,2)  NOT NULL,                                         |
-|                |                |     FOREIGN KEY ([customer_id]) REFERENCES [customer] ([customer_id])        |
-|                |                | 		ON DELETE NO ACTION ON UPDATE NO ACTION                                    |
-|                |                | )                                                                            |
-| invoice_line   | invoice_line   | CREATE TABLE [invoice_line]                                                  |
-|                |                | (                                                                            |
-|                |                |     [invoice_line_id] INTEGER PRIMARY KEY NOT NULL,                          |
-|                |                |     [invoice_id] INTEGER  NOT NULL,                                          |
-|                |                |     [track_id] INTEGER  NOT NULL,                                            |
-|                |                |     [unit_price] NUMERIC(10,2)  NOT NULL,                                    |
-|                |                |     [quantity] INTEGER  NOT NULL,                                            |
-|                |                |     FOREIGN KEY ([invoice_id]) REFERENCES [invoice] ([invoice_id])           |
-|                |                | 		ON DELETE NO ACTION ON UPDATE NO ACTION,                                   |
-|                |                |     FOREIGN KEY ([track_id]) REFERENCES [track] ([track_id])                 |
-|                |                | 		ON DELETE NO ACTION ON UPDATE NO ACTION                                    |
-|                |                | )                                                                            |
-| media_type     | media_type     | CREATE TABLE [media_type]                                                    |
-|                |                | (                                                                            |
-|                |                |     [media_type_id] INTEGER PRIMARY KEY NOT NULL,                            |
-|                |                |     [name] NVARCHAR(120)                                                     |
-|                |                | )                                                                            |
-| playlist       | playlist       | CREATE TABLE [playlist]                                                      |
-|                |                | (                                                                            |
-|                |                |     [playlist_id] INTEGER PRIMARY KEY NOT NULL,                              |
-|                |                |     [name] NVARCHAR(120)                                                     |
-|                |                | )                                                                            |
-| playlist_track | playlist_track | CREATE TABLE [playlist_track]                                                |
-|                |                | (                                                                            |
-|                |                |     [playlist_id] INTEGER  NOT NULL,                                         |
-|                |                |     [track_id] INTEGER  NOT NULL,                                            |
-|                |                |     CONSTRAINT [pk_playlist_track] PRIMARY KEY  ([playlist_id], [track_id]), |
-|                |                |     FOREIGN KEY ([playlist_id]) REFERENCES [playlist] ([playlist_id])        |
-|                |                | 		ON DELETE NO ACTION ON UPDATE NO ACTION,                                   |
-|                |                |     FOREIGN KEY ([track_id]) REFERENCES [track] ([track_id])                 |
-|                |                | 		ON DELETE NO ACTION ON UPDATE NO ACTION                                    |
-|                |                | )                                                                            |
-| track          | track          | CREATE TABLE [track]                                                         |
-|                |                | (                                                                            |
-|                |                |     [track_id] INTEGER PRIMARY KEY NOT NULL,                                 |
-|                |                |     [name] NVARCHAR(200)  NOT NULL,                                          |
-|                |                |     [album_id] INTEGER,                                                      |
-|                |                |     [media_type_id] INTEGER  NOT NULL,                                       |
-|                |                |     [genre_id] INTEGER,                                                      |
-|                |                |     [composer] NVARCHAR(220),                                                |
-|                |                |     [milliseconds] INTEGER  NOT NULL,                                        |
-|                |                |     [bytes] INTEGER,                                                         |
-|                |                |     [unit_price] NUMERIC(10,2)  NOT NULL,                                    |
-|                |                |     FOREIGN KEY ([album_id]) REFERENCES [album] ([album_id])                 |
-|                |                | 		ON DELETE NO ACTION ON UPDATE NO ACTION,                                   |
-|                |                |     FOREIGN KEY ([genre_id]) REFERENCES [genre] ([genre_id])                 |
-|                |                | 		ON DELETE NO ACTION ON UPDATE NO ACTION,                                   |
-|                |                |     FOREIGN KEY ([media_type_id]) REFERENCES [media_type] ([media_type_id])  |
-|                |                | 		ON DELETE NO ACTION ON UPDATE NO ACTION                                    |
-|                |                | )                                                                            |
+| name           | tbl_name       |
+|:---------------|:--------------:|
+| album          | album          |
+| artist         | artist         |
+| customer       | customer       |
+| employee       | employee       |
+| genre          | genre          |
+| invoice        | invoice        |
+| invoice_line   | invoice_line   |
+| media_type     | media_type     |
+| playlist       | playlist       |
+| playlist_track | playlist_track |
+| track          | track          |
 
 ## Task \#1: Album Recommendation
 
@@ -256,7 +146,7 @@ Based on the results below for sales data of music genres in the USA, the 3 arti
 
 We don't have any `Rock` artists in out pool to add to our store, it would be good to keep an eye out for some going forward.
 
-```Python
+```python
 # Assign dataframe to variable name and plot
 sales_USA = run_query(q1)
 sales_USA.loc[:9].plot.barh(x='genre', y='perc_sales_USA', figsize=(10,6),
@@ -298,8 +188,8 @@ A few points to note with the Chinook database.
 - The link between sales agent and how much they have sold is sales rep -> customer -> invoice
     - *However* I can see that there are invoices for customers of a particular rep existing from *before* that rep was hired. I assume that these customers were assigned to other reps before the current reps were hired, and made those purchases with these previous reps  
     
-```Python
-q2='''
+```python
+q2a='''
 
 WITH sales AS
     (
@@ -329,7 +219,7 @@ GROUP BY 1, 2
 
 '''
 
-run_query(q2)
+run_query(q2a)
 ```
 
 | sales_rep     | hire_date   | customer_first_invoice   | customer_last_invoice   |   rep_tenure_months |
@@ -355,7 +245,7 @@ I can see that Jane is the highest performing rep with her sales making my 37% o
 
 However, she is the longest-serving sales rep, so it's not surprising that her running total of sales is greater than those of her colleagues.
 
-```Python
+```python
 q2b='''
 
 WITH sales AS
@@ -416,7 +306,7 @@ I decide to look at average monthly sales to make a fairer comparison.
 
 From the results it does appear that Jane is top of the leader board after all. I can see that **on average**, Jane sells 8% - 14% **per month** more than her colleagues.
 
-```Python
+```python
 # Plot average monthy sales
 sales_totals.plot.barh(x='sales_rep', y='sales_per_month', legend=False, width=0.3, figsize=(10,3))
 
@@ -431,6 +321,7 @@ plt.title('$ Avg Sales per Month Performance', fontsize=12, fontweight='bold')
 plt.savefig('chinook_month_perf.png')
 plt.show()
 ```
+
 ![chinook_month_perf]({{ site.baseurl }}/images/chinook_month_perf.png)
 
 #### 3. Actual Sales Month to Month
@@ -439,7 +330,7 @@ Let's see how the reps perform relative to each other for any given month. I get
 
 However, I can see **in this format** the results are not the easiest to interpret and draw conclusions from.
 
-```Python
+```python
 # Get total sales grouped by rep and sales month
 
 q2c='''
@@ -515,7 +406,7 @@ We can see that more of Jane's and Steve's sales fall below the average sale val
 
 Jane however, does appear to outperform, with more higher value sales than her counterparts.
 
-```Python
+```python
 # Plot figure with 2 axes
 fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(20, 6))
 ax1, ax2 = axes.flatten()
@@ -558,3 +449,6 @@ plt.show()
 ```
 
 ![chinook_distros]({{ site.baseurl }}/images/chinook_distros.png)
+
+
+
