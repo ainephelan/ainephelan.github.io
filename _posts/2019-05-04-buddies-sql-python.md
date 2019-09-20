@@ -400,7 +400,7 @@ plt.show()
 
 ```
 
-<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/chinook_monthly.png" alt="drawing" width="1000px" height="400px"/>
+<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/chinook_monthly.png" alt="drawing" width="1000px" height="500px"/>
 
 
 #### 4. Distribution of Sales Values
@@ -456,7 +456,7 @@ plt.show()
 
 ```
 
-<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/chinook_monthly.png" alt="drawing" width="1000px" height="400px"/>
+<img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/chinook_distros.png" alt="drawing" width="1000px" height="500px"/>
 
 ## Task 3: Analysing Sales by Country
 
