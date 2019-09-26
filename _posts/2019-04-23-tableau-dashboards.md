@@ -4,7 +4,7 @@ title:  "Dashboards for Days"
 date:   2019-04-23 14:21:29 +1000
 categories: jekyll update
 ---
->_“To see a world in a grain of sand. And a heaven in a wild flower, Hold infinity in the palm of your hand. And eternity in an hour."_  
+>_“To see a world in a grain of sand and a heaven in a wild flower, hold infinity in the palm of your hand and eternity in an hour."_  
 >_- William Blake, Auguries of Innocence_
 
 ![dash_bunny_full]({{ site.baseurl }}/images/dash_bunny_full.png)
