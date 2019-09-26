@@ -4,7 +4,10 @@ title:  "Buddies! Answering Business Questions with SQL & Python"
 date:   2019-03-15 20:40:42 +1000
 categories: jekyll update
 ---
-
+>_"Alone we can do little; together we can do so much."_   
+>_- Helen Keller_  
+  
+  
 ![buddies]({{ site.baseurl }}/images/buddies.jpg)
 
 # Mining the Chinook Database with SQL and Python
