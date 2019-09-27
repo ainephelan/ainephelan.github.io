@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "All roads lead to blog"
+title:  "All Roads Lead to Blog"
 date:   2017-03-10 21:06:48 +1000
 categories: jekyll update
 ---
