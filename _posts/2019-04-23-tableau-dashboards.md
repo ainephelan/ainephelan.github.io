@@ -18,10 +18,6 @@ I'll be updating this with new boards as I make them.
 
 <center>
 
-<iframe src="https://public.tableau.com/views/foley2016test2/Dashboard1?:embed=y&:display_count=yes&:refresh=yes&:showShareOptions=false&:toolbar=no&:showVizHome=no" width="450" height="975"  > </p>
-
-  <p>Your browser does not support iframes.</p></center>
-
 </iframe>
 
 
