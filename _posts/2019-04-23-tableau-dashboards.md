@@ -13,7 +13,7 @@ categories: jekyll update
 
 I'll be updating this with new boards as I make them.
 
-<center><iframe src="https://public.tableau.com/views/ATaleof50Cities/ATaleof50Cities?:embed=y&:display_count=yes&:toolbar=no" width="1004" height="1269" frameborder="0"></iframe></center>  
+
 
 
 <center>
