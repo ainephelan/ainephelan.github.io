@@ -99,18 +99,17 @@ I extract data for total dollar value and percentage of the market held by the d
 ```python
 q1 = '''
 WITH dataset AS
-(
+    (
     SELECT 
         il.track_id, 
         quantity, 
         g.name genre
-    FROM 
-        invoice_line il
+    FROM invoice_line il
     INNER JOIN invoice i ON il.invoice_id = i.invoice_id
     INNER JOIN tracK t ON il.track_id = t.track_id
     INNER JOIN genre g ON t.genre_id = g.genre_id
     WHERE i.billing_country = 'USA'
-)
+    )
 
 SELECT 
     genre, 
@@ -179,7 +178,6 @@ plt.xticks([0,50])
 
 # Set vlines
 plt.gca().vlines([10, 20, 30, 40, 50], ymin=0, ymax=10, alpha=0.1)
-plt.savefig('chinook_music_usa.png')
 plt.show()
 ```
 
@@ -207,15 +205,14 @@ q2a='''
 
 WITH sales AS
     (
-    SELECT
-        (e.first_name || " " || e.last_name) sales_rep,
-        strftime("%Y-%m", e.hire_date) hire_date,
-        strftime("%Y-%m", i.invoice_date) invoice_date
-    FROM invoice i
-INNER JOIN customer c ON c.customer_id = i.customer_id
-INNER JOIN employee e ON e.employee_id = c.support_rep_id
-
-)
+        SELECT
+            (e.first_name || " " || e.last_name) sales_rep,
+            strftime("%Y-%m", e.hire_date) hire_date,
+            strftime("%Y-%m", i.invoice_date) invoice_date
+        FROM invoice i
+        INNER JOIN customer c ON c.customer_id = i.customer_id
+        INNER JOIN employee e ON e.employee_id = c.support_rep_id
+    )
     
 SELECT 
     s.sales_rep,
@@ -228,7 +225,7 @@ INNER JOIN
     (
         SELECT 
             sales_rep,
-            count(distinct(invoice_date)) as sales_months
+            count(distinct(invoice_date)) sales_months
         FROM sales
         WHERE hire_date <= invoice_date
         GROUP BY 1
@@ -273,14 +270,14 @@ q2b='''
 
 WITH sales AS
     (
-    SELECT
-        (e.first_name || " " || e.last_name) sales_rep,
-        i.total,
-        strftime("%Y-%m", e.hire_date) hire_date,
-        strftime("%Y-%m", i.invoice_date) invoice_date
-    FROM invoice i
-    INNER JOIN customer c ON c.customer_id = i.customer_id
-    INNER JOIN employee e ON e.employee_id = c.support_rep_id
+        SELECT
+            (e.first_name || " " || e.last_name) sales_rep,
+            i.total,
+            strftime("%Y-%m", e.hire_date) hire_date,
+            strftime("%Y-%m", i.invoice_date) invoice_date
+        FROM invoice i
+        INNER JOIN customer c ON c.customer_id = i.customer_id
+        INNER JOIN employee e ON e.employee_id = c.support_rep_id
     )
 
 SELECT 
@@ -323,7 +320,6 @@ sales_pie.sort_values().plot.pie(
 )
 plt.title('$ Total Sales Performance', fontsize=12, fontweight='bold')
 plt.show()
-
 ```
 
 | sales_rep     |   total_sales |   sales_months |   avg_monthly_sales |
@@ -344,7 +340,7 @@ From the results it does appear that Jane is top of the leader board after all. 
 # Plot average monthy sales
 sales_totals.plot.barh(x='sales_rep', y='sales_per_month', legend=False, width=0.3, figsize=(10,3))
 
-# remove tick params and spines
+# Remove tick params and spines
 plt.tick_params(bottom=False, top=False, left=False, right=False)
 for key, value in plt.gca().spines.items():
     value.set_visible(False)
@@ -374,16 +370,15 @@ q2c='''
 
 WITH sales AS
     (
-    SELECT
-        (e.first_name || " " || e.last_name) sales_rep, 
-        i.total as sale, 
-        strftime("%Y-%m", i.invoice_date) invoice_date
-    FROM invoice i
-    INNER JOIN customer c ON c.customer_id = i.customer_id
-    INNER JOIN employee e ON e.employee_id = c.support_rep_id
-    WHERE e.hire_date <= i.invoice_date
-
-)
+        SELECT
+            (e.first_name || " " || e.last_name) sales_rep, 
+            i.total as sale, 
+            strftime("%Y-%m", i.invoice_date) invoice_date
+        FROM invoice i
+        INNER JOIN customer c ON c.customer_id = i.customer_id
+        INNER JOIN employee e ON e.employee_id = c.support_rep_id
+        WHERE e.hire_date <= i.invoice_date
+    )
 
 SELECT 
     sales_rep,
@@ -423,7 +418,6 @@ plt.legend(prop={'size': 14})
 plt.ylabel('$ Sales', fontsize=14)
 plt.title('$ Monthly Sales Perfomance', fontsize=16, fontweight='bold')
 plt.show()
-
 ```
 
 <img src="https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/chinook_monthly.png" alt="drawing" width="1000px" height="500px"/>
@@ -568,21 +562,22 @@ WITH dataset AS
     (
         SELECT
             CASE
-                WHEN n.customer_count = 1 THEN 'Other'
-                ELSE c.country
+                 WHEN n.customer_count = 1 THEN 'Other'
+                 ELSE c.country
             END AS other,
             c.country,
             c.customer_id,
             i.total,
             i.invoice_id
         FROM customer c
-        INNER JOIN (
-                    SELECT 
-                        country, 
-                        count(customer_id) customer_count
-                    FROM customer
-                    group by 1
-                    ) n ON n.country = c.country
+        INNER JOIN
+            (
+                SELECT 
+                    country, 
+                    count(customer_id) customer_count
+                FROM customer
+                GROUP BY 1
+            ) n ON n.country = c.country
         INNER JOIN invoice i ON i.customer_id = c.customer_id
     )
 
@@ -592,16 +587,18 @@ SELECT
     sum(total) total_sales,
     round(sum(total)/count(distinct customer_id), 2) avg_customer_spend,
     round(sum(total)/count(distinct invoice_id), 2) avg_order_value
-FROM (
-    SELECT
-        *,
-        CASE
-            WHEN other = 'Other' THEN 1
-            ELSE 0
-        END AS sort
-    FROM dataset)
-group by other
-order by sort, avg_customer_spend desc
+FROM 
+    (
+        SELECT
+            *,
+            CASE
+                WHEN other = 'Other' THEN 1
+                ELSE 0
+            END AS sort
+        FROM dataset
+    )
+GROUP BY other
+ORDER BY sort, avg_customer_spend DESC
 ;
 '''
 
@@ -748,14 +745,15 @@ album_invoice AS
             n.invoice_id,
             n.invoice_track_id
         FROM track t
-        INNER JOIN (
-                    SELECT 
-                        il.invoice_id,
-                        min(il.track_id) as invoice_track_id
-                    FROM invoice_line il
-                    INNER JOIN track t ON il.track_id = t.track_id
-                    GROUP BY 1
-                    ) n ON n.invoice_track_id = t.track_id
+        INNER JOIN 
+            (
+                SELECT 
+                    il.invoice_id,
+                    min(il.track_id) as invoice_track_id
+                FROM invoice_line il
+                INNER JOIN track t ON il.track_id = t.track_id
+                GROUP BY 1
+            ) n ON n.invoice_track_id = t.track_id
     ),
 
 compare_tracks AS
@@ -793,10 +791,10 @@ compare_tracks AS
 
 SELECT 
     album_purchased,
-    count(invoice_id) no_of_purchases,
-    round(cast(count(invoice_id) as float)/(select count(*) from invoice)*100, 2) percentage
+    COUNT(invoice_id) no_of_purchases,
+    ROUND(cast(count(invoice_id) as float)/(select count(*) from invoice)*100, 2) percentage
 FROM compare_tracks
-group by 1
+GROUP BY 1
 ;
 '''
 
