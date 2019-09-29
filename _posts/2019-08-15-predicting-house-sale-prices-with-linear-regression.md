@@ -6,7 +6,7 @@ categories: jekyll update
 ---
 
 >_"Prediction is very difficult, especially if it's about the future."_
->_- Nils Bohr, Nobel laureate in Physics_
+>_- Nils Bohr_
 
 ![painted_houses]({{ site.baseurl }}/images/Painted_Houses.jpg)
 
