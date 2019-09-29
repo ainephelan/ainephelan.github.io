@@ -30,7 +30,7 @@ Click through the below story for some high level insights. Each page is interac
 <h2><strong>Dashboard: Sales vs. Target by Department</strong></h2>
 <p>This next dashboard represents sales data for a fictitious supplier of office furniture, supplies and technology. The original data set can be downloaded <a href="https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/P1-AmazingMartEU2.xlsx">here</a>.</p>
 
-<p>The dashboard compares actual sales across time with sales targets. You can filter on the different departments to see how sales have been tracking for each area. I've also included a visualisation of sales value above or below target, to give a clear picture of sales performance for that month for the particular department.</p>
+<p>The dashboard compares actual sales across time with sales targets. You can filter on the different categories or departments on the right to see how sales have been tracking for each area. I've also included a visualisation of sales value above or below target, to give a clear picture of sales performance for that month for the particular department.</p>
 
 
 
