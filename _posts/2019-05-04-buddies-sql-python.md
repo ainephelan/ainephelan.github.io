@@ -196,7 +196,11 @@ It's now my job to analyze the purchases of customers belonging to each employee
 A few points to note with the Chinook database.
 - Invoices date up to December 2020
 - The link between sales agent and how much they have sold is sales rep -> customer -> invoice
-    - *However* I can see that there are invoices for customers of a particular rep existing from *before* that rep was hired. I assume that these customers were assigned to other reps before the current reps were hired, and made those purchases with these previous reps  
+    - *However* I can see that there are invoices for customers of a particular rep existing from *before* that rep was hired. I assume that these customers were assigned to other reps before the current reps were hired, and made those purchases with these previous reps
+
+I only want to consider sales that were made by each rep *after* their hire date.
+
+I will also want to get the total number of months with at least one successful sale for each rep, so that I can use this to calculate the average sale value per month. To assist with this I will convert the date format to `yyyy-mm`.  
     
 ```python
 q2a='''
@@ -204,27 +208,33 @@ q2a='''
 WITH sales AS
     (
     SELECT
-        (e.first_name || " " || e.last_name) employee_name, 
-        e.title,
-        e.hire_date,
-        c.customer_id,
-        i.total as sale, 
-        i.invoice_date
+        (e.first_name || " " || e.last_name) sales_rep,
+        strftime("%Y-%m", e.hire_date) hire_date,
+        strftime("%Y-%m", i.invoice_date) invoice_date
     FROM invoice i
 INNER JOIN customer c ON c.customer_id = i.customer_id
 INNER JOIN employee e ON e.employee_id = c.support_rep_id
 
 )
-
-
+    
 SELECT 
-    employee_name as sales_rep, 
-    strftime("%Y-%m", hire_date) hire_date,  
-    strftime("%Y-%m", min(invoice_date)) customer_first_invoice, 
-    strftime("%Y-%m", max(invoice_date)) customer_last_invoice,
-    cast((julianday('2020-12-31') - julianday(hire_date)) / 30 AS INTEGER) as rep_tenure_months
-FROM sales
-GROUP BY 1, 2
+    s.sales_rep,
+    s.hire_date,
+    min(s.invoice_date) as customer_first_invoice,
+    max(s.invoice_date) as customer_last_invoice,
+    m.sales_months
+FROM sales s
+INNER JOIN 
+    (
+        SELECT 
+            sales_rep,
+            count(distinct(invoice_date)) as sales_months
+        FROM sales
+        WHERE hire_date <= invoice_date
+        GROUP BY 1
+    ) m 
+    ON m.sales_rep = s.sales_rep
+GROUP BY 1
 ;
 
 '''
@@ -234,26 +244,29 @@ run_query(q2a)
 
 | sales_rep     | hire_date   | customer_first_invoice   | customer_last_invoice   |   rep_tenure_months |
 |:--------------|:------------|:-------------------------|:------------------------|:-------------------:|
-| Jane Peacock  | 2017-04     | 2017-01                  | 2020-12                 |                  45 |
+| Jane Peacock  | 2017-04     | 2017-01                  | 2020-12                 |                  44 |
 | Margaret Park | 2017-05     | 2017-01                  | 2020-12                 |                  44 |
-| Steve Johnson | 2017-10     | 2017-01                  | 2020-12                 |                  39 |
+| Steve Johnson | 2017-10     | 2017-01                  | 2020-12                 |                  37 |
 
 
-In order to analyse performance I'll look at sales from a few different angles:
+Now that I have established actual number of months with at least one successful sale, let's look at sales rep performance.
+
+I'll look at sales from a few different angles:
 
 1. Total sales
-2. Average monthly sales
-3. Actual sales month to month 
+2. Average monthly sales (mean)
+3. Sales trend month to month 
 4. Distribution of sales
+5. Median monthly sales
 
 
 #### 1. Total Sales to Date by Sales Rep
 
-I group totals sales by rep, only taking into account sales made after the rep hire date.
+I group total sales by rep, only taking into account sales made after the rep hire date.
 
-I can see that Jane is the highest performing rep with her sales making my 37% of total sales. Her sales total is 10% greater than Margaret's, and almost 32% greater than Steve's.
+I can see that Jane is the highest performing rep with her sales making almost 37% of total sales. Her sales total is 9.6% greater than Margaret's, and 29.6% greater than Steve's.
 
-However, she is the longest-serving sales rep, so it's not surprising that her running total of sales is greater than those of her colleagues.
+She is one of the longer serving reps however, with 19% more months successfully worked than Steve.
 
 ```python
 q2b='''
@@ -261,35 +274,41 @@ q2b='''
 WITH sales AS
     (
     SELECT
-        (e.first_name || " " || e.last_name) sales_rep, 
-        e.title,
-        e.hire_date,
-        c.customer_id,
-        i.total as sale, 
-        i.invoice_date
+        (e.first_name || " " || e.last_name) sales_rep,
+        i.total,
+        strftime("%Y-%m", e.hire_date) hire_date,
+        strftime("%Y-%m", i.invoice_date) invoice_date
     FROM invoice i
     INNER JOIN customer c ON c.customer_id = i.customer_id
     INNER JOIN employee e ON e.employee_id = c.support_rep_id
-    WHERE hire_date < invoice_date
-
-)
+    )
 
 SELECT 
-    sales_rep,
-    SUM(sale) AS total_sales,
-    CAST((julianday('2020-12-31') - julianday(hire_date)) / 30 AS INTEGER) AS rep_tenure_months,
-    ROUND((sum(sale) / CAST((julianday('2020-12-31') - julianday(hire_date)) / 30 AS INTEGER)), 2) sales_per_month
-FROM sales
-WHERE hire_date < invoice_date
-GROUP by 1
+    s.sales_rep,
+    sum(s.total) total_sales,
+    m.sales_months,
+    round((sum(s.total) / m.sales_months), 2) avg_monthly_sales
+FROM sales s
+INNER JOIN 
+    (
+        SELECT 
+            sales_rep,
+            count(distinct(invoice_date)) as sales_months
+        FROM sales
+        WHERE hire_date <= invoice_date
+        GROUP BY 1
+    ) m 
+    ON m.sales_rep = s.sales_rep 
+WHERE s.hire_date <= s.invoice_date
+GROUP BY 1
 ;
 
 '''
-
+# print total sales and average monthly sales
 print(run_query(q2b))
 
 # Assign to variable name
-sales_totals = run_query(q2)
+sales_totals = run_query(q2b)
 
 # Plot total sales data 
 plt.figure(figsize=(8,8))
@@ -303,10 +322,15 @@ sales_pie.sort_values().plot.pie(
     explode = explode
 )
 plt.title('$ Total Sales Performance', fontsize=12, fontweight='bold')
-plt.savefig('chinook_total_perf.png')
 plt.show()
 
 ```
+
+| sales_rep     |   total_sales |   sales_months |   avg_monthly_sales |
+|:--------------|--------------:|---------------:|:-------------------:|
+| Jane Peacock  |       1536.48 |             44 |               34.92 |
+| Margaret Park |       1401.84 |             44 |               31.86 |
+| Steve Johnson |       1185.03 |             37 |               32.03 |  
 
 ![chinook_total_perf]({{ site.baseurl }}/images/chinook_total_perf.png)
 
@@ -338,7 +362,10 @@ plt.show()
 
 Let's see how the reps perform relative to each other for any given month. I get all the sales data for reps grouped by month and plot it on a line graph.
 
-However, I can see **in this format** the results are not the easiest to interpret and draw conclusions from.
+However, I can see **in this format** the results are **not the easiest** to interpret and draw conclusions from.
+
+Nor do they give us any sense of how the reps perform overall relative to each other.
+
 
 ```python
 # Get total sales grouped by rep and sales month
@@ -349,22 +376,19 @@ WITH sales AS
     (
     SELECT
         (e.first_name || " " || e.last_name) sales_rep, 
-        e.title,
-        e.hire_date,
-        c.customer_id,
         i.total as sale, 
-        strftime("%Y-%m", i.invoice_date) invoice_year_month
-FROM invoice i
+        strftime("%Y-%m", i.invoice_date) invoice_date
+    FROM invoice i
     INNER JOIN customer c ON c.customer_id = i.customer_id
     INNER JOIN employee e ON e.employee_id = c.support_rep_id
-    WHERE hire_date < invoice_year_month
+    WHERE e.hire_date <= i.invoice_date
 
 )
 
 SELECT 
     sales_rep,
     sum(sale) as monthly_sales,
-    invoice_year_month
+    invoice_date
 FROM sales
 GROUP BY 1, 3
 ORDER BY 1, 3
@@ -376,16 +400,16 @@ ORDER BY 1, 3
 monthly_sales = run_query(q2c)
 
 # Format date column to datetime
-xticklables = monthly_sales['invoice_year_month'].unique().sort()
-monthly_sales['invoice_year_month']  = pd.to_datetime(monthly_sales['invoice_year_month'])
+monthly_sales['invoice_date']  = pd.to_datetime(monthly_sales['invoice_date'])
 
 # List of reps
 reps = monthly_sales['sales_rep'].unique()
 
 # Plot sales
 plt.figure(figsize=(26,14))
+
 for rep in reps:
-    plt.plot(monthly_sales.loc[monthly_sales['sales_rep'] == rep, 'invoice_year_month'], 
+    plt.plot(monthly_sales.loc[monthly_sales['sales_rep'] == rep, 'invoice_date'], 
           monthly_sales.loc[monthly_sales['sales_rep'] == rep, 'monthly_sales'], label = rep)
 
 # Remove tick params adnd spines
@@ -398,7 +422,6 @@ plt.yticks(fontsize=14)
 plt.legend(prop={'size': 14})
 plt.ylabel('$ Sales', fontsize=14)
 plt.title('$ Monthly Sales Perfomance', fontsize=16, fontweight='bold')
-plt.savefig('chinook_monthly.png')
 plt.show()
 
 ```
@@ -409,15 +432,20 @@ plt.show()
 #### 4. Distribution of Sales Values
 Let's take a look at the distributions of sales made instead.
 
-I'll display the median sales value as well. I'm choosing median as the most representative value as I can see all three distributions are a bit skewed, and the median is a robust statistic, resistant to the pull of outliers.
+I'll display the median monthly sales value as well. I'm choosing median as the most representative value as I can see all three distributions are somewhat skewed, and the median is a robust statistic, resistant to the pull of outliers.
 
-While we can see that the distributions are not incredibly dissimilar from each other, we have more of a granular understanding now of the types of sales that the reps are making. 
-#################################### sdfgsfd
-Jane however, does appear to outperform, with more higher value sales than her counterparts.
+From the below we immediately have a more of a granular understanding of the distributions of the monthly sales values for each rep. 
+
+I can see that Steve's monthly average is skewed by one very large sales month. So the \$32.03 value we calculated above as his mean value is not really representative of his typical monthly sale value.
+
+I can also see that Margaret's most frequent monthly sales values are higher than both her colleagues' most frequent monthly sales values. Jane's most frequent monthly sale values are higher than Steven's.
+
+Additionally, I can see where their sales fall relative to the group's `average` monthly sale value. Let's take a closer look at how many of their sales are above or below the group's average.
+
 
 ```python
 # Plot figure with 2 axes
-fig, axes = plt.subplots(nrows=2, ncols=1, figsize=(10, 14))
+fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(20, 6))
 ax1, ax2 = axes.flatten()
 fig.suptitle('$ Monthly Sales Performace', y=.93, fontsize=16, fontweight='bold')
 
@@ -452,13 +480,74 @@ for key, value in ax2.spines.items():
     value.set_visible(False)
 
 plt.legend(loc='upper left')
-plt.savefig('chinook_distros_a.png')
 plt.show()
-
 
 ```
 ![chinook_distros]({{ site.baseurl }}/images/chinook_distros_a.png)
 
+We can see below that both Jane and Margaret perform above the group's median monthly sales value roughly 50% of the time, and below the median monthly sales value roughly 50% of the time.
+
+Steve performs below the median monthly sales value 62% of the time, with 23 out of his 37 months landing below the group's average.
+
+```python
+# Get count of months above and below group average value for each rep
+median = monthly_sales['monthly_sales'].median()
+
+# Store reps and count of months above/below median
+months_above_median = {}
+months_below_median = {}
+
+for rep in reps:
+    month_above = monthly_sales[(monthly_sales['sales_rep'] == rep) & (monthly_sales['monthly_sales'] > median)].shape[0]
+    month_below = monthly_sales[(monthly_sales['sales_rep'] == rep) & (monthly_sales['monthly_sales'] <= median)].shape[0]
+    months_above_median[rep] = month_above
+    months_below_median[rep] = month_below    
+    
+median_df = pd.DataFrame(pd.Series(months_above_median), columns=['months_above_median'])
+median_df['months_below_median'] = pd.DataFrame(pd.Series(months_below_median))
+
+median_df
+```
+
+|   months_above_median |   months_below_median |
+|----------------------:|:---------------------:|
+|                    23 |                    21 |
+|                    22 |                    22 |
+|                    14 |                    23 |
+
+
+#### 5. Median Monthly Sales  
+I'll perform one last analysis. 
+
+As we saw above, each rep has a slightly skewed sales distribution. Given this, the median is a better statistic to use as the typical monthly sale value for each rep. I'll get the median monthly sale value of each rep and compare.
+
+Steve again has the lowest typical value. Jane's typical monthly sale value is the highest, just beating Margaret's.
+
+```python
+rep_medians = {}
+for rep in reps:
+    rep_median = monthly_sales.loc[monthly_sales['sales_rep'] == rep, 'monthly_sales'].median()
+    rep_medians[rep] = rep_median
+rep_medians
+```
+
+```python
+{'Jane Peacock': 32.67,
+ 'Margaret Park': 32.175000000000004,
+ 'Steve Johnson': 26.729999999999997}
+```  
+  
+From all the above analysis I can conclude:
+- Steve is the worst performing rep
+    - His most frequent sales are of low value relative to those of his colleagues
+    - The large majority of his sales are below the group average sales value
+    - He has the lowest typical monthly sale value
+    
+- There is really not much to chose between Jane's and Margaret's performances
+    - Margaret's most frequent sales are the highest value of the group, so she may be viewed as the most 'reliable' high performer
+    - Jane has gotten the highest total value of sales, with the help of a small number of higher value sales compared to her colleagues, however her most frequent monthly sale values are lower than Margaret's
+    - Jane's typical monthly sales performance is just higher than Margaret's
+    
 
 ## Task 3: Analysing Sales by Country
 
