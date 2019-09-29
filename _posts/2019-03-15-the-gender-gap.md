@@ -5,6 +5,9 @@ date:   2019-03-15 20:40:42 +1000
 categories: jekyll update
 ---
 
+>_“Any fool can know. The point is to understand.”_  
+>_― Albert Einstein_
+
 ![train](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/People_Train.jpg)
 
 ## Visualising the Gender Gap in College Majors  
