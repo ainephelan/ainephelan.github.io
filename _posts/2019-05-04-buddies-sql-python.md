@@ -106,7 +106,7 @@ WITH dataset AS
         g.name genre
     FROM invoice_line il
     INNER JOIN invoice i ON il.invoice_id = i.invoice_id
-    INNER JOIN tracK t ON il.track_id = t.track_id
+    INNER JOIN track t ON il.track_id = t.track_id
     INNER JOIN genre g ON t.genre_id = g.genre_id
     WHERE i.billing_country = 'USA'
     )
@@ -193,12 +193,11 @@ It's now my job to analyze the purchases of customers belonging to each employee
 #### Note:
 A few points to note with the Chinook database.
 - Invoices date up to December 2020
-- The link between sales agent and how much they have sold is sales rep -> customer -> invoice
-    - *However* I can see that there are invoices for customers of a particular rep existing from *before* that rep was hired. I assume that these customers were assigned to other reps before the current reps were hired, and made those purchases with these previous reps
+- The link between sales agent and how much they have sold is sales rep -> customer -> invoice. *However*, as demonstrated below, I can see that there are invoices for customers of a particular rep existing from *before* that rep was hired. I assume that these customers were assigned to other reps before the current reps were hired, and made those purchases with these previous reps.
 
 I only want to consider sales that were made by each rep *after* their hire date.
 
-I will also want to get the total number of months with at least one successful sale for each rep, so that I can use this to calculate the average sale value per month. To assist with this I will convert the date format to `yyyy-mm`.  
+I will also want to get the total number of months with at least one successful sale for each rep, so that I can use this to calculate the average sale value per month. To assist with this I will convert the date format to `yyyy-mm`. 
     
 ```python
 q2a='''
@@ -348,7 +347,6 @@ plt.gca().invert_yaxis()
 plt.ylabel('')
 plt.xlabel('$ Sales')
 plt.title('$ Avg Sales per Month Performance', fontsize=12, fontweight='bold')
-plt.savefig('chinook_month_perf.png')
 plt.show()
 ```
 
@@ -503,11 +501,11 @@ median_df['months_below_median'] = pd.DataFrame(pd.Series(months_below_median))
 median_df
 ```
 
-|   months_above_median |   months_below_median |
-|----------------------:|:---------------------:|
-|                    23 |                    21 |
-|                    22 |                    22 |
-|                    14 |                    23 |
+| sales_rep     |   months_above_median |   months_below_median |
+|:--------------|----------------------:|:---------------------:|
+| Jane Peacock  |                    23 |                    21 |
+| Margaret Park |                    22 |                    22 |
+| Steve Johnson |                    14 |                    23 |
 
 
 #### 5. Median Monthly Sales  
