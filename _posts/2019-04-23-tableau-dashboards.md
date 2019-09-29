@@ -12,7 +12,8 @@ categories: jekyll update
 
 This page will be a home for my Tableau dashboards and stories.  I'll update with it new boards as I make them.
 
-# Bank Customer Segment Story
+<h2><strong>Story: Bank Customer Segment</strong></h2>
+
 The following is a story deep-diving into the customer segmentation of an fictitious bank in the United Kingdom. The data set can be downloaded from [here](https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/P1-UK-Bank-Customers.csv).
  
 I have visualised data for customers' geographic locations, bank balances, ages, genders and job classifications.
@@ -29,7 +30,7 @@ Click through the below story for some high level insights. Each page is interac
    
 <\p>
 
-<h2><strong>Sales vs. Target by Department</strong></h2>
+<h2><strong>Dashboard: Sales vs. Target by Department</strong></h2>
 <p>This next dashboard is sales data for a fictitious supplier of office furniture, supplies and technology. The original data set can be downloaded <a href="https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/P1-AmazingMartEU2.xlsx">here</a>.</p>
 
 <p>The dashboard compares actual sales across time with sales targets. You can filter on the different departments to see how sales have been tracking for each area. I've also included a visualisation of sales value above or below target, to give a very clear picture of sales performance for that month for the particular area.</p>
