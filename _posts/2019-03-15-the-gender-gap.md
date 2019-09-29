@@ -11,7 +11,7 @@ categories: jekyll update
 ![train](https://raw.githubusercontent.com/ainephelan/ainephelan.github.io/master/images/People_Train.jpg)
 
 ## Visualising the Gender Gap in College Majors  
-Today I'll be creating visualisations which communicate the historical narrative of the gender gap in different fields of study in the US.
+In this post I'll be creating visualisations which communicate the historical narrative of the gender gap in different fields of study in the US.
 
 I'll use the already cleaned data set described below, and I'm going to take the opportunity to practice some techniques to eliminate [chartjunk](https://en.wikipedia.org/wiki/Chartjunk) and maximise the [data-ink ratio](https://infovis-wiki.net/wiki/Data-Ink_Ratio).  I want these visuals to be communicative and complete, not requiring any ancillary data to be understood.
 
