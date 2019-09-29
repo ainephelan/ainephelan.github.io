@@ -96,7 +96,7 @@ Our target market is the USA, so decide to investigate what genres already perfo
 
 I extract data for total dollar value and percentage of the market held by the different genres of music in the US. 
 
-```Python
+```python
 q1 = '''
 WITH dataset AS
 (
