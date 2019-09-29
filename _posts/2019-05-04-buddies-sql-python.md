@@ -206,8 +206,8 @@ WITH sales AS
     (
         SELECT
             (e.first_name || " " || e.last_name) sales_rep,
-            strftime("%Y-%m", e.hire_date) hire_date,
-            strftime("%Y-%m", i.invoice_date) invoice_date
+            STRFTIME("%Y-%m", e.hire_date) hire_date,
+            STRFTIME("%Y-%m", i.invoice_date) invoice_date
         FROM invoice i
         INNER JOIN customer c ON c.customer_id = i.customer_id
         INNER JOIN employee e ON e.employee_id = c.support_rep_id
@@ -216,8 +216,8 @@ WITH sales AS
 SELECT 
     s.sales_rep,
     s.hire_date,
-    min(s.invoice_date) as customer_first_invoice,
-    max(s.invoice_date) as customer_last_invoice,
+    MIN(s.invoice_date) customer_first_invoice,
+    MAX(s.invoice_date) customer_last_invoice,
     m.sales_months
 FROM sales s
 INNER JOIN 
@@ -281,15 +281,15 @@ WITH sales AS
 
 SELECT 
     s.sales_rep,
-    sum(s.total) total_sales,
+    SUM(s.total) total_sales,
     m.sales_months,
-    round((sum(s.total) / m.sales_months), 2) avg_monthly_sales
+    ROUND((SUM(s.total) / m.sales_months), 2) avg_monthly_sales
 FROM sales s
 INNER JOIN 
     (
         SELECT 
             sales_rep,
-            count(distinct(invoice_date)) as sales_months
+            COUNT(DISTINCT(invoice_date)) sales_months
         FROM sales
         WHERE hire_date <= invoice_date
         GROUP BY 1
@@ -343,6 +343,7 @@ sales_totals.plot.barh(x='sales_rep', y='sales_per_month', legend=False, width=0
 plt.tick_params(bottom=False, top=False, left=False, right=False)
 for key, value in plt.gca().spines.items():
     value.set_visible(False)
+    
 plt.gca().invert_yaxis()
 plt.ylabel('')
 plt.xlabel('$ Sales')
@@ -371,7 +372,7 @@ WITH sales AS
         SELECT
             (e.first_name || " " || e.last_name) sales_rep, 
             i.total as sale, 
-            strftime("%Y-%m", i.invoice_date) invoice_date
+            STRFTIME("%Y-%m", i.invoice_date) invoice_date
         FROM invoice i
         INNER JOIN customer c ON c.customer_id = i.customer_id
         INNER JOIN employee e ON e.employee_id = c.support_rep_id
@@ -380,7 +381,7 @@ WITH sales AS
 
 SELECT 
     sales_rep,
-    sum(sale) as monthly_sales,
+    SUM(sale) monthly_sales,
     invoice_date
 FROM sales
 GROUP BY 1, 3
@@ -437,7 +438,7 @@ Additionally, I can see where their sales fall relative to the group's `average`
 
 ```python
 # Plot figure with 2 axes
-fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(20, 6))
+fig, axes = plt.subplots(nrows=2, ncols=1, figsize=(12, 16))
 ax1, ax2 = axes.flatten()
 fig.suptitle('$ Monthly Sales Performace', y=.93, fontsize=16, fontweight='bold')
 
@@ -485,7 +486,7 @@ Steve performs below the median monthly sales value 62% of the time, with 23 out
 # Get count of months above and below group average value for each rep
 median = monthly_sales['monthly_sales'].median()
 
-# Store reps and count of months above/below median
+# Store counts of months above/below median for each rep
 months_above_median = {}
 months_below_median = {}
 
@@ -572,7 +573,7 @@ WITH dataset AS
             (
                 SELECT 
                     country, 
-                    count(customer_id) customer_count
+                    COUNT(customer_id) customer_count
                 FROM customer
                 GROUP BY 1
             ) n ON n.country = c.country
@@ -581,10 +582,10 @@ WITH dataset AS
 
 SELECT 
     other country, 
-    count(distinct customer_id) total_customers,
-    sum(total) total_sales,
-    round(sum(total)/count(distinct customer_id), 2) avg_customer_spend,
-    round(sum(total)/count(distinct invoice_id), 2) avg_order_value
+    COUNT(distinct customer_id) total_customers,
+    SUM(total) total_sales,
+    ROUNT(SUM(total)/count(distinct customer_id), 2) avg_customer_spend,
+    ROUND(SUM(total)/count(distinct invoice_id), 2) avg_order_value
 FROM 
     (
         SELECT
@@ -702,7 +703,6 @@ ax4.tick_params(top=False, right=False, left=False, bottom=False)
 for value in ax4.spines.values():
     value.set_visible(False)
     
-plt.savefig('chinook_countries.png')
 plt.show()
 ```
 
@@ -747,7 +747,7 @@ album_invoice AS
             (
                 SELECT 
                     il.invoice_id,
-                    min(il.track_id) as invoice_track_id
+                    MIN(il.track_id) invoice_track_id
                 FROM invoice_line il
                 INNER JOIN track t ON il.track_id = t.track_id
                 GROUP BY 1
@@ -761,24 +761,24 @@ compare_tracks AS
             CASE
                 WHEN
                     (
-                        SELECT t.track_id from track t
-                        where t.album_id = ai.album_id
+                        SELECT t.track_id FROM track t
+                        WHERE t.album_id = ai.album_id
                         
                         EXCEPT
                         
-                        SELECT il.track_id from invoice_line il
-                        where il.invoice_id = ai.invoice_id
+                        SELECT il.track_id FROM invoice_line il
+                        WHERE il.invoice_id = ai.invoice_id
                     )  IS NULL
                     
                     AND
                     (
-                        SELECT il.track_id from invoice_line il
-                        where il.invoice_id = ai.invoice_id
+                        SELECT il.track_id FROM invoice_line il
+                        FROM il.invoice_id = ai.invoice_id
                         
                         EXCEPT
                         
-                        SELECT t.track_id from track t
-                        where t.album_id = ai.album_id
+                        SELECT t.track_id FROM track t
+                        WHERE t.album_id = ai.album_id
                                                 
                     )  IS NULL
                 THEN "Yes"
@@ -790,7 +790,7 @@ compare_tracks AS
 SELECT 
     album_purchased,
     COUNT(invoice_id) no_of_purchases,
-    ROUND(cast(count(invoice_id) as float)/(select count(*) from invoice)*100, 2) percentage
+    ROUND(CAST(COUNT(invoice_id) AS float)/(SELECT COUNT(*) FROM invoice)*100, 2) percentage
 FROM compare_tracks
 GROUP BY 1
 ;
