@@ -14,7 +14,7 @@ This page will be a home for my Tableau dashboards and stories.  I'll update wit
 
 <h2><strong>Story: Bank Customer Segment</strong></h2>
 
-The following is a story deep-diving into the customer segmentation of an fictitious bank in the United Kingdom. The data set can be downloaded from [here](https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/P1-UK-Bank-Customers.csv).
+The following story deep-dives into the customer segmentation of a fictitious bank in the United Kingdom. The original data set can be downloaded from [here](https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/P1-UK-Bank-Customers.csv).
  
 I have visualised data for customers' geographic locations, bank balances, ages, genders and job classifications.
 
