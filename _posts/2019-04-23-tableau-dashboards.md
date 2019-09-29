@@ -12,7 +12,7 @@ categories: jekyll update
 
 This page will be a home for my Tableau dashboards and stories.  I'll update with it new boards as I make them.
 
-<h2><strong>Story: Bank Customer Segment</strong></h2>
+<h2><strong>Story: Bank Customer Segmentation</strong></h2>
 
 The following story deep-dives into the customer segmentation of a fictitious bank in the United Kingdom. The original data set can be downloaded from [here](https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/P1-UK-Bank-Customers.csv).
  
