@@ -272,8 +272,8 @@ WITH sales AS
         SELECT
             (e.first_name || " " || e.last_name) sales_rep,
             i.total,
-            strftime("%Y-%m", e.hire_date) hire_date,
-            strftime("%Y-%m", i.invoice_date) invoice_date
+            STRFTIME("%Y-%m", e.hire_date) hire_date,
+            STRFTIME("%Y-%m", i.invoice_date) invoice_date
         FROM invoice i
         INNER JOIN customer c ON c.customer_id = i.customer_id
         INNER JOIN employee e ON e.employee_id = c.support_rep_id
