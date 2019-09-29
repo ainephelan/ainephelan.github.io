@@ -5,7 +5,7 @@ date:   2019-08-15 14:40:42 +1000
 categories: jekyll update
 ---
 
->_"Prediction is very difficult, especially if it's about the future."_
+>_"Prediction is very difficult, especially if it's about the future."_  
 >_- Nils Bohr_
 
 ![painted_houses]({{ site.baseurl }}/images/Painted_Houses.jpg)
