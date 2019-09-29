@@ -5,7 +5,7 @@ date:   2017-03-10 21:06:48 +1000
 categories: jekyll update
 ---
 
->_“Some beautiful paths can't be discovered without getting lost.”_
+>_“Some beautiful paths can't be discovered without getting lost.”_  
 >_― Erol Ozan_
 
 
