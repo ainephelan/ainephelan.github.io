@@ -24,6 +24,10 @@ Click through the below story for some high level insights. Each page is interac
 <div class='tableauPlaceholder' id='viz1569754094182' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ba&#47;BankCustomerSegmentationDashboard_15697523286960&#47;SegmentationStory&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='BankCustomerSegmentationDashboard_15697523286960&#47;SegmentationStory' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ba&#47;BankCustomerSegmentationDashboard_15697523286960&#47;SegmentationStory&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1569754094182');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 
 </center>
+<p>
+   
+   
+<\p>
 
 <h2><strong>Sales vs. Target by Department</strong></h2>
 <p>This next dashboard is sales data for a fictitious supplier of office furniture, supplies and technology. The original data set can be downloaded <a href="https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/P1-AmazingMartEU2.xlsx">here</a>.</p>
