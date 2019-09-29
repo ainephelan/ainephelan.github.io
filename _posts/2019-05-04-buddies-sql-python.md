@@ -517,7 +517,9 @@ As we saw above, each rep has a slightly skewed sales distribution. Given this, 
 Steve again has the lowest typical value. Jane's typical monthly sale value is the highest, just beating Margaret's.
 
 ```python
+# Get median monthly sales value for each rep
 rep_medians = {}
+
 for rep in reps:
     rep_median = monthly_sales.loc[monthly_sales['sales_rep'] == rep, 'monthly_sales'].median()
     rep_medians[rep] = rep_median
