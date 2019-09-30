@@ -23,10 +23,10 @@ I find I am reading a lot for personal development lately, an article or two eve
   
 Medium has a lot to answer for.  
   
-Writing is a topic that crops up over and over (machine learning at its finest I'm sure, but I'm not complaining) as a tool for betterment - writing to clear your mind and combat anxiety, for creativity, productivity, to bolster your own learning, or to boost your profile. 
+Writing is a topic that crops up over and over (machine learning at its finest I'm sure, but I'm not complaining) as a tool for betterment - writing to clear your mind and combat anxiety, for creativity, focus, productivity, to bolster your own learning, or to boost your profile. The jury is still out on a lot of these, but I do know that the more I do, the more I enjoy. And the act of writing something out as though explaining it to a peer or a student forces my own understanding to deepen. I do believe you don't truly understand something until you can wrap words around it and express it.
 
 ### Data Science
-I’ve been teaching myself data science for a few months now. 
+I’ve been teaching myself data science for a few months now. It's a solo endeavour so far, me and my lonely laptop.
 
 But, how do you break into a new field? How do you share the work you’ve done, and get your projects and insights out before the eyes of the world? How do you showcase that not only have you got the technical chops, but you’re a pretty legendary communicator too? The internet has a lot to say about this too, namely: “Blog”. Industry friends are in agreement: “Blog”.
 
