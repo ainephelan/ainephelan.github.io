@@ -18,14 +18,14 @@ Who am I to argue with the universe?
 ### Journaling
 A friend bought me a goal-tracking journal. I made sure to leave it in a drawer gathering dust for a year before it felt it was ready for use, but once I _did_ start using it, I loved it! 2 brief sessions morning and night, bookending my day, providing a framework for me to organise and and hold myself accountable. It was theraputic. I began to feel more in control, more clear in what I was doing. I was less prone to procrastination - I knew every morning what I wanted to get out of the day. And of course I could make sure to eat my frogs first. Yum, frogs.
 
-## Articles are everywhere
+### The Ubiquity of Articles
 I find I am reading a lot for personal development lately, an article or two every other day to do with learning, productivity, creativity, mental health, data science, or all of the above.  
   
 Medium has a lot to answer for.  
   
 Writing is a topic that crops up over and over (machine learning at its finest I'm sure, but I'm not complaining) as a tool for betterment - writing to clear your mind and combat anxiety, for creativity, productivity, to bolster your own learning, or to boost your profile. 
 
-## Data Science
+### Data Science
 I’ve been teaching myself data science for a few months now. 
 
 But, how do you break into a new field? How do you share the work you’ve done, and get your projects and insights out before the eyes of the world? How do you showcase that not only have you got the technical chops, but you’re a pretty legendary communicator too? The internet has a lot to say about this too, namely: “Blog”. Industry friends are in agreement: “Blog”.
