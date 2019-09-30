@@ -8,7 +8,7 @@ Hello. I'm Áine and I do data science and analytics. I mostly work in Python an
 
 Data was an easy sell for me. My analytical skills are far and away my favourite to use, followed by my curiosity, a love of communication and an impulse towards excellence. I couple these skills with deep interests in human behaviour, storytelling and business.
 
-This is what data science is to me - the meeting of analysis and excellence and curiosity and business and behaviour and storytelling, with boundless potential. It touches everything. You have an interest? Go forth and explore it. A skill you wish to develop? Right this way ma'am!
+This is what data science is to me - the meeting of analysis and excellence and curiosity and business and behaviour and storytelling, with boundless potential. It touches everything. It lets you play, explore and build in domains of your interest, whatever those might be, and develop untold skills along the way.
 
 So that's me. 
 
