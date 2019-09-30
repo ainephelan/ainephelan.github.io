@@ -22,7 +22,7 @@ I find I am reading a lot for personal development lately, an article or two eve
   
 Medium has a lot to answer for.  
   
-Writing is a topic that crops up over and over (machine learning at its finest I'm sure, but I'm not complaining) as a tool for betterment - writing to clear your mind and combat anxiety, for creativity, focus, productivity, to bolster your own learning, or to boost your profile. The jury is still out on a lot of these, but I do know that the more I do, the more I enjoy. And the act of writing something out as though explaining it to a peer or a student forces my own understanding to deepen. I do believe you don't truly understand something until you can wrap words around it and express it.
+Writing is a topic that crops up over and over (machine learning at its finest I'm sure, but I'm not complaining) as a tool for betterment - writing to clear your mind and combat anxiety, for creativity, focus, productivity, to bolster your own learning, or to boost your profile. I can't attest to all of these yet, but I have experienced noticeable benefits as I mentioned above. And the act of writing something out as though explaining it to a peer or a student forces my own understanding to deepen. I do believe you don't truly understand something until you can wrap words around it and express it.
 
 ### Data Science
 I’ve been teaching myself data science for a few months now. It's a solo endeavour so far, me and my lonely laptop.
