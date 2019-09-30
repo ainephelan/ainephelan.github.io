@@ -8,7 +8,7 @@ categories: jekyll update
 >_“In every walk with Nature one receives far more than he seeks.”_  
 >_― John Muir_
 
-![path]({{ site.baseurl }}/images/Wooden_Pathway_Forest.jpg)
+![path]({{ site.baseurl }}/images/road_path_green_grasses.jpg)
 
 So, a blog. I'm as surprised as anyone really, but the universe seems to be converging on a point when it comes to this. 
 
