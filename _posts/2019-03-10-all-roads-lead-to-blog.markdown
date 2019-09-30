@@ -5,9 +5,8 @@ date:   2017-03-10 21:06:48 +1000
 categories: jekyll update
 ---
 
->_“Some beautiful paths can't be discovered without getting lost.”_  
->_― Erol Ozan_
-
+>_“In every walk with Nature one receives far more than he seeks.”_ 
+>_― John Muir_
 
 ![path]({{ site.baseurl }}/images/road_path_green_grasses.jpg)
 
