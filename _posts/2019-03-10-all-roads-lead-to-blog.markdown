@@ -15,7 +15,7 @@ So, a blog. I'm as surprised as anyone really, but the universe seems to be conv
 Who am I to argue with the universe?
 
 ### Journaling
-A friend bought me a goal-tracking journal. I made sure to leave it in a drawer gathering dust for a year before it felt it was ready for use, but once I _did_ start using it, I loved it! Two brief sessions morning and night, bookending my day, providing a framework for me to organise and hold myself accountable. It was therapeutic. I began to feel more in control, clearer in what I was doing. I was less prone to procrastination - I knew every morning what I wanted to get out of the day. And of course, I could make sure to eat my frogs first. Yum, frogs.
+A friend bought me a goal-tracking journal. I made sure to leave it in a drawer gathering dust for a year before it felt ready for use, but once I _did_ start using it, I loved it! Two brief sessions morning and night, bookending my day, providing a framework for me to organise and hold myself accountable. It was therapeutic. I began to feel more in control, clearer in what I was doing. I was less prone to procrastination - I knew every morning what I wanted to get out of the day. And of course, I could make sure to eat my frogs first. Yum, frogs.
 
 ### The Ubiquity of Articles
 I find I am reading a lot for personal development lately, an article or two every other day to do with learning, productivity, creativity, mental health, data science, or all of the above.  
