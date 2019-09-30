@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Hello. I'm Áine and I do data science and analytics. I mostly work in Python and SQL, and whatever else I pick up along the way to help me get done what I need to do.
+Hello. I'm Áine and I do data science and analytics. I mostly work in Python and SQL, and whatever else I pick up along the way to help me get done what I'm trying to do.
 
 Data was an easy sell for me. My analytical skills are far and away my favourite to use, followed by my curiosity, a love of communication and an impulse towards excellence. I couple these skills with deep interests in human behaviour, storytelling and business.
 
