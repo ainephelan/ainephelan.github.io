@@ -18,7 +18,7 @@ The following story deep-dives into the customer segmentation of a fictitious ba
  
 I have visualised data for customers' geographic locations, bank balances, ages, genders and job classifications.
 
-Click through the below story for some high level insights. Each page is interactive, and each feature acts as a filter for all the other features.  
+Click through the below story for some high level insights. Each page is interactive, and each feature acts as a filter for all the other features. You can select different bin values for age and bank balance.
 
 <center>
   
