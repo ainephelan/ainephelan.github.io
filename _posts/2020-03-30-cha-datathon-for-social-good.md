@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Buddies! Answering Business Questions with SQL & Python"
-date:   2019-05-04 20:40:42 +1000
+title:  "CHA Datathon for Social Good"
+date:   2020-03-30 20:40:42 +1000
 categories: jekyll update
 ---
 >_"Alone we can do little; together we can do so much."_   
