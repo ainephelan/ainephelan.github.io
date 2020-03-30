@@ -9,6 +9,9 @@ categories: jekyll update
 
 ![slide1](https://github.com/ainephelan/ainephelan.github.io/blob/master/images/Screen%20Shot%202020-03-30%20at%209.36.44%20pm.png)
   
+![test]({{ site.baseurl }}/images/"Screen Shot 2020-03-30 at 9.36.44 pm".png)
+  
+  
 ![buddies]({{ site.baseurl }}/images/buddies.jpg)
 
 # Mining the Chinook Database with SQL and Python
