@@ -185,9 +185,15 @@ For our calculations we used [Simpson's Index of Diveristy](https://en.wikipedia
 
 ### 1.5 'Spread' of activities for children and adults
 
-In this section we addressed another key success measure, asking ourselves questions about the proportion of activities offered to adults and children. Again, we came at this in a number of different ways to help with our understanding, looking at  
+In this section we addressed another key success measure, asking ourselves questions about the proportion of activities on offer to adults, compared with those on offer to children.   
+  
+Again, we came at this in a number of different ways to help with our understanding, looking at:    
 - adult-only and child-only activities
-- mixed activities  
+- mixed activities (those where both children and adults attended)  
+  
+&nbsp;  
+  
+    
   
 ![13_ratio]({{ site.baseurl }}/images/cha_dfsg_images/13_ratio.png)   
   
