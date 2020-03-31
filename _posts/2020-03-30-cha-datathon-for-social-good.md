@@ -69,10 +69,10 @@ Thus, we made the decision to treat January as an extreme outlier and remove it 
   
 We first took a look at how long hubs had been running  
 - at the general level   
+- at an individial level, and compared with one another 
   
 ![1_age]({{ site.baseurl }}/images/cha_dfsg_images/1_age.png)  
-         
-- at an individial level, and compared with one another  
+          
  
 ![2_ageheatmap]({{ site.baseurl }}/images/cha_dfsg_images/2_ageheatmap.png)  
 
@@ -89,10 +89,12 @@ In this section we take a general look at the activities and ansered questions a
   
   
 ### 1.3 Engagement  
-A key measure of successm in this section we dove into the data on participants to help us learn more about how engaged the community was at each hub. At a general and an individual hub level, we asked and answered questions to do with:  
+A key measure of success for CHA, in this section we dove into the data on participation to help us understand how engaged the community was at each hub. 
+
+At a general and an individual hub level, we asked and answered questions to do with:  
 - average participation per activity  
 - throughput of participants per month   
-- the breakdown of these participants into adult and children 
+- the breakdown of participation by adults and children  
 
 ![6_participants]({{ site.baseurl }}/images/cha_dfsg_images/6_participants.png)  
   
@@ -105,11 +107,28 @@ A key measure of successm in this section we dove into the data on participants 
 ![10_part_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/10_part_heatmap.png)  
 
 ### 1.4 Diversity of Programmes  
+Another key success measure, this section measures and compares hubs for the diversity of the programs offered.  
 
+Looking to Ecology and Information Theory, the concept of diversity can be quantified taking [2 main factors](http://www.countrysideinfo.co.uk/simpsons.htm) into account:
+- Richness - the number of different specis in a sample. The greater the number of species, the 'richer' and more diverse the sample is
+- Evenness - the relative abundance of these species. The more evenly distributed the number of individuals in different species are, the higher the 'evenness' and the more diverse the sample is
   
+So, to be diverse, we need to see hubs with
+- a good number of different programs on offer
+- an even distribution of activities for each of those programmes
+
+To help with our calculations we used [Simpson's Index of Diveristy](https://en.wikipedia.org/wiki/Diversity_index#Simpson_index), which ranges from 0 to 1, with 0 being the least diverse, and 1 being the most diverse.  
+    
 ![11_diversity.]({{ site.baseurl }}/images/cha_dfsg_images/11_diversity.png)  
   
 ![12_diversity_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/12_diversity_heatmap.png)  
+
+
+### 1.5 'Spread' of activities for children and adults
+
+In this section we addressed another key success measure, asking ourselves questions about the proportion of activities offered to adults and children. Again, we came at this in a number of different ways to help with our understanding, looking at  
+- adult-only and child-only activities
+- mixed activities  
   
 ![13_ratio]({{ site.baseurl }}/images/cha_dfsg_images/13_ratio.png)  
   
