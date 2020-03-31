@@ -73,7 +73,7 @@ Thus, we made the decision to treat January as an extreme outlier and, where dee
   
 We first took a look at how long hubs had been running:  
 - at the general level   
-- at an individial level, and compared with one another 
+- at an individial level, and compared with one another  
    
 &nbsp;  
   
@@ -93,6 +93,10 @@ We first took a look at how long hubs had been running:
 In this section we took an initial look at activities and answered questions around: 
 - how many activities do hubs run?  
 - who are these activities catering to?  
+  
+&nbsp;  
+  
+    
 
 ![3_activities]({{ site.baseurl }}/images/cha_dfsg_images/3_activities.png)  
   
@@ -115,8 +119,11 @@ A key measure of success for CHA, in this section we dove into the data on parti
 At a general and an individual hub level, we asked and answered questions to do with:  
 - average participation per activity  
 - throughput of participants per month   
-- the breakdown of participation by adults and children  
-
+- the breakdown of participation by adults and children   
+  
+&nbsp;  
+  
+    
 ![6_participants]({{ site.baseurl }}/images/cha_dfsg_images/6_participants.png)   
   
 &nbsp;  
@@ -150,14 +157,18 @@ At a general and an individual hub level, we asked and answered questions to do 
 Another key measure of success, this section measures and compares hubs on the diversity of programmes offered.  
 
 Looking to Ecology and Information Theory, the concept of diversity can be quantified taking [2 main factors](http://www.countrysideinfo.co.uk/simpsons.htm) into account:  
-- Richness - the number of different specis in a sample. The greater the number of species, the 'richer' and more diverse the sample is
-- Evenness - the relative abundance of these species. The more evenly distributed the number of individuals in different species are, the higher the 'evenness' and the more diverse the sample is.  
+- Richness - the number of different species in a sample. The greater the number of species, the 'richer' and more diverse the sample is
+- Evenness - the relative abundance of these species. The more evenly distributed the number of individuals in different species are, the more 'even' and diverse the sample is
   
-So, to be highly diverse, we need to see hubs with  
+So, for hub programmes to be highly diverse, we need to see hubs with  
 - a high number of different programmes on offer  
-- an even distribution of activities withing each of those programmes  
+- an even distribution of activities within each of those programmes  
 
-To help with our calculations we used [Simpson's Index of Diveristy](https://en.wikipedia.org/wiki/Diversity_index#Simpson_index), which ranges from 0 to 1, with 0 being the least diverse, and 1 being the most diverse.  
+To help with our calculations we used [Simpson's Index of Diveristy](https://en.wikipedia.org/wiki/Diversity_index#Simpson_index), which ranges from 0 to 1, with 0 being the least diverse, and 1 being the most diverse.   
+  
+&nbsp;  
+  
+    
     
 ![11_diversity.]({{ site.baseurl }}/images/cha_dfsg_images/11_diversity.png)   
   
