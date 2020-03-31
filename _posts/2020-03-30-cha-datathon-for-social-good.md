@@ -66,10 +66,13 @@ Thus, we made the decision to treat January as an extreme outlier and remove it 
 ## 1. What is a Typical Hub? 
 ### 1.1 Hub Age
   
-We first took a look at how long hubs had been running for, at both the general level and the individual.  
+We first took a look at how long hubs had been running for  
+- at the general level   
   
 ![1_age]({{ site.baseurl }}/images/cha_dfsg_images/1_age.png)  
-  
+
+- at an individial level, and compared with one another  
+ 
 ![2_ageheatmap]({{ site.baseurl }}/images/cha_dfsg_images/2_ageheatmap.png)  
 
 ### 1.1 Hub Activities
