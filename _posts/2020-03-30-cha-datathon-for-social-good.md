@@ -20,12 +20,12 @@ Report by Áine Phelan and Patrick Healy
 ### Context
 Patrick and I participated in Melbourne’s first [Datathon for Social Good](https://www.ourcommunity.com.au/datathon), serving [Community Hubs Australia](https://www.communityhubs.org.au/) (CHA), a not-for-profit organisation which helps to build social cohesion Australia-wide, particularly amongst the migrant community.  
 
-Community Hubs and their programs are gateways that engage and support migrant women with young children. There are already dozens of hubs in operation, and future plans to expand. Hubs are hosted in schools to provide a range of activities for children and adults, such as English lessons, maternal and child health, and playgroups. They provide welcoming places for migrant families, especially mothers of young children, to come and connect.  
+Community Hubs and their programmes are gateways that engage and support migrant women with young children, where isolation can be a serious social issue. There are already dozens of hubs in operation, and future plans to expand. Hubs are hosted in schools to provide a range of activities for children and adults, such as English lessons, maternal and child health, and playgroups. They provide welcoming places for migrant families, and especially these mothers, to come and connect.  
 
 The highly motivating challenge in this datathon was to use provided data to learn more about the activities and impacts of Community Hubs.  
 
 ### Data
-The original repostitory can be found [here](https://gitlab.com/mechakozai/datathon-social-good).  
+The original datathon repostitory can be found [here](https://gitlab.com/mechakozai/datathon-social-good).  
   
 ### Problem Statement  
 Out team chose the Internal Data track challenge. Our challenge was to use internal organisational data to answer questions such as, _"What is a ‘typical’ hub and what is an ‘outlier’?"_
@@ -35,7 +35,7 @@ In addition to the above prompt, we were encouraged to be as creative as we like
 ### Scope
 Our report is comprised of 2 main parts:  
 
-#### 1. Analysis of the 'typical hub' based on Key Measures of Success  
+#### 1. Analysis of the 'Typical Hub' based on Key Measures of Success  
 We took the approach of focusing on the measures of success important to CHA, as advised to us during the datathon briefing. These included:  
 - Engagement
 - Diversity of programs
@@ -45,15 +45,19 @@ For these and other measures detailed in this report we created:
 - a distribution of values for each measure - finding the 'typical' values, the general ranges, and also noting extreme outliers
 - a breakdown of these values at an individual hub level - mapping a value back to its hub, and using heatmapping to compare these values to each other at a hub level  
 
-We have come at each key success measure in a variety of different ways, looking at each from multiple angles as we believe that [multiple contexts](https://vicki.substack.com/p/all-numbers-are-made-up-some-are) are important to help give as full an understanding of the data as possible.  
+We have come at each key success measure in a variety of different ways, looking at each from multiple angles, as we believe that [multiple contexts](https://vicki.substack.com/p/all-numbers-are-made-up-some-are) are crucial to help give as full an understanding of the data as possible.  
   
 #### 2. Creation of a Hidden Markov Model
 Another key measure of success was hub use over time. To assist with this measure we created a [Hidden Markov Model](https://en.wikipedia.org/wiki/Hidden_Markov_model) (HMM), to allow the oganisation to compare a single hub to itself over time, to see how it is tracking against its own past behaviour.
   
 ### Data Considerations
 #### Programme Categories
-For the purposes of our analysis we decided to narrow our focus to activities belonging to the Programmed Activities, and Education and Training categories of programmes only. We opted to focus on these 2 categories for the following reasons:  
-- Programmed Activities and Education and Training we felt represented CHA's core business. They are frequent, regular and are proactively planned and scheduled. These form the overwhelming bulk of CHA's interactions with the community
+For the purposes of our analysis we decided to narrow our focus to activities belonging to the the following categories of programmes only:
+- Programmed Activities  
+- Education and Training  
+
+We opted to focus on these 2 categories for the following reasons:  
+- We felt the above 2 categories represented CHA's core business. They are frequent, regular and are proactively planned and scheduled. These are the categories hubs have most control over and they form the overwhelming bulk of CHA's interactions with the community
 - Other categories (One Off Events and Service Referrals) appeared more ad-hoc, reactive and irregular, and we found issues with data availability and reliability. For example, though many Service Referral activities were recorded, there was an almost total lack of participants recorded
 
 #### Participants
