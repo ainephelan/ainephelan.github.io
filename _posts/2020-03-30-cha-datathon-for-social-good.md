@@ -4,8 +4,10 @@ title:  "CHA Datathon for Social Good"
 date:   2020-03-30 20:40:42 +1000
 categories: jekyll update
 ---
->_"Alone we can do little; together we can do so much."_   
->_- Helen Keller_  
+>_"If you want to lift yourself up, lift up someone else."_   
+>_- Booker T. Washington_   
+  
+![hands]({{ site.baseurl }}/images/cha_dfsg_images/Hands.jpg)
   
 ![1_age]({{ site.baseurl }}/images/cha_dfsg_images/1_age.png)  
   
