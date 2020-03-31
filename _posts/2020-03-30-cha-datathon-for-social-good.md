@@ -22,7 +22,7 @@ Patrick and I participated in Melbourne’s first [Datathon for Social Good](htt
 
 Community Hubs and their programmes are gateways that engage and support migrant women with young children, where isolation can be a serious social issue. There are already dozens of hubs in operation, and future plans to expand. Hubs are hosted in schools to provide a range of activities for children and adults, such as English lessons, maternal and child health, and playgroups. They provide welcoming places for migrant families, and especially these mothers, to come and connect.  
 
-The highly motivating challenge in this datathon was to use provided data to learn more about the activities and impacts of Community Hubs.  
+The challenge in this highly motivating datathon was to use the provided data to further insight into the activities and impacts of Community Hubs.  
 
 ### Data
 The original datathon repostitory can be found [here](https://gitlab.com/mechakozai/datathon-social-good).  
