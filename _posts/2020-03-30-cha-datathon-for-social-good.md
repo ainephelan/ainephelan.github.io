@@ -50,7 +50,7 @@ We have come at each key success measure in a variety of different ways, looking
 #### 2. Creation of a Hidden Markov Model  
 Another key measure of success was hub performance over time. 
 
-To assist with this measure we worked on a [Hidden Markov Model](https://en.wikipedia.org/wiki/Hidden_Markov_model) (HMM), which would enable the oganisation to compare a single hub to itself over time, predicting a hub's performance based on its own past behaviour. For example, comparing the a hub's activities to the number of its participants, to see if we can use activities to predict attendance as a measurement of performance.
+To assist with this measure we worked on a [Hidden Markov Model](https://en.wikipedia.org/wiki/Hidden_Markov_model) (HMM), which would enable the oganisation to compare a single hub to itself over time, predicting a hub's performance based on its own past behaviour. For example, comparing a hub's sequence of activities to its number of participants, to see if we can use activities to predict attendance as a measurement of performance.
     
     
 ### Data Considerations  
