@@ -308,5 +308,5 @@ In summary, for this report we
 - analysed hubs at general, individual and comparative levels, from a range of perspectives
 - explored modelling how observed behaviour over time in an individual hub can be used to predict future performance   
   
-Thanks to CHA and the organisers for opening your doors to us for this challenge. We learned a lot and we hope we were able to contribute in a meaningful way to the important work you are doing for women, migrants and those at risk from social isolation.  
+Thanks to CHA and the organisers for opening your doors to us for this challenge. This was a fantastic learning experience and we hope we were able to contribute in some meaningful way to the important work you are doing for women, migrants and those at risk from social isolation.  
   
