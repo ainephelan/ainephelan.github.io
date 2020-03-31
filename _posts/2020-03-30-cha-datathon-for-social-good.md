@@ -215,11 +215,9 @@ It is worth noting in that the following ratio could not be calculated for all h
   
 ### Can we predict the performance of a hub compared to its average attendance using hub data?
 
-Due to Covid time pressure we started with a single hub to examine the potential of this approach and the results have not been cross
-validated.
+Due to Covid time pressure we started with a single hub to examine the potential of this approach. Note that the results have not been cross validated.
 
-Using Hub data we implement a Hidden Markov Model to show that by utilizing observed hub activity can be used build a generalized method
-for forecasting hub performance.
+Using Hub data we implement a Hidden Markov Model to show that observed hub activity can be used build a generalized method for forecasting hub performance.
 
 ### 2.1 What is a Hidden Markov Model?
 A Hidden Markov Model uses Markov chains to try and make a prediction about the future based on the sequence of events we have observed in our data.  
@@ -228,19 +226,19 @@ To outline the relevance of this model we will highlight an example described by
 
 ### 2.2 How do HMM's apply to Community Hubs Data?    
 Using a HMM we can forecast how a hub will perform in relation to its own past performance and then cluster hubs with a similar performance trajectory as well as hubs with similar predictors of performance.  
-
-What this means is that we want to group hubs with similar indicators for how they are performing based on scheduled activities across time.
-
-We believe that a HMM is both better suited to the categorical data and also easier to implement than a Time Series Regression. When clustering is performed using categorical variables, these clusters are incredibly hard to transfer into a time series.We hope that applying a HMM will solve this problem. We take inspiration from Ghassempour et al (2014) who perform a time series cluster of medical data using the HMM.  
+  
+What this means is that we want to group hubs with similar indicators for how they are performing based on scheduled activities across time.  
+  
+We believe that a HMM is both better suited to the categorical data and also easier to implement than a Time Series Regression. When clustering is performed using categorical variables, these clusters are incredibly hard to transfer into a time series.We hope that applying a HMM will solve this problem. We take inspiration from Ghassempour et al (2014) who perform a time series cluster of medical data using the HMM.   
 
 This approach can be thought of as using machine learning to classify a time series to observe how similar hubs are tracking.  
 
 We hope that this will provide information about what types of classes are most in demand and what scheduling appears to be most accessible to each school and community.  
 
 ### 2.3 Data preparation  
-First we choose a single hub 15994. Then we remove outliers and rows with zero participants. Our suggestion for predicting zero values is to explain their presence with clustering and by incorporating important dates such as holidays. This can be achieved with the R package Naniar (Tierney 2019).  
+First we choose a single hub 15994. Then we remove outliers and rows with zero participants. Our suggestion for predicting zero values is to explain their presence with clustering and by incorporating important dates such as holidays. This can be achieved with the R package Naniar (Tierney 2019).   
 
-Day of Week and Month of Year are taken from Activity Date as variables for our model.  
+Day of Week and Month of Year are taken from Activity Date as variables for our model.   
     
 ### 2.4 Building the Model   
 We use the DepmixS4 package Visser, I., & Speekenbrink, M. (2010) in R for Hidden Markov Models. We use a multinational distribution to best capture the categorical distribution of the high dimensional data. We 
@@ -248,7 +246,7 @@ start with a 2 state model for simplicity. Our two states are
 - State 1 Performing Below average  
 - State 2 Performing at or above average  
   
-To build an equation we start with a small number of variables. We choose variables which exist in all hubs and all years.  
+To build an equation we start with a small number of variables. We choose variables which exist in all hubs and all years.   
 
 "ShortName", "CategoryName", "Month" and "Day" Month and Day are taken out of the time stamp using the Lubridate package in R and scaled from 0 to 1 for comparing the results between the two. Names are textual data and don’t need to be scaled.  
 
