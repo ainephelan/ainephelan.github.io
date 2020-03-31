@@ -67,7 +67,7 @@ Thus, we made the decision to treat January as an extreme outlier and, where dee
 ## 1. What is a Typical Hub? 
 ### 1.1 Hub Age
   
-We first took a look at how long hubs had been running  
+We first took a look at how long hubs had been running:  
 - at the general level   
 - at an individial level, and compared with one another 
   
@@ -77,7 +77,7 @@ We first took a look at how long hubs had been running
 ![2_ageheatmap]({{ site.baseurl }}/images/cha_dfsg_images/2_ageheatmap.png)  
 
 ### 1.2 Hub Activities
-In this section we take a general look at the activities and ansered questions around 
+In this section we take a general look at the activities and ansered questions around: 
 - how many activities do hubs run?  
 - who are they catering to?  
 
@@ -107,15 +107,15 @@ At a general and an individual hub level, we asked and answered questions to do 
 ![10_part_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/10_part_heatmap.png)  
 
 ### 1.4 Diversity of Programmes  
-Another key success measure, this section measures and compares hubs for the diversity of the programs offered.  
+Another key measure of success, this section measures and compares hubs on the diversity of programmes offered.  
 
-Looking to Ecology and Information Theory, the concept of diversity can be quantified taking [2 main factors](http://www.countrysideinfo.co.uk/simpsons.htm) into account:
+Looking to Ecology and Information Theory, the concept of diversity can be quantified taking [2 main factors](http://www.countrysideinfo.co.uk/simpsons.htm) into account:  
 - Richness - the number of different specis in a sample. The greater the number of species, the 'richer' and more diverse the sample is
-- Evenness - the relative abundance of these species. The more evenly distributed the number of individuals in different species are, the higher the 'evenness' and the more diverse the sample is
+- Evenness - the relative abundance of these species. The more evenly distributed the number of individuals in different species are, the higher the 'evenness' and the more diverse the sample is.  
   
-So, to be diverse, we need to see hubs with
-- a good number of different programs on offer
-- an even distribution of activities for each of those programmes
+So, to be highly diverse, we need to see hubs with  
+- a high number of different programmes on offer  
+- an even distribution of activities withing each of those programmes  
 
 To help with our calculations we used [Simpson's Index of Diveristy](https://en.wikipedia.org/wiki/Diversity_index#Simpson_index), which ranges from 0 to 1, with 0 being the least diverse, and 1 being the most diverse.  
     
