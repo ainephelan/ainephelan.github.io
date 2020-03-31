@@ -283,8 +283,12 @@ As we have trained on quite a small sample size of a single hub we are quite ske
 These results sound promising but this is only a training model so the results are still quite unstable and need to be cross validated by testing on other hubs.  
   
 ### 2.6 Visual Comparison 
-We use visuals to observe how well our predicted states match up to the actual performance of Hubs implied by the attendance figures. Given the large variation in attendance week to week, these plots will look quite messy to if you haven't seen them before. For example what we want to see is that when there is a high probability of the hub being in an above active state (State 2) that this looks very similar to attendance at the same point on the X-axis. When we have a longer period of being in State 2 in (Implied State plot)
-we want to the corresponding probability line for State 2 (red) to be at the top in the (Probabilities plot) this is largely what we see which is promising.  
+We use visuals to observe how well our predicted states match up to the actual performance of Hubs implied by the attendance figures. 
+
+Given the large variation in attendance week to week, these plots will look quite messy to if you haven't seen them before. For example, what we want to see is that when there is a high probability of the hub being in an above active state (State 2) that this looks very similar to attendance at the same point on the X-axis. When we have a longer period of being in State 2 in (Implied State plot),
+we want to the corresponding probability line for State 2 (red) to be at the top in the (Probabilities plot).   
+  
+This is largely what we see which is promising.  
  
 ![x]({{ site.baseurl }}/images/cha_dfsg_images/x.png)    
   
@@ -293,8 +297,7 @@ we want to the corresponding probability line for State 2 (red) to be at the top
 ![y]({{ site.baseurl }}/images/cha_dfsg_images/y.png)    
   
 &nbsp;  
-   
-  
+    
 
 ### 2.7 Conclusion and Next Steps
 -----------------------------
@@ -319,10 +322,10 @@ Ghassempour, S., Girosi, F., & Maeder, A. (2014). Clustering multivariate time s
 # Recap
 
 In summary, we
-- Tackled the Internal Data Track challenge  
-- Analysed hubs from the point of view of several Key Success Measures, believed to be the most important to CHA  
-- Looked at hubs from general, individual, and comparative levels  
-- Modelled how changes in an individual hub can be tracked over time, comparing itself now to itself in a previous state  
+- tackled the Internal Data Track challenge  
+- analysed hubs from the point of view of several Key Success Measures, believed to be the most important to CHA  
+- analysed hubs from general, individual, and comparative levels  
+- modelled how changes in an individual hub can be tracked over time and used to predict performance   
   
-Thanks to CHA and the organisers for opening your doors to us for this challenge. We learned a lot and we hope we were able to contribute in a meaningful way to the important work you are doing for women, for migrants and for those at risk from isolation.  
+Thanks to CHA and the organisers for opening your doors to us for this challenge. We learned a lot and we hope we were able to contribute in a meaningful way to the important work you are doing for women, migrants and those at risk from social isolation.  
   
