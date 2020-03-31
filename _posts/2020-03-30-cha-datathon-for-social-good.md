@@ -49,7 +49,7 @@ We have come at each measure in a variety of different ways, looking at each fro
 Another key measure of success was Hub use over time. To assist with this measure we created a [Hidden Markov Model](https://en.wikipedia.org/wiki/Hidden_Markov_model) (HMM), to allow the oganisation to compare a single Hub to itself over time, to see how it is tracking against its own past behaviour.
   
 ### Data Considerations
-#### Activities
+#### Programme Categories
 For the purposes of our analysis we decided to narrow our focus to activities belonging to the Programmed Activities, and Education and Training categories of activities only. We opted focus on these 2 categories for the following reasons:  
 - Programmed Activities and Education and Training we felt represented CHA's core business. They are frequent, regular, and are proactively planned and scheduled. These form the overwhelming bulk of CHA's interactions with the community
 - Other categories (One Off Events and Service Referrals) were more ad-hoc, reactive and irregular, and we found issues with data availability and reliability. For example, though many Service Referral activities were recorded, there was an almost total lack of participants recorded
