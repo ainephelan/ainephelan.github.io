@@ -76,10 +76,12 @@ We first took a look at how long hubs had been running:
 - at an individial level, and compared with one another 
   
 ![1_age]({{ site.baseurl }}/images/cha_dfsg_images/1_age.png)  
+  
 &nbsp;  
-       
- 
+  
+  
 ![2_ageheatmap]({{ site.baseurl }}/images/cha_dfsg_images/2_ageheatmap.png)  
+  
 &nbsp;  
 
 
@@ -91,11 +93,19 @@ In this section we took an initial look at activities and answered questions aro
 
 ![3_activities]({{ site.baseurl }}/images/cha_dfsg_images/3_activities.png)  
   
-![4_activities]({{ site.baseurl }}/images/cha_dfsg_images/4_activities.png)    
+&nbsp;  
+  
+    
+![4_activities]({{ site.baseurl }}/images/cha_dfsg_images/4_activities.png)  
+  
+&nbsp;  
+  
     
 ![5_activities_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/5_activities_heatmap.png)  
   
+&nbsp;  
   
+    
 ### 1.3 Engagement  
 A key measure of success for CHA, in this section we dove into the data on participation to help us understand how engaged the community was at each hub. 
 
