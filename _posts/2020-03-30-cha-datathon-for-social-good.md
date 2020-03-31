@@ -117,15 +117,34 @@ At a general and an individual hub level, we asked and answered questions to do 
 - throughput of participants per month   
 - the breakdown of participation by adults and children  
 
-![6_participants]({{ site.baseurl }}/images/cha_dfsg_images/6_participants.png)  
+![6_participants]({{ site.baseurl }}/images/cha_dfsg_images/6_participants.png)   
   
-![7_part_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/7_part_heatmap.png)  
+&nbsp;  
   
-![8_part]({{ site.baseurl }}/images/cha_dfsg_images/8_part.png)    
+      
+![7_part_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/7_part_heatmap.png) 
   
-![9_part]({{ site.baseurl }}/images/cha_dfsg_images/9_part.png)  
+&nbsp;  
+  
+      
+  
+![8_part]({{ site.baseurl }}/images/cha_dfsg_images/8_part.png)     
+  
+&nbsp;  
+  
+    
+  
+![9_part]({{ site.baseurl }}/images/cha_dfsg_images/9_part.png)   
+  
+&nbsp;  
+  
+    
   
 ![10_part_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/10_part_heatmap.png)  
+  
+&nbsp;  
+  
+     
 
 ### 1.4 Diversity of Programmes  
 Another key measure of success, this section measures and compares hubs on the diversity of programmes offered.  
@@ -140,9 +159,17 @@ So, to be highly diverse, we need to see hubs with
 
 To help with our calculations we used [Simpson's Index of Diveristy](https://en.wikipedia.org/wiki/Diversity_index#Simpson_index), which ranges from 0 to 1, with 0 being the least diverse, and 1 being the most diverse.  
     
-![11_diversity.]({{ site.baseurl }}/images/cha_dfsg_images/11_diversity.png)  
+![11_diversity.]({{ site.baseurl }}/images/cha_dfsg_images/11_diversity.png)   
   
-![12_diversity_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/12_diversity_heatmap.png)  
+&nbsp;  
+  
+    
+  
+![12_diversity_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/12_diversity_heatmap.png)   
+  
+&nbsp;  
+  
+    
 
 
 ### 1.5 'Spread' of activities for children and adults
@@ -151,11 +178,23 @@ In this section we addressed another key success measure, asking ourselves quest
 - adult-only and child-only activities
 - mixed activities  
   
-![13_ratio]({{ site.baseurl }}/images/cha_dfsg_images/13_ratio.png)  
+![13_ratio]({{ site.baseurl }}/images/cha_dfsg_images/13_ratio.png)   
   
-![14_ratio]({{ site.baseurl }}/images/cha_dfsg_images/14_ratio.png)  
+&nbsp;  
   
-![15_ratio_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/15_ratio_heatmap.png)  
+    
+  
+![14_ratio]({{ site.baseurl }}/images/cha_dfsg_images/14_ratio.png)   
+  
+&nbsp;  
+  
+    
+  
+![15_ratio_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/15_ratio_heatmap.png)   
+  
+&nbsp;  
+  
+    
   
   
     
