@@ -39,7 +39,7 @@ We took the approach of focusing on some key measures of success as advised by C
 - Diversity of programs
 - 'Spread' of activities for children and adults
 
-For these and other measures detailed in this report we created  
+For these and other measures detailed in this report we created:  
 - a distribution of values for each measure - finding the 'typical' values, the general ranges, and also noting extreme outliers
 - a breakdown of these values at an individual hub level - mapping a value back to its hub, and using heatmapping to compare these values to each other at a hub level  
 
@@ -51,8 +51,8 @@ Another key measure of success was Hub use over time. To assist with this measur
 ### Data Considerations
 #### Activities
 For the purposes of our analysis we decided to narrow our focus to activities belonging to the Programmed Activities, and Education and Training categories of activities only. We opted focus on these 2 for the following reasons:  
-- Programmed Activities and Education and Training we felt represented CHA's core business. They are frequent, regular, and are proactively organised and scheduled
-- For other categories (One Off Events and Service Referrals) there were issues with data scarcity and unreliability. For example, though many Service Referral activities were recorded, there was an almost total lack of participants recorded
+- Programmed Activities and Education and Training we felt represented CHA's core business. They are frequent, regular, and are proactively planned and scheduled
+- Other categories (One Off Events and Service Referrals) were more ad-hoc, reactive and irregular, and we found issues with data availability and reliability. For example, though many Service Referral activities were recorded, there was an almost total lack of participants recorded
 
 #### Participants
 Based on advice from CHA representatives, we focused our analysis on Child and Adult participants only.
