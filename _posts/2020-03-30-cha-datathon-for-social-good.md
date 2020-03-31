@@ -16,9 +16,9 @@ categories: jekyll update
 Report by Áine Phelan and Patrick Healy
 
 ### Context
-Patrick and I participated in Melbourne’s first Datathon for Social Good, serving Community Hubs Australia (CHA), a not-for-profit organisation that helps build social cohesion.  
+Patrick and I participated in Melbourne’s first Datathon for Social Good, serving Community Hubs Australia (CHA), a not-for-profit organisation that helps build social cohesion Australia-wide, particularly among the migrant community.  
 
-Community Hubs and their programs are gateways that engage and support migrant women with young children. There are already dozens of Hubs in operation, and this year will see further expansion.
+Community Hubs and their programs are gateways that engage and support migrant women with young children. There are already dozens of Hubs in operation, and future plans to expand.
 
 Community Hubs are hosted in schools to provide a range of activities for children and adults, such as English lessons, maternal and child health, and playgroups. 
 
