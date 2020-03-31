@@ -43,7 +43,7 @@ For these and other measures detailed in this report we created
 - a distribution of values for each measure - finding the 'typical' values, the general ranges, and also noting extreme outliers
 - a breakdown of these values at an individual hub level - mapping a value back to its hub, and using heatmapping to compare these values to each other at a hub level  
 
-We come at each measure in a variety of different ways, looking at each from multiple angles. We believe [multiple contexts](https://vicki.substack.com/p/all-numbers-are-made-up-some-are) are important to help give as full an understanding of the data as possible.  
+We have come at each measure in a variety of different ways, looking at each from multiple angles as we believe that [multiple contexts](https://vicki.substack.com/p/all-numbers-are-made-up-some-are) are important to help give as full an understanding of the data as possible.  
   
 #### 2. Creation of a Hidden Markov Model
 Another key measure of success was Hub use over time. To assist with this measure we created a [Hidden Markov Model](https://en.wikipedia.org/wiki/Hidden_Markov_model) (HMM), to allow the oganisation to compare a single Hub to itself over time, to see how it is tracking against its own past behaviour.
