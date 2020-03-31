@@ -48,7 +48,9 @@ For these and other measures detailed in this report we created
 We have come at each key success measure in a variety of different ways, looking at each from multiple angles, as we believe that [multiple contexts](https://vicki.substack.com/p/all-numbers-are-made-up-some-are) are crucial to help give as full an understanding of the data as possible.  
   
 #### 2. Creation of a Hidden Markov Model  
-Another key measure of success was hub use over time. To assist with this measure we created a [Hidden Markov Model](https://en.wikipedia.org/wiki/Hidden_Markov_model) (HMM), to allow the oganisation to compare a single hub to itself over time, to see how it is tracking against its own past behaviour.  
+Another key measure of success was hub performance over time. 
+
+To assist with this measure we worked on a [Hidden Markov Model](https://en.wikipedia.org/wiki/Hidden_Markov_model) (HMM), which would enable the oganisation to compare a single hub to itself over time, predicting a hub's performance based on its own past behaviour.  
     
 ### Data Considerations  
 #### Program Categories  
