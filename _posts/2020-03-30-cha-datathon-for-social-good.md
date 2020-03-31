@@ -58,9 +58,9 @@ For the purposes of our analysis we decided to narrow our focus to activities be
 Based on advice from CHA representatives, we focused our analysis on Child and Adult participants only.
 
 #### Activity Dates
-When analysing the data in terms of _"what does a typical hub look like?"_, we found the data was heavily skewed by the month of January, with the number of activities proportionally much smaller here than for any other month. 
+When analysing for _"typical"_ behaviour, we found the data was heavily skewed by the month of January, with the number of activities proportionally much smaller here than for any other month.  
   
-Thus, we made the decision to treat January as an extreme outlier and remove it where deemed necessary for our analysis.  
+Thus, we made the decision to treat January as an extreme outlier and, where deemed necessary, remove it from our analysis.  
    
 ![Jan]({{ site.baseurl }}/images/cha_dfsg_images/Jan_activities.png)   
   
