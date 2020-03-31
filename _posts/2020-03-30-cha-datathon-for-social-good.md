@@ -224,7 +224,7 @@ for forecasting hub performance.
 ### 2.1 What is a Hidden Markov Model?
 A Hidden Markov Model uses Markov chains to try and make a prediction about the future based on the sequence of events we have observed in our data.  
 
-To outline the relevance of this model we will highlight an example described by Eisner (2002). Suppose we want to study the sequence of Hot(H) and Cold(C) days to predict how much ice-cream our Neighbor will eat every day. If we have observed how many ice-creams our neighbor has eaten over three days (e.g., 3 1 3 ) for a given sequence of weather (e.g., H H C) we can estimate the likelihood of this many ice-creams being eaten each day. As we build up more information we can begin to forecast how many ice-creams our neighbor will eat.
+To outline the relevance of this model we will highlight an example described by Eisner (2002). Suppose we want to study the sequence of Hot(H) and Cold(C) days to predict how much ice-cream our Neighbor will eat every day. If we have observed how many ice-creams our neighbor has eaten over three days (e.g., 3 1 3) for a given sequence of weather (e.g., H H C) we can estimate the likelihood of this many ice-creams being eaten each day. As we build up more information we can begin to forecast how many ice-creams our neighbor will eat.
 
 ### 2.2 How do HMM's apply to Community Hubs Data?    
 Using a HMM we can forecast how a hub will perform in relation to its own past performance and then cluster hubs with a similar performance trajectory as well as hubs with similar predictors of performance.  
