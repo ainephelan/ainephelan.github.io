@@ -20,7 +20,7 @@ Report by Áine Phelan and Patrick Healy
 ### Context
 Patrick and I participated in Melbourne’s first [Datathon for Social Good](https://www.ourcommunity.com.au/datathon), serving [Community Hubs Australia](https://www.communityhubs.org.au/) (CHA), a not-for-profit organisation which helps to build social cohesion Australia-wide, particularly amongst the migrant community.  
 
-Community Hubs and their programmes are gateways that engage and support migrant women with young children, where isolation can be a serious social issue. There are already dozens of hubs in operation, and future plans to expand. Hubs are hosted in schools to provide a range of activities for children and adults, such as English lessons, maternal and child health, and playgroups. They provide welcoming places for migrant families, and especially these mothers, to come and connect.  
+Community Hubs and their programs are gateways that engage and support migrant women with young children, where isolation can be a serious social issue. There are already dozens of hubs in operation, and future plans to expand. Hubs are hosted in schools to provide a range of activities for children and adults, such as English lessons, maternal and child health, and playgroups. They provide welcoming places for migrant families, and especially these mothers, to come and connect.  
 
 The challenge in this highly motivating datathon was to use the provided data to further insight into the activities and impacts of Community Hubs.  
 
@@ -36,12 +36,12 @@ In addition to the above prompt, we were encouraged to be as creative as we like
 Our report is comprised of 2 main parts:  
 
 #### 1. Analysis of the 'Typical Hub' based on Key Measures of Success  
-We took the approach of focusing on the measures of success important to CHA, as advised to us during the datathon briefing. These included (but were not limited to):  
+We took the approach of focusing on the measures of success important to CHA, as advised to us during the datathon briefing. These included (but were not limited to)  
 - Engagement
 - Diversity of programs
 - 'Spread' of activities for children and adults
 
-For these and other measures detailed in this report we created:  
+For these and other measures detailed in this report we created  
 - a distribution of values for each measure - finding the 'typical' values, the general ranges, and also noting extreme outliers
 - a breakdown of these values at an individual hub level - mapping a value back to its hub, and using heatmapping to compare these values to each other at a hub level  
 
@@ -51,12 +51,12 @@ We have come at each key success measure in a variety of different ways, looking
 Another key measure of success was hub use over time. To assist with this measure we created a [Hidden Markov Model](https://en.wikipedia.org/wiki/Hidden_Markov_model) (HMM), to allow the oganisation to compare a single hub to itself over time, to see how it is tracking against its own past behaviour.  
     
 ### Data Considerations  
-#### Programme Categories  
-For the purposes of our analysis we decided to narrow our focus to activities belonging to the the following categories of programmes only:
+#### Program Categories  
+For the purposes of our analysis we decided to narrow our focus to activities belonging to the the following categories of programs only
 - Programmed Activities  
 - Education and Training  
   
-We opted to focus on these 2 categories for the following reasons:   
+We opted to focus on these 2 categories for the following reasons   
 - We felt the above 2 categories represented CHA's core business. They are frequent, regular and are proactively planned and scheduled. These are the categories hubs have most control over, and they form the overwhelming bulk of CHA's interactions with the community
 - Other categories (One Off Events and Service Referrals) appeared more ad-hoc, reactive and irregular, and we found issues with data availability and reliability. For example, though many Service Referral activities were recorded, there was an almost total lack of participants recorded
 
@@ -75,7 +75,7 @@ Thus, we made the decision to treat January as an extreme outlier and, where we 
 ## 1. What is a Typical Hub? 
 ### 1.1 Hub Age
   
-We first took a look at how long hubs had been running:  
+We first took a look at how long hubs had been running  
 - at the general level   
 - at an individial level, and compared with one another  
    
@@ -94,7 +94,7 @@ We first took a look at how long hubs had been running:
 
 
 ### 1.2 Hub Activities
-In this section we took an initial look at activities and answered questions around:  
+In this section we took an initial look at activities and answered questions around  
 - how many activities do hubs run?  
 - who do these activities cater to?  
   
@@ -120,7 +120,7 @@ In this section we took an initial look at activities and answered questions aro
 ### 1.3 Engagement  
 A key measure of success for CHA, in this section we dove into the data on participation to help us understand how engaged the community was at each hub.  
 
-At a general and an individual hub level, we asked and answered questions to do with:   
+At a general and an individual hub level, we asked and answered questions to do with   
 - average participation per activity  
 - throughput of participants per month   
 - the breakdown of participation by adults and children   
@@ -157,16 +157,16 @@ At a general and an individual hub level, we asked and answered questions to do 
   
      
 
-### 1.4 Diversity of Programmes  
-Another key measure of success, this section measures and compares hubs on the diversity of programmes offered.   
+### 1.4 Diversity of Programs  
+Another key measure of success, this section measures and compares hubs on the diversity of programs offered.   
 
-Looking to Ecology and Information Theory, the concept of diversity can be quantified taking [2 main factors](http://www.countrysideinfo.co.uk/simpsons.htm) into consideration:  
+Looking to Ecology and Information Theory, the concept of diversity can be quantified taking [2 main factors](http://www.countrysideinfo.co.uk/simpsons.htm) into consideration  
 - Richness - the number of different species in a sample. The greater the number of species, the 'richer' and more diverse the sample is
 - Evenness - the relative abundance of these species. The more evenly distributed the number of individuals in different species are, the more 'even' and diverse the sample is
   
-So, for hub programmes to be highly diverse, we need to see hubs with  
-- a high number of different programmes on offer  
-- an even distribution of activities within each of those programmes  
+So, for hub programs to be highly diverse, we need to see hubs with  
+- a high number of different programs on offer  
+- an even distribution of activities within each of those programs  
 
 For our calculations we used [Simpson's Index of Diveristy](https://en.wikipedia.org/wiki/Diversity_index#Simpson_index), which ranges from 0 to 1, with 0 being least diverse, and 1 being most diverse.   
   
@@ -191,11 +191,11 @@ For our calculations we used [Simpson's Index of Diveristy](https://en.wikipedia
 
 In this section we addressed another key success measure, asking ourselves questions about the proportion of activities on offer to adults, compared with those on offer to children.   
    
-Again, we came at this in a number of different ways to help with our understanding, looking at:    
+Again, we came at this in a number of different ways to help with our understanding, looking at    
 - adult-only and child-only activities
 - mixed activities (those where both children and adults attended)  
    
-It is worth noting in that the following ratio could not be calculated for all hubs, as there were:  
+It is worth noting in that the following ratio could not be calculated for all hubs, as there were  
 - 20 hubs with 0 child-only activities  
 - 2 hubs with 0 child-only and 0 adult-only activities  
   
@@ -224,9 +224,9 @@ It is worth noting in that the following ratio could not be calculated for all h
   
 # Recap
 
-In summary, we:
+In summary, we
 - Tackled the Internal Data Track challenge  
-- Analysed hubs from the point of view of several Key Success Measures which we believed to be the most important to CHA  
+- Analysed hubs from the point of view of several Key Success Measures, believed to be the most important to CHA  
 - Looked at hubs from general, individual, and comparative levels  
 - Modelled how changes in an individual hub can be tracked over time, comparing itself now to itself in a previous state  
   
