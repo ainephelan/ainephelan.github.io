@@ -39,7 +39,7 @@ Our report is comprised of 2 main parts:
 We took the approach of focusing on the measures of success important to CHA, as advised to us during the datathon briefing. These included (but were not limited to)  
 - Engagement
 - Diversity of programs
-- 'Spread' of activities for children and adults
+- Ratio of activities for children to those for adults
 
 For these and other measures detailed in this report we created  
 - a distribution of values for each measure - finding the 'typical' values, the general ranges, and also noting extreme outliers
@@ -55,13 +55,13 @@ To assist with this measure we worked on a [Hidden Markov Model](https://en.wiki
     
 ### Data Considerations  
 #### Program Categories  
-For the purposes of our analysis we decided to narrow our focus to activities belonging to the the following categories of programs only
+Due to time and resource constraints, for the purposes of our analysis we decided to narrow our focus to activities belonging to the the following categories of programs only
 - Programmed Activities  
 - Education and Training  
   
-We opted to focus on these 2 categories for the following reasons   
-- We felt the above 2 categories represented CHA's core business. They are frequent, regular and are proactively planned and scheduled. These are the categories hubs have most control over, and they form the overwhelming bulk of CHA's interactions with the community
-- Other categories (One Off Events and Service Referrals) appeared more ad-hoc, reactive and irregular, and we found issues with data availability and reliability. For example, though many Service Referral activities were recorded, there was an almost total lack of participants recorded
+We chose these two categories to focus on for the following reasons   
+- Of the four categories we felt these two most represented CHA's core business. They are frequent, regular and are proactively planned and scheduled. These are the categories hubs have most control over, and they form the overwhelming bulk of CHA's interactions with the community
+- Other categories (One Off Events and Service Referrals) appeared more ad-hoc, reactive and irregular, and we found issues with data availability and reliability. For example, though many Service Referral activities were recorded, there was an almost total lack of participants recorded. These categories would make an interesting subject for future work, allowing a more complete picture of hubs to be painted, more time and resources permitting.  
 
 #### Participants
 Based on advice from CHA representatives, we focused our analysis on Child and Adult participants only.
@@ -83,7 +83,7 @@ Python, Jupyter Notebook, Rmarkdown, Tableau, Excel
 ### 1.1 Hub Age
   
 We first took a look at how long hubs had been running  
-- at the general level   
+- across all hubs   
 - at an individial level, and compared with one another  
    
 &nbsp;    
@@ -181,7 +181,7 @@ For our calculations we used [Simpson's Index of Diveristy](https://en.wikipedia
 &nbsp;  
   
   
-### 1.5 'Spread' of activities for children and adults
+### 1.5 Ratio of child to adult activities
 
 In this section we addressed another key success measure, asking ourselves questions about the proportion of activities on offer to adults, compared with those on offer to children.   
    
