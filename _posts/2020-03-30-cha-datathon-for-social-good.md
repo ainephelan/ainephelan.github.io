@@ -211,11 +211,9 @@ It is worth noting in that the following ratio could not be calculated for all h
 &nbsp;  
   
   
-## 2.0 Hidden Markov Model:
-===========================
-
+## 2 Hidden Markov Model  
+  
 ### Can we predict the performance of a hub compared to its average attendance using hub data?
-----------------------------------------------------------------------------------------------
 
 Due to Covid time pressure we started with a single hub to examine the potential of this approach and the results have not been cross
 validated.
@@ -224,15 +222,11 @@ Using Hub data we implement a Hidden Markov Model to show that by utilizing obse
 for forecasting hub performance.
 
 ### 2.1 What is a Hidden Markov Model?
---------------------------------------
-
 A Hidden Markov Model uses Markov chains to try and make a prediction about the future based on the sequence of events we have observed in our data.  
 
 To outline the relevance of this model we will highlight an example described by Eisner (2002). Suppose we want to study the sequence of Hot(H) and Cold(C) days to predict how much ice-cream our Neighbor will eat every day. If we have observed how many ice-creams our neighbor has eaten over three days (e.g., 3 1 3 ) for a given sequence of weather (e.g., H H C) we can estimate the likelihood of this many ice-creams being eaten each day. As we build up more information we can begin to forecast how many ice-creams our neighbor will eat.
 
-### 2.2 How do HMM's apply to Community Hubs Data?  
---------------------------------------------------
-
+### 2.2 How do HMM's apply to Community Hubs Data?    
 Using a HMM we can forecast how a hub will perform in relation to its own past performance and then cluster hubs with a similar performance trajectory as well as hubs with similar predictors of performance.  
 
 What this means is that we want to group hubs with similar indicators for how they are performing based on scheduled activities across time.
@@ -244,15 +238,11 @@ This approach can be thought of as using machine learning to classify a time ser
 We hope that this will provide information about what types of classes are most in demand and what scheduling appears to be most accessible to each school and community.  
 
 ### 2.3 Data preparation  
-------------------------
-  
 First we choose a single hub 15994. Then we remove outliers and rows with zero participants. Our suggestion for predicting zero values is to explain their presence with clustering and by incorporating important dates such as holidays. This can be achieved with the R package Naniar (Tierney 2019).  
 
 Day of Week and Month of Year are taken from Activity Date as variables for our model.  
     
-### 2.4 Building the Model  
---------------------------
-
+### 2.4 Building the Model   
 We use the DepmixS4 package Visser, I., & Speekenbrink, M. (2010) in R for Hidden Markov Models. We use a multinational distribution to best capture the categorical distribution of the high dimensional data. We 
 start with a 2 state model for simplicity. Our two states are  
 - State 1 Performing Below average  
@@ -270,9 +260,7 @@ For this we use an aggregate of “AdultParticipants” and “Child Participant
 Children participants for a single row) and (the mean Child and Adult participation for the entire hub) as an indicator for how a hub is
 performing compared to its own average. This is also scaled from 0 to 1.   
 
-### 2.5 Results
------------
-
+### 2.5 Results  
 We find that our hidden states which actually match up to the Participation data extremely well.  
 
 - In state 1 there was a 66% probability of the hub having below average attendance  
@@ -282,7 +270,7 @@ As we have trained on quite a small sample size of a single hub we are quite ske
 
 These results sound promising but this is only a training model so the results are still quite unstable and need to be cross validated by testing on other hubs.  
   
-### 2.6 Visual Comparison 
+### 2.6 Visual Comparison   
 We use visuals to observe how well our predicted states match up to the actual performance of Hubs implied by the attendance figures. 
 
 Given the large variation in attendance week to week, these plots will look quite messy to if you haven't seen them before. For example, what we want to see is that when there is a high probability of the hub being in an above active state (State 2) that this looks very similar to attendance at the same point on the X-axis. When we have a longer period of being in State 2 in (Implied State plot),
@@ -299,17 +287,13 @@ This is largely what we see which is promising.
 &nbsp;  
     
 
-### 2.7 Conclusion and Next Steps
------------------------------
-
+### 2.7 Conclusion and Next Steps  
 Run this training model for other hubs to cross validate the results.  
   
 Look to expand the equation to improve the prediction scores. And begin to cluster the hubs.
 
 
-### 2.8 References
---------------
-
+### 2.8 References  
 Eisner, J. (2002, July). An interactive spreadsheet for teaching the forward-backward algorithm. In Proceedings of the ACL-02 Workshop on Effective tools and methodologies for teaching natural language processing and computational linguistics (pp. 10-18).
 
 Tierney, Nicholas, et al. "Naniar: Data structures, Summaries, and Visualizations for Missing Data." R Package (2019).
@@ -319,8 +303,7 @@ Visser, I., & Speekenbrink, M. (2010). depmixS4: an R package for hidden Markov 
 Ghassempour, S., Girosi, F., & Maeder, A. (2014). Clustering multivariate time series using hidden Markov models. International journal of environmental research and public health, 11(3), 2741-2763.    
   
   
-# Recap
-
+# Recap  
 In summary, we
 - tackled the Internal Data Track challenge  
 - analysed hubs from the point of view of several Key Success Measures, believed to be the most important to CHA  
