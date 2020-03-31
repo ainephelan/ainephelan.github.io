@@ -77,9 +77,9 @@ We first took a look at how long hubs had been running:
 ![2_ageheatmap]({{ site.baseurl }}/images/cha_dfsg_images/2_ageheatmap.png)  
 
 ### 1.2 Hub Activities
-In this section we take a general look at the activities and ansered questions around: 
+In this section we took an initial look at activities and answered questions around: 
 - how many activities do hubs run?  
-- who are they catering to?  
+- who are these activities catering to?  
 
 ![3_activities]({{ site.baseurl }}/images/cha_dfsg_images/3_activities.png)  
   
