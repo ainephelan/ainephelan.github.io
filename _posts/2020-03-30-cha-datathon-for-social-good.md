@@ -10,8 +10,9 @@ categories: jekyll update
 >_- Booker T. Washington_   
   
 ![hands]({{ site.baseurl }}/images/cha_dfsg_images/Hands.jpg)
+&nbsp;  
   
-# Community Hubs Australia Datathon for Social Good
+# Community Hubs Australia - Datathon for Social Good
 
 Report by Áine Phelan and Patrick Healy
 
@@ -63,6 +64,8 @@ When analysing for _"typical"_ behaviour, we found the data was heavily skewed b
 Thus, we made the decision to treat January as an extreme outlier and, where deemed necessary, remove it from our analysis.  
    
 ![Jan]({{ site.baseurl }}/images/cha_dfsg_images/Jan_activities.png)   
+&nbsp;  
+  
   
 ## 1. What is a Typical Hub? 
 ### 1.1 Hub Age
