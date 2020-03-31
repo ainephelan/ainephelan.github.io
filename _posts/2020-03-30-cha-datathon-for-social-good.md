@@ -74,7 +74,10 @@ Thus, we made the decision to treat January as an extreme outlier and, where dee
 We first took a look at how long hubs had been running:  
 - at the general level   
 - at an individial level, and compared with one another 
+   
+&nbsp;  
   
+    
 ![1_age]({{ site.baseurl }}/images/cha_dfsg_images/1_age.png)  
   
 &nbsp;  
