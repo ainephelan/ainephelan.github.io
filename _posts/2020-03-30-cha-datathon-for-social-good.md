@@ -226,8 +226,8 @@ It is worth noting in that the following ratio could not be calculated for all h
 &nbsp;  
   
   
-2 Hidden Markov Model
-=========================
+## 2 Hidden Markov Model  
+=========================  
 
 Can we predict the performance of a hub compared to its average attendance using hub data?
 ------------------------------------------------------------------------------------------
