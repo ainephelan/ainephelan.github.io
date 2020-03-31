@@ -16,20 +16,20 @@ categories: jekyll update
 Report by Áine Phelan and Patrick Healy
 
 ### Context
-Patrick and I participated in Melbourne’s first [Datathon for Social Good](https://www.ourcommunity.com.au/datathon), serving [Community Hubs Australia](https://www.communityhubs.org.au/) (CHA), a not-for-profit organisation that helps build social cohesion Australia-wide, particularly amongst the migrant community.  
+Patrick and I participated in Melbourne’s first [Datathon for Social Good](https://www.ourcommunity.com.au/datathon), serving [Community Hubs Australia](https://www.communityhubs.org.au/) (CHA), a not-for-profit organisation which helps to build social cohesion Australia-wide, particularly amongst the migrant community.  
 
-Community Hubs and their programs are gateways that engage and support migrant women with young children. There are already dozens of Hubs in operation, and future plans to expand. Hubs are hosted in schools to provide a range of activities for children and adults, such as English lessons, maternal and child health, and playgroups. They provide welcoming places for migrant families, particularly mothers of young children, to come and connect.  
+Community Hubs and their programs are gateways that engage and support migrant women with young children. There are already dozens of Hubs in operation, and future plans to expand. Hubs are hosted in schools to provide a range of activities for children and adults, such as English lessons, maternal and child health, and playgroups. They provide welcoming places for migrant families, especially mothers of young children, to come and connect.  
 
-The hihgly motivating challenge in this datathon was be to use provided data to learn more about the activities and impacts of Community Hubs.
+The highly motivating challenge in this datathon was to use provided data to learn more about the activities and impacts of Community Hubs.  
 
 ### Data
 The original repostitory can be found [here](https://gitlab.com/mechakozai/datathon-social-good).  
   
-### Internal Track
+### Problem Statement  
 Out team chose the Internal Data track challenge. Our challenge was to use internal organisational data to answer questions such as, _"What is a ‘typical’ hub and what is an ‘outlier’?"_
 
-In addition to the above prompt, we were encouraged to be as creative as we liked, should any we see any other way of using the data to help CHA ongoing. 
-
+In addition to the above prompt, we were encouraged to be as creative as we liked, should any we see any other way of using the data to help CHA ongoing.  
+  
 ### Scope
 Our report is comprised of 2 main parts:  
 
@@ -38,15 +38,20 @@ We took the approach of focusing on some key measures of success as advised by C
 - Engagement
 - Diversity of programs
 - 'Spread' of activities for children and adults
+
+For these and other measures detailed in this report we created  
+- a distribution of values for each measure - finding the 'typical' values, the general ranges, and also noting extreme outliers
+- a breakdown of these values at an individual hub level - mapping a value back to its hub, and using heatmapping to compare these values to each other at a hub level  
   
+
 #### 2. Creation of a Hidden Markov Model
 Another key measure of success was Hub use over time. To assist with this measure we created a [Hidden Markov Model](https://en.wikipedia.org/wiki/Hidden_Markov_model) (HMM), to allow the oganisation to compare a single Hub to itself over time, to see how it is tracking against its own past behaviour.
   
 ### Data Considerations
 #### Activities
-For the purposes of our analysis we decided to narrow our focus to activities belonging to the Programmed Activities and Education and Training categories of activities only. We opted focus on the first 2 for the following reasons:  
+For the purposes of our analysis we decided to narrow our focus to activities belonging to the Programmed Activities, and Education and Training categories of activities only. We opted focus on these 2 for the following reasons:  
 - Programmed Activities and Education and Training we felt represented CHA's core business. They are frequent, regular, and are proactively organised and scheduled
-- For other categories (`One Off Events` and `Service Referrals`) there were issues with data scarcity and unreliability. FOr example, though manyu Service Referral activities were recorded, there was an almost total lack of recorded participants
+- For other categories (One Off Events and Service Referrals) there were issues with data scarcity and unreliability. For example, though many Service Referral activities were recorded, there was an almost total lack of participants recorded
 
 #### Participants
 Based on advice from CHA representatives, we focused our analysis on Child and Adult participants only.
@@ -54,14 +59,15 @@ Based on advice from CHA representatives, we focused our analysis on Child and A
 #### Date Range
 When analysing the data in terms of _"what does a typical hub look like?"_, we found the data was heavily skewed by the month of January, with the number of activities proportionally much smaller here than for any other month. 
   
-Thus, we made the decision to treat January as an extreme outlier and remove it as deemed necessary for our analysis.  
+Thus, we made the decision to treat January as an extreme outlier and remove it where deemed necessary for our analysis.  
    
 ![Jan]({{ site.baseurl }}/images/cha_dfsg_images/Jan_activities.png)   
   
 ## 1. What is a Typical Hub? 
 ### 1.1 Hub Age
   
-We first took a look at how long hubs had been running for. There were no extreme cases here.  
+We first took a look at how long hubs had been running for, getting a distribution of hub ages, and breaking down ages to anindividual hub level.  
+
 
 ![1_age]({{ site.baseurl }}/images/cha_dfsg_images/1_age.png)  
   
