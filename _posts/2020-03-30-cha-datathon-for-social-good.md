@@ -11,14 +11,50 @@ categories: jekyll update
   
 ![hands]({{ site.baseurl }}/images/cha_dfsg_images/Hands.jpg)
   
-     
-Report by Áine Phelan and Patrick Healy.   
-   
+# Community Hubs Australia Datathon for Social Good
+
+Report by Áine Phelan and Patrick Healy
+
+### Context
+Patrick and I participated in Melbourne’s first Datathon for Social Good, serving Community Hubs Australia (CHA), a not-for-profit organisation that helps build social cohesion.  
+
+Community Hubs and their programs are gateways that engage and support migrant women with young children. There are already dozens of Hubs in operation, and this year will see further expansion.
+
+Community Hubs are hosted in schools to provide a range of activities for children and adults, such as English lessons, maternal and child health, and playgroups. 
+
+The motivating challenge in this datathon was be to use provided data to learn more about the activities and impacts of Hubs.
+
+### Internal Track
+We chose the Internal Data track. Our challenge was to use internal organisational data to answer questions such as, _"What is a ‘typical’ hub and what is an ‘outlier’?"_
+
+In addition to the above prompt, we were encouraged to see if there was anything we could create that would be of value to CHA ongoing. 
+
+### Scope
+#### Activities
+For the purposes of our analysis we decided to narrow our focus to activities belonging to the `Programmed Activities` and `Education and Training` categories of activities. Other categories whicih we did not include were `One Off Events` and `Service Referrals`. We opted focus on the first 2 for the following reasons:  
+- `Programmed Activities` and `Education and Training` we felt, represented CHA's core business
+- Scarcity and unreliability of participant data for `One Off Events` and `Service Referrals` 
+
+#### Participants
+Based on advice from CHA representatives, we focused our analysis on Child and Adult participants only.
+
+#### Date Range
+When analysing the data in terms of _"what does a typical hub look like?"_, we found the data was heavily skewed by the month of January, when the number of activities was proportionally much smaller than every other month's actvities. 
+  
+We made the decision to remove January as an extreme outlier for our analysis.  
+
+![Jan]({{ site.baseurl }}/images/cha_dfsg_images/Jan_activities.png) 
+
+## 1. What is a Typical Hub? 
+### 1.1 Hub Age
   
 ![1_age]({{ site.baseurl }}/images/cha_dfsg_images/1_age.png)  
   
 ![2_ageheatmap]({{ site.baseurl }}/images/cha_dfsg_images/2_ageheatmap.png)  
-  
+
+### 1.1 Hub Activities
+
+
 ![3_activities]({{ site.baseurl }}/images/cha_dfsg_images/3_activities.png)  
   
 ![4_activities]({{ site.baseurl }}/images/cha_dfsg_images/4_activities.png)    
