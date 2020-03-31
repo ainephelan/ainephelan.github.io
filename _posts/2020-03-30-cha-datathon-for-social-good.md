@@ -110,8 +110,12 @@ In this section we took an initial look at activities and answered questions aro
 ![4_activities]({{ site.baseurl }}/images/cha_dfsg_images/4_activities.png)  
   
 &nbsp;  
-  
+   
     
+Note: in the following, figures are rounded up to the nearest whole.   
+  
+&nbsp;  
+      
 ![5_activities_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/5_activities_heatmap.png)  
   
 &nbsp;  
@@ -194,6 +198,10 @@ In this section we addressed another key success measure, asking ourselves quest
 Again, we came at this in a number of different ways to help with our understanding, looking at:    
 - adult-only and child-only activities
 - mixed activities (those where both children and adults attended)  
+   
+It is worth noting in that the following ratio could not be calculated for all hubs, as there were:  
+- 20 hubs with 0 child-only activities  
+- 2 hubs with 0 child-only and 0 adult-only activities  
   
 &nbsp;  
   
