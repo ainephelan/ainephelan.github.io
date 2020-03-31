@@ -27,7 +27,7 @@ categories: jekyll update
   
 ![10_part_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/10_part_heatmap.png)  
   
-![11_diversity.]({{ site.baseurl }}/images/cha_dfsg_images/11_diversity..png)  
+![11_diversity.]({{ site.baseurl }}/images/cha_dfsg_images/11_diversity.png)  
   
 ![12_diversity_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/12_diversity_heatmap.png)  
   
