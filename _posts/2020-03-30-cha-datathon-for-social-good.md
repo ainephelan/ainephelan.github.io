@@ -7,8 +7,42 @@ categories: jekyll update
 >_"Alone we can do little; together we can do so much."_   
 >_- Helen Keller_  
   
+![1_age]({{ site.baseurl }}/images/cha_dfsg_images/1_age.png)  
   
-![buddies]({{ site.baseurl }}/images/buddies.jpg)
+![2_ageheatmap]({{ site.baseurl }}/images/cha_dfsg_images/2_ageheatmap.png)  
+  
+![3_activities]({{ site.baseurl }}/images/cha_dfsg_images/3_activities.png)  
+  
+![4_activities]({{ site.baseurl }}/images/cha_dfsg_images/4_activities.png)    
+    
+![5_activities_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/5_activities_heatmap.png)  
+  
+![6_participants]({{ site.baseurl }}/images/cha_dfsg_images/6_participants.png)  
+  
+![7_part_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/7_part_heatmap.png)  
+  
+![8_part]({{ site.baseurl }}/images/cha_dfsg_images/8_part.png)    
+  
+![9_part]({{ site.baseurl }}/images/cha_dfsg_images/9_part.png)  
+  
+![10_part_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/10_part_heatmap.png)  
+  
+![11_diversity.]({{ site.baseurl }}/images/cha_dfsg_images/11_diversity..png)  
+  
+![12_diversity_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/12_diversity_heatmap.png)  
+  
+![13_ratio]({{ site.baseurl }}/images/cha_dfsg_images/13_ratio.png)  
+  
+![14_ratio]({{ site.baseurl }}/images/cha_dfsg_images/14_ratio.png)  
+  
+![15_ratio_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/15_ratio_heatmap.png)  
+  
+  
+    
+      
+        
+
+
 
 # Mining the Chinook Database with SQL and Python
 
