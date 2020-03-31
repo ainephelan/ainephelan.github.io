@@ -21,31 +21,48 @@ Patrick and I participated in Melbourne’s first [Datathon for Social Good](htt
 Community Hubs and their programs are gateways that engage and support migrant women with young children. There are already dozens of Hubs in operation, and future plans to expand. Hubs are hosted in schools to provide a range of activities for children and adults, such as English lessons, maternal and child health, and playgroups. They provide welcoming places for migrant families, particularly mothers of young children, to come and connect.  
 
 The hihgly motivating challenge in this datathon was be to use provided data to learn more about the activities and impacts of Community Hubs.
+
+### Data
+The original repostitory can be found [here](https://gitlab.com/mechakozai/datathon-social-good).  
   
 ### Internal Track
-Out team chose the Internal Data track. Our challenge was to use internal organisational data to answer questions such as, _"What is a ‘typical’ hub and what is an ‘outlier’?"_
+Out team chose the Internal Data track challenge. Our challenge was to use internal organisational data to answer questions such as, _"What is a ‘typical’ hub and what is an ‘outlier’?"_
 
-In addition to the above prompt, we were encouraged to see if there was anything we could create that would be of value to CHA ongoing. 
+In addition to the above prompt, we were encouraged to be as creative as we liked, should any we see any other way of using the data to help CHA ongoing. 
 
 ### Scope
+Our report is comprised of 2 main parts:  
+
+#### 1. Analysis of the 'typical hub'  
+We took the approach of focusing on some key measures of success as advised by CHA staff, including:
+- Engagement
+- Diversity of programs
+- 'Spread' of activities for children and adults
+  
+#### 2. Creation of a Hidden Markov Model
+Another key measure of success was Hub use over time. To assist with this measure we created a [Hidden Markov Model](https://en.wikipedia.org/wiki/Hidden_Markov_model) (HMM), to allow the oganisation to compare a single Hub to itself over time, to see how it is tracking against its own past behaviour.
+  
+### Data Considerations
 #### Activities
-For the purposes of our analysis we decided to narrow our focus to activities belonging to the `Programmed Activities` and `Education and Training` categories of activities. Other categories whicih we did not include were `One Off Events` and `Service Referrals`. We opted focus on the first 2 for the following reasons:  
-- `Programmed Activities` and `Education and Training` we felt, represented CHA's core business
-- Scarcity and unreliability of participant data for `One Off Events` and `Service Referrals` 
+For the purposes of our analysis we decided to narrow our focus to activities belonging to the Programmed Activities and Education and Training categories of activities only. We opted focus on the first 2 for the following reasons:  
+- Programmed Activities and Education and Training we felt represented CHA's core business. They are frequent, regular, and are proactively organised and scheduled
+- For other categories (`One Off Events` and `Service Referrals`) there were issues with data scarcity and unreliability. FOr example, though manyu Service Referral activities were recorded, there was an almost total lack of recorded participants
 
 #### Participants
 Based on advice from CHA representatives, we focused our analysis on Child and Adult participants only.
 
 #### Date Range
-When analysing the data in terms of _"what does a typical hub look like?"_, we found the data was heavily skewed by the month of January, when the number of activities was proportionally much smaller than every other month's actvities. 
+When analysing the data in terms of _"what does a typical hub look like?"_, we found the data was heavily skewed by the month of January, with the number of activities proportionally much smaller here than for any other month. 
   
-We made the decision to remove January as an extreme outlier for our analysis.  
-
-![Jan]({{ site.baseurl }}/images/cha_dfsg_images/Jan_activities.png) 
-
+Thus, we made the decision to treat January as an extreme outlier and remove it as deemed necessary for our analysis.  
+   
+![Jan]({{ site.baseurl }}/images/cha_dfsg_images/Jan_activities.png)   
+  
 ## 1. What is a Typical Hub? 
 ### 1.1 Hub Age
   
+We first took a look at how long hubs had been running for. There were no extreme cases here.  
+
 ![1_age]({{ site.baseurl }}/images/cha_dfsg_images/1_age.png)  
   
 ![2_ageheatmap]({{ site.baseurl }}/images/cha_dfsg_images/2_ageheatmap.png)  
