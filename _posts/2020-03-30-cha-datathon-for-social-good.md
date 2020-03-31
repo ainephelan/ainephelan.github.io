@@ -339,5 +339,5 @@ In summary, we
 - Looked at hubs from general, individual, and comparative levels  
 - Modelled how changes in an individual hub can be tracked over time, comparing itself now to itself in a previous state  
   
-Thanks to CHA and the organisers for opening your doors to us for this challenge! We learned a lot and we hope we were able to contribute in a meaningful way to the important work you are doing for women, for migrants and for those at risk from isolation.  
+Thanks to CHA and the organisers for opening your doors to us for this challenge. We learned a lot and we hope we were able to contribute in a meaningful way to the important work you are doing for women, for migrants and for those at risk from isolation.  
   
