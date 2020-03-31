@@ -164,7 +164,7 @@ So, for hub programmes to be highly diverse, we need to see hubs with
 - a high number of different programmes on offer  
 - an even distribution of activities within each of those programmes  
 
-To help with our calculations we used [Simpson's Index of Diveristy](https://en.wikipedia.org/wiki/Diversity_index#Simpson_index), which ranges from 0 to 1, with 0 being the least diverse, and 1 being the most diverse.   
+For our calculations we used [Simpson's Index of Diveristy](https://en.wikipedia.org/wiki/Diversity_index#Simpson_index), which ranges from 0 to 1, with 0 being the least diverse, and 1 being the most diverse.   
   
 &nbsp;  
   
