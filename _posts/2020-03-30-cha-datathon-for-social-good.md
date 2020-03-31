@@ -111,11 +111,7 @@ In this section we took an initial look at activities and answered questions aro
   
 &nbsp;  
    
-    
-Note: in the following, figures are rounded up to the nearest whole.   
-  
-&nbsp;  
-      
+          
 ![5_activities_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/5_activities_heatmap.png)  
   
 &nbsp;  
