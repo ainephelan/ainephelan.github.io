@@ -16,16 +16,14 @@ categories: jekyll update
 Report by Áine Phelan and Patrick Healy
 
 ### Context
-Patrick and I participated in Melbourne’s first Datathon for Social Good, serving Community Hubs Australia (CHA), a not-for-profit organisation that helps build social cohesion Australia-wide, particularly among the migrant community.  
+Patrick and I participated in Melbourne’s first [Datathon for Social Good](https://www.ourcommunity.com.au/datathon), serving [Community Hubs Australia](https://www.communityhubs.org.au/) (CHA), a not-for-profit organisation that helps build social cohesion Australia-wide, particularly amongst the migrant community.  
 
-Community Hubs and their programs are gateways that engage and support migrant women with young children. There are already dozens of Hubs in operation, and future plans to expand.
+Community Hubs and their programs are gateways that engage and support migrant women with young children. There are already dozens of Hubs in operation, and future plans to expand. Hubs are hosted in schools to provide a range of activities for children and adults, such as English lessons, maternal and child health, and playgroups. They provide welcoming places for migrant families, particularly mothers of young children, to come and connect.  
 
-Community Hubs are hosted in schools to provide a range of activities for children and adults, such as English lessons, maternal and child health, and playgroups. 
-
-The motivating challenge in this datathon was be to use provided data to learn more about the activities and impacts of Hubs.
-
+The hihgly motivating challenge in this datathon was be to use provided data to learn more about the activities and impacts of Community Hubs.
+  
 ### Internal Track
-We chose the Internal Data track. Our challenge was to use internal organisational data to answer questions such as, _"What is a ‘typical’ hub and what is an ‘outlier’?"_
+Out team chose the Internal Data track. Our challenge was to use internal organisational data to answer questions such as, _"What is a ‘typical’ hub and what is an ‘outlier’?"_
 
 In addition to the above prompt, we were encouraged to see if there was anything we could create that would be of value to CHA ongoing. 
 
