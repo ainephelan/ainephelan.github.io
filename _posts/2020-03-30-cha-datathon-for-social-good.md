@@ -71,18 +71,15 @@ We first took a look at how long hubs had been running
 - at the general level   
   
 ![1_age]({{ site.baseurl }}/images/cha_dfsg_images/1_age.png)  
-  
-    
-    
+         
 - at an individial level, and compared with one another  
  
 ![2_ageheatmap]({{ site.baseurl }}/images/cha_dfsg_images/2_ageheatmap.png)  
 
 ### 1.2 Hub Activities
-  
-   
-
-
+In this section we take a general look at the activities and ansered questions around 
+- how many activities do hubs run?  
+- who are they catering to?  
 
 ![3_activities]({{ site.baseurl }}/images/cha_dfsg_images/3_activities.png)  
   
@@ -90,6 +87,13 @@ We first took a look at how long hubs had been running
     
 ![5_activities_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/5_activities_heatmap.png)  
   
+  
+### 1.3 Engagement  
+A key measure of successm in this section we dove into the data on participants to help us learn more about how engaged the community was at each hub. At a general and an individual hub level, we asked and answered questions to do with:  
+- average participation per activity  
+- throughput of participants per month   
+- the breakdown of these participants into adult and children 
+
 ![6_participants]({{ site.baseurl }}/images/cha_dfsg_images/6_participants.png)  
   
 ![7_part_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/7_part_heatmap.png)  
@@ -99,6 +103,9 @@ We first took a look at how long hubs had been running
 ![9_part]({{ site.baseurl }}/images/cha_dfsg_images/9_part.png)  
   
 ![10_part_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/10_part_heatmap.png)  
+
+### 1.4 Diversity of Programmes  
+
   
 ![11_diversity.]({{ site.baseurl }}/images/cha_dfsg_images/11_diversity.png)  
   
