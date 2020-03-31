@@ -9,7 +9,8 @@ categories: jekyll update
 >_"If you want to lift yourself up, lift up someone else."_   
 >_- Booker T. Washington_   
   
-![hands]({{ site.baseurl }}/images/cha_dfsg_images/Hands.jpg)
+![hands]({{ site.baseurl }}/images/cha_dfsg_images/Hands.jpg)  
+  
 &nbsp;  
   
 # Community Hubs Australia - Datathon for Social Good
@@ -75,9 +76,13 @@ We first took a look at how long hubs had been running:
 - at an individial level, and compared with one another 
   
 ![1_age]({{ site.baseurl }}/images/cha_dfsg_images/1_age.png)  
-          
+&nbsp;  
+       
  
 ![2_ageheatmap]({{ site.baseurl }}/images/cha_dfsg_images/2_ageheatmap.png)  
+&nbsp;  
+
+
 
 ### 1.2 Hub Activities
 In this section we took an initial look at activities and answered questions around: 
