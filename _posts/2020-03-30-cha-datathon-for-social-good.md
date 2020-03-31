@@ -50,7 +50,7 @@ We have come at each key success measure in a variety of different ways, looking
 #### 2. Creation of a Hidden Markov Model  
 Another key measure of success was hub performance over time. 
 
-To assist with this measure we worked on a [Hidden Markov Model](https://en.wikipedia.org/wiki/Hidden_Markov_model) (HMM), which would enable the oganisation to compare a single hub to itself over time, predicting a hub's performance based on its own past behaviour. For example, comparing a hub's sequence of activities to its number of participants, to see if we can use activities to predict attendance as a measurement of performance.
+To assist with this measure we worked on a [Hidden Markov Model](https://en.wikipedia.org/wiki/Hidden_Markov_model) (HMM), which would enable the oganisation to compare a single hub to itself over time, predicting a hub's performance based on its own past behaviour. For example, comparing a hub's observed sequence of activities to its number of participants, to see if we can use activities to predict attendance as a measurement of performance.
     
     
 ### Data Considerations  
@@ -302,11 +302,11 @@ Ghassempour, S., Girosi, F., & Maeder, A. (2014). Clustering multivariate time s
   
   
 # Recap  
-In summary, we
+In summary, for this report we
 - tackled the Internal Data Track challenge  
-- analysed hubs from the point of view of several Key Success Measures, believed to be the most important to CHA  
-- analysed hubs from general, individual, and comparative levels  
-- modelled how changes in an individual hub can be tracked over time and used to predict performance   
+- analysed hubs from the point of view of several key success measures believed to be the most important to CHA  
+- analysed hubs at general, individual and comparative levels, from a range of perspectives
+- explored modelling how observed behaviour over time in an individual hub can be used to predict future performance   
   
 Thanks to CHA and the organisers for opening your doors to us for this challenge. We learned a lot and we hope we were able to contribute in a meaningful way to the important work you are doing for women, migrants and those at risk from social isolation.  
   
