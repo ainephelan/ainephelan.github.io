@@ -18,7 +18,7 @@ categories: jekyll update
 Report by Áine Phelan and Patrick Healy
 
 ### Context
-Patrick and I participated in Melbourne’s first [Datathon for Social Good](https://www.ourcommunity.com.au/datathon), serving [Community Hubs Australia](https://www.communityhubs.org.au/) (CHA), a not-for-profit organisation which helps to build social cohesion Australia-wide, particularly amongst the migrant community.  
+We participated in Melbourne’s first [Datathon for Social Good](https://www.ourcommunity.com.au/datathon), serving [Community Hubs Australia](https://www.communityhubs.org.au/) (CHA), a not-for-profit organisation which helps to build social cohesion Australia-wide, particularly amongst the migrant community.  
 
 Community Hubs and their programs are gateways that engage and support migrant women with young children, where isolation can be a serious social issue. There are already dozens of hubs in operation, and future plans to expand. Hubs are hosted in schools to provide a range of activities for children and adults, such as English lessons, maternal and child health, and playgroups. They provide welcoming places for migrant families, and especially these mothers, to come and connect.  
 
@@ -50,7 +50,8 @@ We have come at each key success measure in a variety of different ways, looking
 #### 2. Creation of a Hidden Markov Model  
 Another key measure of success was hub performance over time. 
 
-To assist with this measure we worked on a [Hidden Markov Model](https://en.wikipedia.org/wiki/Hidden_Markov_model) (HMM), which would enable the oganisation to compare a single hub to itself over time, predicting a hub's performance based on its own past behaviour.  
+To assist with this measure we worked on a [Hidden Markov Model](https://en.wikipedia.org/wiki/Hidden_Markov_model) (HMM), which would enable the oganisation to compare a single hub to itself over time, predicting a hub's performance based on its own past behaviour. For example, comparing the a hub's activities to the number of its participants, to see if we can use activities to predict attendance as a measurement of performance.
+    
     
 ### Data Considerations  
 #### Program Categories  
@@ -75,7 +76,7 @@ Thus, we made the decision to treat January as an extreme outlier and, where we 
   
 
 ### Technologies Used
-The tools we used in this 
+Python, Jupyter Notebook, Rmarkdown, Tableau, Excel  
   
   
 ## 1. What is a Typical Hub? 
@@ -85,18 +86,15 @@ We first took a look at how long hubs had been running
 - at the general level   
 - at an individial level, and compared with one another  
    
-&nbsp;  
-  
+&nbsp;    
     
 ![1_age]({{ site.baseurl }}/images/cha_dfsg_images/1_age.png)  
   
-&nbsp;  
-  
+&nbsp;    
   
 ![2_ageheatmap]({{ site.baseurl }}/images/cha_dfsg_images/2_ageheatmap.png)  
   
 &nbsp;  
-
 
 
 ### 1.2 Hub Activities
@@ -104,9 +102,7 @@ In this section we took an initial look at activities and answered questions aro
 - how many activities do hubs run?  
 - who do these activities cater to?  
   
-&nbsp;  
-  
-    
+&nbsp;      
 
 ![3_activities]({{ site.baseurl }}/images/cha_dfsg_images/3_activities.png)  
   
@@ -115,9 +111,9 @@ In this section we took an initial look at activities and answered questions aro
     
 ![4_activities]({{ site.baseurl }}/images/cha_dfsg_images/4_activities.png)  
   
-&nbsp;  
-   
-          
+&nbsp;     
+  
+  
 ![5_activities_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/5_activities_heatmap.png)  
   
 &nbsp;  
@@ -142,27 +138,23 @@ At a general and an individual hub level, we asked and answered questions to do 
 ![7_part_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/7_part_heatmap.png) 
   
 &nbsp;  
-  
-      
+        
   
 ![8_part]({{ site.baseurl }}/images/cha_dfsg_images/8_part.png)     
   
 &nbsp;  
-  
-    
+      
   
 ![9_part]({{ site.baseurl }}/images/cha_dfsg_images/9_part.png)   
   
 &nbsp;  
-  
-    
+      
   
 ![10_part_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/10_part_heatmap.png)  
   
 &nbsp;  
   
      
-
 ### 1.4 Diversity of Programs  
 Another key measure of success, this section measures and compares hubs on the diversity of programs offered.   
 
@@ -177,22 +169,18 @@ So, for hub programs to be highly diverse, we need to see hubs with
 For our calculations we used [Simpson's Index of Diveristy](https://en.wikipedia.org/wiki/Diversity_index#Simpson_index), which ranges from 0 to 1, with 0 being least diverse, and 1 being most diverse.   
   
 &nbsp;  
-  
-    
+      
     
 ![11_diversity.]({{ site.baseurl }}/images/cha_dfsg_images/11_diversity.png)   
   
 &nbsp;  
-  
-    
+      
   
 ![12_diversity_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/12_diversity_heatmap.png)   
   
 &nbsp;  
   
-    
-
-
+  
 ### 1.5 'Spread' of activities for children and adults
 
 In this section we addressed another key success measure, asking ourselves questions about the proportion of activities on offer to adults, compared with those on offer to children.   
@@ -207,19 +195,16 @@ It is worth noting in that the following ratio could not be calculated for all h
   
 &nbsp;  
   
-    
-  
+      
 ![13_ratio]({{ site.baseurl }}/images/cha_dfsg_images/13_ratio.png)   
   
 &nbsp;  
-  
-    
+      
   
 ![14_ratio]({{ site.baseurl }}/images/cha_dfsg_images/14_ratio.png)   
   
 &nbsp;  
-  
-    
+      
   
 ![15_ratio_heatmap]({{ site.baseurl }}/images/cha_dfsg_images/15_ratio_heatmap.png)   
   
