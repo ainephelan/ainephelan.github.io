@@ -28,7 +28,7 @@ The challenge in this highly motivating datathon was to use the provided data to
 The original datathon repostitory can be found [here](https://gitlab.com/mechakozai/datathon-social-good).  
   
 ### Problem Statement  
-Out team chose the Internal Data track challenge. Our challenge was to use internal organisational data to answer questions such as, _"What is a ‘typical’ hub and what is an ‘outlier’?"_
+Out team chose the Internal Data Track challenge. Our challenge was to use internal organisational data to answer questions such as, _"What is a ‘typical’ hub and what is an ‘outlier’?"_
 
 In addition to the above prompt, we were encouraged to be as creative as we liked, should any we see any other way of using the data to help CHA ongoing.  
   
