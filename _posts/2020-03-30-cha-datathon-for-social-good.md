@@ -63,7 +63,7 @@ Due to time and resource constraints, for the purposes of our analysis we decide
   
 We chose these two categories to focus on for the following reasons   
 - Of the four categories we felt these two most represented CHA's core business. They are frequent, regular and are proactively planned and scheduled. These are the categories hubs have most control over, and they form the overwhelming bulk of CHA's interactions with the community
-- Other categories (One Off Events and Service Referrals) appeared more ad-hoc, reactive and irregular, and we found issues with data availability and reliability. For example, though many Service Referral activities were recorded, there was an almost total lack of participants recorded. These categories would make an interesting subject for future work, allowing a more complete picture of hubs to be painted, more time and resources permitting.  
+- Other categories (One Off Events and Service Referrals) appeared more ad-hoc, reactive and irregular, and we found issues with data availability and reliability. For example, though many Service Referral activities were recorded, there was an almost total lack of participants recorded. In short, there were more questions here than we felt we had time to answer. More time and resources permitting, these categories would make an interesting subject for future work, allowing a more complete picture of hubs to be painted.  
 
 #### Participants
 Based on advice from CHA representatives, we focused our analysis on Child and Adult participants only.
