@@ -32,6 +32,8 @@ Out team chose the Internal Data Track challenge. Our challenge was to use inter
 
 In addition to the above prompt, we were encouraged to be as creative as we liked, should any we see any other way of using the data to help CHA ongoing.  
   
+All internal hub data was anonymised - we had no contextual data such as location, demographics, school or hub size to inform our analysis.  
+   
 ### Scope
 Our report is comprised of 2 main parts:  
 
