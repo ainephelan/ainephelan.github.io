@@ -9,7 +9,7 @@ categories: jekyll update
 >_"If you want to lift yourself up, lift up someone else."_   
 >_- Booker T. Washington_   
   
-![hands]({{ site.baseurl }}/images/cha_dfsg_images/Hands.jpg)  
+![cha_cover]({{ site.baseurl }}/images/cha_dfsg_images/cha_cover.jpg)  
   
 &nbsp;  
   
