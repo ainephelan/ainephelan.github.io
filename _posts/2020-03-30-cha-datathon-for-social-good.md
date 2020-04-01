@@ -63,7 +63,7 @@ Due to time and resource constraints, for the purposes of our analysis we decide
   
 We chose these two categories to focus on for the following reasons   
 - Of the four categories we felt these two most represented CHA's core business. They are frequent, regular and are proactively planned and scheduled. These are the categories hubs have most control over, and they form the overwhelming bulk of CHA's interactions with the community
-- Other categories (One Off Events and Service Referrals) appeared more ad-hoc, reactive and irregular, and we found issues with data availability and reliability. For example, though many Service Referral activities were recorded, there was an almost total lack of participants recorded. In short, there were more questions here than we felt we had time to answer. More time and resources permitting, these categories would make an interesting subject for future work, allowing a more complete picture of hubs to be painted.  
+- Other categories (One Off Events and Service Referrals) appeared more ad-hoc, reactive and irregular, and we found issues with data availability and reliability. For example, though many Service Referral activities were recorded, there was an almost total lack of participants recorded. In short, there were more questions here than we felt we had time to answer. More time and resources permitting, these categories would make an interesting subject for future work, allowing a more complete picture of hubs to be painted  
 
 #### Participants
 Based on advice from CHA representatives, we focused our analysis on Child and Adult participants only.
@@ -231,7 +231,7 @@ Using a HMM we can forecast how a hub will perform in relation to its own past p
   
 What this means is that we want to group hubs with similar indicators for how they are performing based on scheduled activities across time.  
   
-We believe that a HMM is both better suited to the categorical data and also easier to implement than a Time Series Regression. When clustering is performed using categorical variables, these clusters are incredibly hard to transfer into a time series.We hope that applying a HMM will solve this problem. We take inspiration from Ghassempour et al (2014) who perform a time series cluster of medical data using the HMM.   
+We believe that a HMM is both better suited to the categorical data and also easier to implement than a Time Series Regression. When clustering is performed using categorical variables, these clusters are incredibly hard to transfer into a time series. We hope that applying a HMM will solve this problem. We take inspiration from Ghassempour et al (2014) who perform a time series cluster of medical data using the HMM.   
 
 This approach can be thought of as using machine learning to classify a time series to observe how similar hubs are tracking.  
 
