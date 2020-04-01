@@ -301,7 +301,7 @@ Visser, I., & Speekenbrink, M. (2010). depmixS4: an R package for hidden Markov 
 Ghassempour, S., Girosi, F., & Maeder, A. (2014). Clustering multivariate time series using hidden Markov models. International journal of environmental research and public health, 11(3), 2741-2763.    
   
   
-# Recap  
+# 3. Recap  
 In summary, for this report we
 - tackled the Internal Data Track challenge  
 - analysed hubs from the point of view of several key success measures believed to be the most important to CHA  
