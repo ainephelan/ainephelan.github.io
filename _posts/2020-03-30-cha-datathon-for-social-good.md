@@ -86,7 +86,7 @@ Python, Jupyter Notebook, Rmarkdown, Tableau, Excel
   
 We first took a look at how long hubs had been running - across all hubs, at an individial level, and compared with one another.
 
-Informative in its own right, hub age and specifically what we considered 'active months' (i.e. excluding January) would also inform many of the other key measures in the following sections.  
+Informative in its own right, hub age and derived from this, what we considered 'active months' (i.e. excluding January), would also inform many of the other key measures in the following sections.  
    
 &nbsp;    
     
