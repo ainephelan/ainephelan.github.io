@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Instacart - Market Basket Analysis"
+title:  "Instacart Market Basket Analysis"
 date:   2019-10-21 20:40:42 +1000
 categories: jekyll update
 ---
@@ -22,7 +22,7 @@ Entrants had **3 months** to analyse, model and submit their entries, making as 
 I recently took part in a version of the Instacart challenge of my own.  
   
 **My challenge?**   
-- Tackle the [Kaggle Instacard Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis) competition and present on my analysis and findings  
+- Tackle the [Kaggle Instacart Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis) competition and present on my analysis and findings  
   
 **My time limit?**  
 - One week  
