@@ -8,8 +8,11 @@ categories: jekyll update
 >_- Marilyn Monroe_  
 
 On 17th May 2017 [Kaggle](https://www.kaggle.com/) launched its [Instacart Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis) competition.  
-  
-The challenge - to use customer, product and order data from [Instacart](https://www.instacart.com/), a US-based grocery order and delivery app, to predict which previously purchased grocery items a customer would be in a customer's next basket.
+
+[Instacart](https://www.instacart.com/) is a US-based grocery order and delivery app. Users select grocery products through the app, and personal shoppers review and complete the in-store shopping and home delivery.
+
+The challenge - use open-sourced, anonymised data on 3 milling Instacart orders over time to predict which previously purchased grocery items will be in a user's next basket. 
+
 
 
   
