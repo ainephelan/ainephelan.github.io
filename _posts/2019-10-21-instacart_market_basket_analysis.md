@@ -25,12 +25,12 @@ My time limit?
   
 The nature of the challenge was purposefully time-constrained, the goal being not to achieve the best F-score, but instead for me to  
   
-- Create and communicate a narrative around my approach to the data and the challenge
+- Create a narrative around my approach to the data and the challenge
+- Situate the data problem firmly within its business context
 - Make explicit my thought processes and reasoning
-- Situate the data problem in its business context
-- Communicate ideas for future work 
+- Communicate ideas for future work  
   
-Below is the deck I prepared and presented.  
+Below is the deck I prepared and presented.   
 
 
 
