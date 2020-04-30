@@ -13,15 +13,17 @@ On 17th May 2017 [Kaggle](https://www.kaggle.com/) launched its [Instacart Marke
   
 The challenge posed in this competition - use open-sourced, anonymised data on 3 million Instacart orders over time to predict which previously purchased grocery items will be in a user's next basket.  
   
-Entrants had 3 months to analyse, model and submit their entries.  
+Entrants had *3 months* to analyse, model and submit their entries, making as many entries as desired over this period to validate and improve their score.  
   
-I recently took part in an Instacart challenge of my own. My challenge?   
-- Tackle the [Kaggle Instacard Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis) competition and present on my analysis and findings
-
+I recently took part in a version of the Instacart challenge of my own.  
+  
+My challenge?   
+- Tackle the [Kaggle Instacard Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis) competition and present on my analysis and findings  
+  
 My time limit?  
 - One week  
   
-
+Below is the deck I prepared
 
 
 
