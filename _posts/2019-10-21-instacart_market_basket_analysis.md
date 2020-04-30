@@ -7,6 +7,10 @@ categories: jekyll update
 >_"Happiness is not in money, but in shopping."_   
 >_- Marilyn Monroe_  
 
+  
+![shoes]({{ site.baseurl }}/images/shoes.jpg)    
+  
+    
 On 17th May 2017 [Kaggle](https://www.kaggle.com/) launched its [Instacart Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis) competition.   
   
 [Instacart](https://www.instacart.com/) is a US-based grocery order and delivery app. Users select grocery products through the app, and personal shoppers review and complete the in-store shopping and home delivery.  
