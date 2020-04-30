@@ -16,10 +16,10 @@ The challenge posed in this competition - use open-sourced, anonymised data on 3
 Entrants had 3 months to analyse, model and submit their entries.  
   
 I recently took part in an Instacart challenge of my own. My challenge?   
-### Tackle the [Kaggle Instacard Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis) competition and present on my analysis and findings
+- Tackle the [Kaggle Instacard Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis) competition and present on my analysis and findings
 
 My time limit?  
-### One week
+- One week  
   
 
 
