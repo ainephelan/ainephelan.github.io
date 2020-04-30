@@ -7,11 +7,22 @@ categories: jekyll update
 >_"Happiness is not in money, but in shopping."_   
 >_- Marilyn Monroe_  
 
-On 17th May 2017 [Kaggle](https://www.kaggle.com/) launched its [Instacart Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis) competition.  
+On 17th May 2017 [Kaggle](https://www.kaggle.com/) launched its [Instacart Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis) competition.   
+  
+[Instacart](https://www.instacart.com/) is a US-based grocery order and delivery app. Users select grocery products through the app, and personal shoppers review and complete the in-store shopping and home delivery.  
+  
+The challenge posed in this competition - use open-sourced, anonymised data on 3 million Instacart orders over time to predict which previously purchased grocery items will be in a user's next basket.  
+  
+Entrants had 3 months to analyse, model and submit their entries.  
+  
+I recently took part in an Instacart challenge of my own. My challenge?   
+### Tackle the [Kaggle Instacard Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis) competition and present on my analysis and findings
 
-[Instacart](https://www.instacart.com/) is a US-based grocery order and delivery app. Users select grocery products through the app, and personal shoppers review and complete the in-store shopping and home delivery.
+My time limit?  
+### One week
+  
 
-The challenge - use open-sourced, anonymised data on 3 milling Instacart orders over time to predict which previously purchased grocery items will be in a user's next basket. 
+
 
 
 
