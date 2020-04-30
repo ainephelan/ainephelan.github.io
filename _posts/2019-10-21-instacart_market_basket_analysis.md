@@ -17,10 +17,10 @@ Entrants had **3 months** to analyse, model and submit their entries, making as 
   
 I recently took part in a version of the Instacart challenge of my own.  
   
-My challenge?   
+**My challenge?**   
 - Tackle the [Kaggle Instacard Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis) competition and present on my analysis and findings  
   
-My time limit?  
+**My time limit?**  
 - One week  
   
 The nature of the challenge was purposefully time-constrained, the goal being not to achieve the best F-score, but instead for me to  
