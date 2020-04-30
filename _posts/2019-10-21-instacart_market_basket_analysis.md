@@ -23,13 +23,14 @@ My challenge?
 My time limit?  
 - One week  
   
-The nature of the challenge was purposefully time-constrained, the goal being not to achieve the best F-score, but instead for me to use the journey of the challenge to  
-- create and communicate a narrative around my approach to the data and the problem
-- make explicit my thought processes and reasoning
-- situate the data problem in its business context
-- communicate ideas for future work 
-
-Below is the deck I prepared and presented on.  
+The nature of the challenge was purposefully time-constrained, the goal being not to achieve the best F-score, but instead for me to  
+  
+- Create and communicate a narrative around my approach to the data and the challenge
+- Make explicit my thought processes and reasoning
+- Situate the data problem in its business context
+- Communicate ideas for future work 
+  
+Below is the deck I prepared and presented.  
 
 
 
