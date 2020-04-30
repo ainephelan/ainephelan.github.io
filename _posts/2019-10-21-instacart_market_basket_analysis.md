@@ -6,6 +6,12 @@ categories: jekyll update
 ---
 >_"Happiness is not in money, but in shopping."_   
 >_- Marilyn Monroe_  
+
+On 17th May 2017 [Kaggle](https://www.kaggle.com/) launched its [Instacart Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis) competition.  
+  
+The challenge - to use customer, product and order data from [Instacart](https://www.instacart.com/), a US-based grocery order and delivery app, to predict which previously purchased grocery items a customer would be in a customer's next basket.
+
+
   
 ![slide1]({{ site.baseurl }}/images/Screen%20Shot%202020-03-30%20at%209.36.44%20pm.png)  
   
