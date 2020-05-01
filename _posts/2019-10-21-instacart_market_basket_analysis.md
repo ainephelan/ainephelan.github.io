@@ -19,7 +19,7 @@ The challenge posed in this competition - use open-sourced, anonymised data on 3
   
 Entrants had **3 months** to analyse, model and submit their entries, making as many entries as desired over this period to validate and improve their score.  
   
-I recently took part in a version of the Instacart challenge of my own.  
+I recently took part in a modified version of the Instacart challenge.  
   
 **My challenge?**   
 - Tackle the [Kaggle Instacart Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis) competition and present on my analysis and findings  
@@ -27,9 +27,9 @@ I recently took part in a version of the Instacart challenge of my own.
 **My time limit?**  
 - One week  
   
-The nature of the challenge was purposefully time-constrained, the goal being not to achieve the best F-score, but instead for me to  
+The nature of the challenge was purposefully time-constrained, the goal being not to achieve the best F-score, but instead use the challenge as a platform to  
   
-- Create a narrative around my approach to the data and the challenge
+- Create and communicate a narrative around my approach to the data and the challenge
 - Situate the data problem firmly within its business context
 - Make explicit my thought processes and reasoning
 - Communicate ideas for future work  
