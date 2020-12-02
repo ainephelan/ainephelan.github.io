@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Community Hubs Australia - Datathon for Social Good"
-title:  "Award Winner: Best Individual"
 date:   2020-03-30 20:40:42 +1000
 categories: jekyll update
 ---
