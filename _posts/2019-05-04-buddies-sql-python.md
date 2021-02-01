@@ -423,7 +423,7 @@ plt.show()
 
 
 #### 4. Distribution of Sales Values
-As mentioned, the above representation doesn't help us in getting to our goal. Let's find a __better way__ of visualising the data for our purposes, taking a look at the distributions of sales made.  
+As mentioned, the above representation doesn't really help us in getting to our goal. Let's find a __better way__ of visualising the data for our purposes, taking a look at the distributions of sales made.  
 
 I'll display the median monthly sales value as well. I'm choosing median as the most representative value as I can see all three distributions are somewhat skewed, and the median is a robust statistic, resistant to the pull of outliers.
 
